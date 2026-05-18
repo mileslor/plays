@@ -1,0 +1,63 @@
+{
+  "site": { "title": "Plays", "tagline": "派對遊戲工具集" },
+  "nav": { "home": "首頁" },
+  "home": {
+    "heading": "派對遊戲工具",
+    "subheading": "唔需要買道具，開瀏覽器就玩",
+    "comingSoon": "即將推出"
+  },
+  "undercover": {
+    "title": "誰是臥底",
+    "gameLanguage": "遊戲語言",
+    "players": "玩家人數",
+    "undercoverCount": "臥底人數",
+    "enableWhiteboard": "加入白板",
+    "whiteboardDesc": "白板玩家收到空白牌，靠聽描述估詞",
+    "startGame": "開局！",
+    "playerN": "{{n}} 號玩家",
+    "progress": "{{current}} / {{total}} 人睇完",
+    "doubleTapReveal": "雙按睇你嘅秘密詞 👀",
+    "tapAgain": "再嚟一下！",
+    "yourWord": "🔐 你嘅秘密詞係",
+    "youAreWhiteboard": "😶 你係白板！",
+    "whiteboardNote": "冇詞㗎，靠你把口同兩隻耳！",
+    "tapToHide": "睇完快啲按隱藏！",
+    "role_civilian": "平民",
+    "role_undercover": "臥底",
+    "role_whiteboard": "白板",
+    "roundN": "第 {{n}} 回合",
+    "alivePlayers": "仲有 {{n}} 人",
+    "pickFirst": "隨機揀邊個先講",
+    "firstSpeaker": "🎤 第一個講嘅係",
+    "repick": "再抽一次",
+    "describeHint": "每人輪流講一句，唔能直接講出個詞！",
+    "startVote": "🗳️ 投票！",
+    "voting": "係邊個？",
+    "voteHint": "你覺得邊個係臥底？揀佢！",
+    "confirmEliminate": "就係佢，出局！",
+    "eliminated": "出局！",
+    "theirRole": "原來佢係",
+    "theirWord": "佢嘅詞係",
+    "nextRound": "繼續捉鬼！",
+    "wbGuessHint": "🎯 最後一次機會！猜中平民詞即刻贏！",
+    "wbGuessPlaceholder": "你估個詞係⋯",
+    "submitGuess": "就係呢個！",
+    "wbCorrect": "🎉 估中喇！白板大神！",
+    "wbWrong": "哎呀！估錯喇，遊戲繼續⋯",
+    "wbContinue": "繼續玩",
+    "win_civilian": "🎉 平民大勝！臥底現形！",
+    "win_undercover": "😈 臥底勝出！平民輸喇！",
+    "win_whiteboard": "🕵️ 白板神勝！所有人都唔知佢係白板！",
+    "mainWordWas": "平民詞係",
+    "newGame": "再玩一局！",
+    "backHome": "返主頁"
+  },
+  "games": {
+    "undercover": { "name": "誰是臥底", "desc": "每人收到一個詞，其中一個唔同，靠描述找出臥底" },
+    "werewolf": { "name": "狼人殺", "desc": "平民vs狼人，角色分配一鍵搞掂" }
+  },
+  "lang": {
+    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
+    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+  }
+}

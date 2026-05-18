@@ -1,0 +1,63 @@
+{
+  "site": { "title": "Plays", "tagline": "パーティーゲームツール集" },
+  "nav": { "home": "ホーム" },
+  "home": {
+    "heading": "パーティーゲームツール",
+    "subheading": "道具不要 — ブラウザを開くだけ",
+    "comingSoon": "近日公開"
+  },
+  "undercover": {
+    "title": "裏切り者は誰だ",
+    "gameLanguage": "ゲーム言語",
+    "players": "プレイヤー数",
+    "undercoverCount": "スパイ数",
+    "enableWhiteboard": "ミスター・ホワイトを追加",
+    "whiteboardDesc": "ミスター・ホワイトは白紙を受け取り、ヒントから単語を推測する",
+    "startGame": "ゲームスタート！",
+    "playerN": "{{n}}番プレイヤー",
+    "progress": "{{current}} / {{total}} 完了",
+    "doubleTapReveal": "ダブルタップで秘密の単語を確認 👀",
+    "tapAgain": "もう一回！",
+    "yourWord": "🔐 あなたの秘密の単語は",
+    "youAreWhiteboard": "😶 あなたはミスター・ホワイト！",
+    "whiteboardNote": "単語なし — よく聞いて！",
+    "tapToHide": "見たら隠して渡して！",
+    "role_civilian": "市民",
+    "role_undercover": "スパイ",
+    "role_whiteboard": "Mr.ホワイト",
+    "roundN": "第{{n}}ラウンド",
+    "alivePlayers": "残り{{n}}人",
+    "pickFirst": "最初の発言者をランダムに決める",
+    "firstSpeaker": "🎤 最初に話すのは",
+    "repick": "もう一度",
+    "describeHint": "順番に単語を説明してください — 直接言わずに！",
+    "startVote": "🗳️ 投票！",
+    "voting": "誰だ！？",
+    "voteHint": "スパイだと思うプレイヤーを選べ！",
+    "confirmEliminate": "こいつだ、追放！",
+    "eliminated": "脱落！",
+    "theirRole": "正体は",
+    "theirWord": "彼らの単語は",
+    "nextRound": "まだまだ続くぞ！",
+    "wbGuessHint": "🎯 最後のチャンス！市民の単語を当てれば勝利！",
+    "wbGuessPlaceholder": "答えは⋯",
+    "submitGuess": "これだ！",
+    "wbCorrect": "🎉 正解！Mr.ホワイトの勝利！",
+    "wbWrong": "残念！外れ、ゲーム続行⋯",
+    "wbContinue": "続ける",
+    "win_civilian": "🎉 市民の勝利！スパイが暴かれた！",
+    "win_undercover": "😈 スパイの勝利！市民は騙された！",
+    "win_whiteboard": "🕵️ Mr.ホワイトの大勝利！誰も気づかなかった！",
+    "mainWordWas": "市民の単語は",
+    "newGame": "もう一回！",
+    "backHome": "ホーム"
+  },
+  "games": {
+    "undercover": { "name": "裏切り者は誰だ", "desc": "全員に単語が配られる。一人だけ違う単語を持つスパイを見つけよう" },
+    "werewolf": { "name": "人狼", "desc": "村人vs人狼 — ワンタップで役職を割り当て" }
+  },
+  "lang": {
+    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
+    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+  }
+}

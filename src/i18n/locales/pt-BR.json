@@ -1,0 +1,63 @@
+{
+  "site": { "title": "Plays", "tagline": "Jogos de Mesa para Grupos" },
+  "nav": { "home": "Início" },
+  "home": {
+    "heading": "Ferramentas de Jogos",
+    "subheading": "Sem acessórios — só abra o navegador",
+    "comingSoon": "Em Breve"
+  },
+  "undercover": {
+    "title": "Quem é o Infiltrado?",
+    "gameLanguage": "Idioma do jogo",
+    "players": "Número de jogadores",
+    "undercoverCount": "Infiltrados",
+    "enableWhiteboard": "Adicionar Sr. Branco",
+    "whiteboardDesc": "O Sr. Branco recebe uma carta em branco e precisa adivinhar pelas dicas",
+    "startGame": "Vamos lá!",
+    "playerN": "Jogador {{n}}",
+    "progress": "{{current}} / {{total}} prontos",
+    "doubleTapReveal": "Toque duas vezes para ver sua palavra secreta 👀",
+    "tapAgain": "Mais uma vez!",
+    "yourWord": "🔐 Sua palavra secreta é",
+    "youAreWhiteboard": "😶 Você é o Sr. Branco!",
+    "whiteboardNote": "Sem palavra — preste atenção!",
+    "tapToHide": "Esconda antes de passar!",
+    "role_civilian": "Civil",
+    "role_undercover": "Infiltrado",
+    "role_whiteboard": "Sr. Branco",
+    "roundN": "Rodada {{n}}",
+    "alivePlayers": "Restam {{n}}",
+    "pickFirst": "Sortear quem fala primeiro",
+    "firstSpeaker": "🎤 O primeiro a falar é",
+    "repick": "Sortear de novo",
+    "describeHint": "Cada um descreve sua palavra sem dizê-la diretamente!",
+    "startVote": "🗳️ Votar!",
+    "voting": "Quem é?",
+    "voteHint": "Quem você acha que é o infiltrado? Escolha!",
+    "confirmEliminate": "É ele, fora!",
+    "eliminated": "Eliminado!",
+    "theirRole": "Era",
+    "theirWord": "A palavra deles era",
+    "nextRound": "Continua!",
+    "wbGuessHint": "🎯 Última chance! Acerte a palavra civil e ganhe!",
+    "wbGuessPlaceholder": "Minha resposta é⋯",
+    "submitGuess": "Essa é!",
+    "wbCorrect": "🎉 Acertou! O Sr. Branco vence!",
+    "wbWrong": "Errou! O jogo continua⋯",
+    "wbContinue": "Continuar",
+    "win_civilian": "🎉 Os Civis vencem! O infiltrado foi descoberto!",
+    "win_undercover": "😈 O Infiltrado vence! Os civis foram enganados!",
+    "win_whiteboard": "🕵️ O Sr. Branco vence! Ninguém desconfiou!",
+    "mainWordWas": "A palavra civil era",
+    "newGame": "Jogar de novo!",
+    "backHome": "Início"
+  },
+  "games": {
+    "undercover": { "name": "Quem é o Infiltrado?", "desc": "Cada jogador recebe uma palavra, um tem uma diferente — encontre-o" },
+    "werewolf": { "name": "Lobisomem", "desc": "Aldeões vs Lobisomens — atribua papéis com um toque" }
+  },
+  "lang": {
+    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
+    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+  }
+}

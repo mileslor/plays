@@ -1,0 +1,63 @@
+{
+  "site": { "title": "Plays", "tagline": "Party Game Toolkit" },
+  "nav": { "home": "Home" },
+  "home": {
+    "heading": "Party Game Tools",
+    "subheading": "No props needed — just open your browser",
+    "comingSoon": "Coming Soon"
+  },
+  "undercover": {
+    "title": "Who's Undercover",
+    "gameLanguage": "Game Language",
+    "players": "Number of Players",
+    "undercoverCount": "Undercovers",
+    "enableWhiteboard": "Add Mr. White",
+    "whiteboardDesc": "Mr. White gets a blank card and must guess from others' clues",
+    "startGame": "Let's Go!",
+    "playerN": "Player {{n}}",
+    "progress": "{{current}} / {{total}} done",
+    "doubleTapReveal": "Double tap to see your secret word 👀",
+    "tapAgain": "One more tap!",
+    "yourWord": "🔐 Your secret word is",
+    "youAreWhiteboard": "😶 You're Mr. White!",
+    "whiteboardNote": "No word for you — listen closely!",
+    "tapToHide": "Tap to hide before passing!",
+    "role_civilian": "Civilian",
+    "role_undercover": "Undercover",
+    "role_whiteboard": "Mr. White",
+    "roundN": "Round {{n}}",
+    "alivePlayers": "{{n}} still in",
+    "pickFirst": "Pick who goes first",
+    "firstSpeaker": "🎤 First to speak",
+    "repick": "Repick",
+    "describeHint": "Take turns describing your word — don't say it directly!",
+    "startVote": "🗳️ Vote!",
+    "voting": "Who is it?",
+    "voteHint": "Who do you think is the undercover? Pick them!",
+    "confirmEliminate": "That's them — eliminate!",
+    "eliminated": "Eliminated!",
+    "theirRole": "They were",
+    "theirWord": "Their word was",
+    "nextRound": "Keep hunting!",
+    "wbGuessHint": "🎯 Last chance! Guess the Civilian word to win it all!",
+    "wbGuessPlaceholder": "Your guess is⋯",
+    "submitGuess": "That's my answer!",
+    "wbCorrect": "🎉 Correct! Mr. White wins it!",
+    "wbWrong": "Nope! Wrong guess, game goes on⋯",
+    "wbContinue": "Continue",
+    "win_civilian": "🎉 Civilians win! The undercover is exposed!",
+    "win_undercover": "😈 Undercover wins! The civilians got played!",
+    "win_whiteboard": "🕵️ Mr. White wins! Nobody suspected a thing!",
+    "mainWordWas": "The Civilian word was",
+    "newGame": "Play Again!",
+    "backHome": "Home"
+  },
+  "games": {
+    "undercover": { "name": "Who's Undercover", "desc": "Everyone gets a word, one player gets a different one — find the undercover" },
+    "werewolf": { "name": "Werewolf", "desc": "Villagers vs Werewolves — one-tap role assignment" }
+  },
+  "lang": {
+    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
+    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Plays",
+    "tagline": "派对游戏工具集"
+  },
+  "nav": {
+    "home": "首页"
+  },
+  "home": {
+    "heading": "派对游戏工具",
+    "subheading": "不需要买道具，打开浏览器就玩",
+    "comingSoon": "即将推出"
+  },
+  "games": {
+    "undercover": {
+      "name": "谁是卧底",
+      "desc": "每人收到一个词，其中一个不同，靠描述找出卧底"
+    },
+    "werewolf": {
+      "name": "狼人杀",
+      "desc": "平民vs狼人，角色分配一键搞定"
+    }
+  },
+  "lang": {
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "zh-CN": "简中",
+    "en": "English"
+  }
+}
