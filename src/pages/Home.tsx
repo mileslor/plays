@@ -15,7 +15,7 @@ const GAMES = [
     path: '/werewolf',
     emoji: '🐺',
     color: 'from-red-700 to-orange-700',
-    ready: false,
+    ready: true,
   },
 ]
 

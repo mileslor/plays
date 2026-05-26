@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "Jogos de Mesa para Grupos" },
-  "nav": { "home": "Início" },
+  "site": {
+    "title": "Plays",
+    "tagline": "Jogos de Mesa para Grupos"
+  },
+  "nav": {
+    "home": "Início"
+  },
   "home": {
     "heading": "Ferramentas de Jogos",
     "subheading": "Sem acessórios — só abra o navegador",
@@ -53,11 +58,82 @@
     "backHome": "Início"
   },
   "games": {
-    "undercover": { "name": "Quem é o Infiltrado?", "desc": "Cada jogador recebe uma palavra, um tem uma diferente — encontre-o" },
-    "werewolf": { "name": "Lobisomem", "desc": "Aldeões vs Lobisomens — atribua papéis com um toque" }
+    "undercover": {
+      "name": "Quem é o Infiltrado?",
+      "desc": "Cada jogador recebe uma palavra, um tem uma diferente — encontre-o"
+    },
+    "werewolf": {
+      "name": "Lobisomem",
+      "desc": "Aldeões vs Lobisomens — atribua papéis com um toque"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
+  },
+  "werewolf": {
+    "title": "Lobisomem",
+    "setup": "Configurar papéis",
+    "preset": "Configuração rápida",
+    "startGame": "Começar!",
+    "role_werewolf": "Lobisomem",
+    "role_villager": "Aldeão",
+    "role_seer": "Vidente",
+    "role_witch": "Bruxa",
+    "role_hunter": "Caçador",
+    "ability_werewolf": "Matar um jogador cada noite",
+    "ability_villager": "Sem habilidade especial",
+    "ability_seer": "Verificar um jogador por noite",
+    "ability_witch": "Antídoto×1 para salvar, Veneno×1 para matar",
+    "ability_hunter": "Levar alguém ao ser eliminado",
+    "progress": "{{current}} / {{total}} prontos",
+    "doubleTapReveal": "Toque duas vezes para ver seu papel 👀",
+    "yourRole": "🃏 Você é",
+    "tapToHide": "Esconda antes de passar!",
+    "allReady": "Todos prontos!",
+    "nightPhase": "🌙 Noite",
+    "dayPhase": "☀️ Dia",
+    "roundN": "Noite {{n}}",
+    "allClose": "Todos fechem os olhos 👇",
+    "werewolvesOpen": "Lobisomens abram os olhos — escolham o alvo",
+    "werewolvesClose": "Lobisomens fechem os olhos",
+    "seerOpen": "Vidente abre os olhos — aponte quem quer verificar",
+    "seerResult_wolf": "🔴 Lobisomem!",
+    "seerResult_good": "🟢 Pessoa boa",
+    "seerClose": "Vidente fecha os olhos",
+    "witchOpen": "Bruxa abre os olhos",
+    "witchSave": "Jogador {{n}} foi morto. Usar antídoto?",
+    "witchPoison": "Usar veneno para matar alguém?",
+    "witchUsed": "(Usado)",
+    "witchClose": "Bruxa fecha os olhos",
+    "nightResult": "Amanheceu!",
+    "died": "{{names}} morreu esta noite",
+    "peacefulNight": "Noite tranquila — ninguém morreu 🕊️",
+    "discuss": "Discutam e votem",
+    "startVote": "🗳️ Votar!",
+    "voting": "Votar para exilar",
+    "voteHint": "Quem você acha que é o Lobisomem?",
+    "confirmEliminate": "Exilar!",
+    "eliminated": "Exilado!",
+    "hunterShot": "Caçador! Quem você leva?",
+    "skipShot": "Sem tiro",
+    "wolfWin": "😈 Os Lobisomens vencem!",
+    "goodWin": "🎉 Os Aldeões vencem!",
+    "newGame": "Jogar de novo!",
+    "backHome": "Início",
+    "alive": "Vivos",
+    "dead": "Mortos",
+    "nextNight": "Próxima noite",
+    "yes": "Sim, usar!",
+    "no": "Não",
+    "witchSkipPoison": "Pular veneno",
+    "witchSavedConfirm": "✅ Jogador {{n}} salvo",
+    "witchDeclinedSave": "Antídoto não usado",
+    "witchPoisonedConfirm": "☠️ Jogador {{n}} envenenado",
+    "hunterShootConfirm": "🏹 Atirar no Jogador {{n}}"
   }
 }

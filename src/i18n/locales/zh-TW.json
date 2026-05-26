@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "派對遊戲工具集" },
-  "nav": { "home": "首頁" },
+  "site": {
+    "title": "Plays",
+    "tagline": "派對遊戲工具集"
+  },
+  "nav": {
+    "home": "首頁"
+  },
   "home": {
     "heading": "派對遊戲工具",
     "subheading": "不需要買道具，開瀏覽器就玩",
@@ -53,11 +58,82 @@
     "backHome": "回首頁"
   },
   "games": {
-    "undercover": { "name": "誰是臥底", "desc": "每人收到一個詞，其中一個不同，靠描述找出臥底" },
-    "werewolf": { "name": "狼人殺", "desc": "平民vs狼人，角色分配一鍵搞定" }
+    "undercover": {
+      "name": "誰是臥底",
+      "desc": "每人收到一個詞，其中一個不同，靠描述找出臥底"
+    },
+    "werewolf": {
+      "name": "狼人殺",
+      "desc": "平民vs狼人，角色分配一鍵搞定"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
+  },
+  "werewolf": {
+    "title": "狼人殺",
+    "setup": "角色設定",
+    "preset": "快速配置",
+    "startGame": "開始！",
+    "role_werewolf": "狼人",
+    "role_villager": "平民",
+    "role_seer": "預言家",
+    "role_witch": "女巫",
+    "role_hunter": "獵人",
+    "ability_werewolf": "每晚集體殺一人",
+    "ability_villager": "無特殊能力",
+    "ability_seer": "每晚查一人是好人還是狼人",
+    "ability_witch": "解藥×1救人，毒藥×1殺人",
+    "ability_hunter": "出局時可帶走一人",
+    "progress": "{{current}} / {{total}} 人看完",
+    "doubleTapReveal": "雙擊查看你的角色 👀",
+    "yourRole": "🃏 你是",
+    "tapToHide": "看完快點隱藏！",
+    "allReady": "全部人看完，可以開始！",
+    "nightPhase": "🌙 夜晚",
+    "dayPhase": "☀️ 白天",
+    "roundN": "第 {{n}} 夜",
+    "allClose": "所有人閉眼 👇",
+    "werewolvesOpen": "狼人請睜眼，決定殺誰",
+    "werewolvesClose": "狼人閉眼",
+    "seerOpen": "預言家請睜眼，指出你想查的人",
+    "seerResult_wolf": "🔴 是狼人！",
+    "seerResult_good": "🟢 是好人",
+    "seerClose": "預言家閉眼",
+    "witchOpen": "女巫請睜眼",
+    "witchSave": "今晚被殺的是 {{n}} 號，用解藥救他？",
+    "witchPoison": "用毒藥殺人？",
+    "witchUsed": "（已用過）",
+    "witchClose": "女巫閉眼",
+    "nightResult": "天亮了！",
+    "died": "今晚 {{names}} 出局",
+    "peacefulNight": "平安夜，沒有人出局 🕊️",
+    "discuss": "大家討論，發言完畢後投票",
+    "startVote": "🗳️ 投票！",
+    "voting": "投票放逐",
+    "voteHint": "你覺得是哪個狼人？",
+    "confirmEliminate": "就是他，放逐！",
+    "eliminated": "被放逐！",
+    "hunterShot": "獵人！你想帶走誰？",
+    "skipShot": "不帶人",
+    "wolfWin": "😈 狼人勝利！好人輸了！",
+    "goodWin": "🎉 好人勝利！所有狼人出局！",
+    "newGame": "再玩一局！",
+    "backHome": "回首頁",
+    "alive": "存活",
+    "dead": "出局",
+    "nextNight": "繼續夜晚",
+    "yes": "是，用！",
+    "no": "不用",
+    "witchSkipPoison": "不毒人，跳過",
+    "witchSavedConfirm": "✅ 救了 {{n}} 號",
+    "witchDeclinedSave": "跳過解藥",
+    "witchPoisonedConfirm": "☠️ 毒了 {{n}} 號",
+    "hunterShootConfirm": "🏹 射 {{n}} 號"
   }
 }

@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "パーティーゲームツール集" },
-  "nav": { "home": "ホーム" },
+  "site": {
+    "title": "Plays",
+    "tagline": "パーティーゲームツール集"
+  },
+  "nav": {
+    "home": "ホーム"
+  },
   "home": {
     "heading": "パーティーゲームツール",
     "subheading": "道具不要 — ブラウザを開くだけ",
@@ -53,11 +58,82 @@
     "backHome": "ホーム"
   },
   "games": {
-    "undercover": { "name": "裏切り者は誰だ", "desc": "全員に単語が配られる。一人だけ違う単語を持つスパイを見つけよう" },
-    "werewolf": { "name": "人狼", "desc": "村人vs人狼 — ワンタップで役職を割り当て" }
+    "undercover": {
+      "name": "裏切り者は誰だ",
+      "desc": "全員に単語が配られる。一人だけ違う単語を持つスパイを見つけよう"
+    },
+    "werewolf": {
+      "name": "人狼",
+      "desc": "村人vs人狼 — ワンタップで役職を割り当て"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
+  },
+  "werewolf": {
+    "title": "人狼",
+    "setup": "役職設定",
+    "preset": "クイック設定",
+    "startGame": "ゲームスタート！",
+    "role_werewolf": "人狼",
+    "role_villager": "村人",
+    "role_seer": "占い師",
+    "role_witch": "魔女",
+    "role_hunter": "狩人",
+    "ability_werewolf": "毎晩一人を殺す",
+    "ability_villager": "特殊能力なし",
+    "ability_seer": "毎晩一人を占う（人狼か村人か）",
+    "ability_witch": "薬×1で救助、毒×1で殺害",
+    "ability_hunter": "脱落時に一人道連れにできる",
+    "progress": "{{current}} / {{total}} 完了",
+    "doubleTapReveal": "ダブルタップで役職を確認 👀",
+    "yourRole": "🃏 あなたは",
+    "tapToHide": "見たら隠して渡して！",
+    "allReady": "全員準備完了！",
+    "nightPhase": "🌙 夜",
+    "dayPhase": "☀️ 昼",
+    "roundN": "{{n}}夜目",
+    "allClose": "全員目を閉じて 👇",
+    "werewolvesOpen": "人狼は目を開けて — 誰を殺すか決めよ",
+    "werewolvesClose": "人狼は目を閉じて",
+    "seerOpen": "占い師は目を開けて — 占う人を指さして",
+    "seerResult_wolf": "🔴 人狼です！",
+    "seerResult_good": "🟢 村人側です",
+    "seerClose": "占い師は目を閉じて",
+    "witchOpen": "魔女は目を開けて",
+    "witchSave": "{{n}}番が今夜殺されました。薬で救いますか？",
+    "witchPoison": "毒を使って誰かを殺しますか？",
+    "witchUsed": "（使用済み）",
+    "witchClose": "魔女は目を閉じて",
+    "nightResult": "夜明けです！",
+    "died": "今夜 {{names}} が脱落しました",
+    "peacefulNight": "平和な夜でした 🕊️",
+    "discuss": "議論して投票してください",
+    "startVote": "🗳️ 投票！",
+    "voting": "追放投票",
+    "voteHint": "誰が人狼だと思いますか？",
+    "confirmEliminate": "追放！",
+    "eliminated": "追放されました！",
+    "hunterShot": "狩人！誰を道連れにしますか？",
+    "skipShot": "道連れなし",
+    "wolfWin": "😈 人狼の勝利！",
+    "goodWin": "🎉 村人の勝利！",
+    "newGame": "もう一回！",
+    "backHome": "ホーム",
+    "alive": "生存",
+    "dead": "脱落",
+    "nextNight": "次の夜へ",
+    "yes": "はい、使います！",
+    "no": "いいえ",
+    "witchSkipPoison": "毒は使わない",
+    "witchSavedConfirm": "✅ プレイヤー{{n}}を救出",
+    "witchDeclinedSave": "解毒薬スキップ",
+    "witchPoisonedConfirm": "☠️ プレイヤー{{n}}に毒を盛った",
+    "hunterShootConfirm": "🏹 プレイヤー{{n}}を射る"
   }
 }

@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "Party Game Toolkit" },
-  "nav": { "home": "Home" },
+  "site": {
+    "title": "Plays",
+    "tagline": "Party Game Toolkit"
+  },
+  "nav": {
+    "home": "Home"
+  },
   "home": {
     "heading": "Party Game Tools",
     "subheading": "No props needed — just open your browser",
@@ -53,11 +58,82 @@
     "backHome": "Home"
   },
   "games": {
-    "undercover": { "name": "Who's Undercover", "desc": "Everyone gets a word, one player gets a different one — find the undercover" },
-    "werewolf": { "name": "Werewolf", "desc": "Villagers vs Werewolves — one-tap role assignment" }
+    "undercover": {
+      "name": "Who's Undercover",
+      "desc": "Everyone gets a word, one player gets a different one — find the undercover"
+    },
+    "werewolf": {
+      "name": "Werewolf",
+      "desc": "Villagers vs Werewolves — one-tap role assignment"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
+  },
+  "werewolf": {
+    "title": "Werewolf",
+    "setup": "Role Setup",
+    "preset": "Quick Setup",
+    "startGame": "Start!",
+    "role_werewolf": "Werewolf",
+    "role_villager": "Villager",
+    "role_seer": "Seer",
+    "role_witch": "Witch",
+    "role_hunter": "Hunter",
+    "ability_werewolf": "Kill one player each night",
+    "ability_villager": "No special ability",
+    "ability_seer": "Check one player each night — wolf or human?",
+    "ability_witch": "Antidote×1 to save, Poison×1 to kill",
+    "ability_hunter": "Take someone down when eliminated",
+    "progress": "{{current}} / {{total}} done",
+    "doubleTapReveal": "Double tap to see your role 👀",
+    "yourRole": "🃏 You are",
+    "tapToHide": "Tap to hide before passing!",
+    "allReady": "Everyone ready — begin!",
+    "nightPhase": "🌙 Night",
+    "dayPhase": "☀️ Day",
+    "roundN": "Night {{n}}",
+    "allClose": "Everyone close your eyes 👇",
+    "werewolvesOpen": "Werewolves open eyes — choose your target",
+    "werewolvesClose": "Werewolves close eyes",
+    "seerOpen": "Seer opens eyes — point to someone to check",
+    "seerResult_wolf": "🔴 Werewolf!",
+    "seerResult_good": "🟢 Good person",
+    "seerClose": "Seer close eyes",
+    "witchOpen": "Witch opens eyes",
+    "witchSave": "Player {{n}} was killed tonight. Use your antidote?",
+    "witchPoison": "Use poison to kill someone?",
+    "witchUsed": "(Used)",
+    "witchClose": "Witch close eyes",
+    "nightResult": "Dawn breaks!",
+    "died": "{{names}} died tonight",
+    "peacefulNight": "Peaceful night — no one died 🕊️",
+    "discuss": "Discuss, then vote",
+    "startVote": "🗳️ Vote!",
+    "voting": "Vote to Exile",
+    "voteHint": "Who do you think is a werewolf?",
+    "confirmEliminate": "Exile them!",
+    "eliminated": "Exiled!",
+    "hunterShot": "Hunter! Who do you take down?",
+    "skipShot": "No shot",
+    "wolfWin": "😈 Werewolves win! Villagers lose!",
+    "goodWin": "🎉 Villagers win! All werewolves gone!",
+    "newGame": "Play Again!",
+    "backHome": "Home",
+    "alive": "Alive",
+    "dead": "Dead",
+    "nextNight": "Next Night",
+    "yes": "Yes, use it!",
+    "no": "No",
+    "witchSkipPoison": "Skip poison",
+    "witchSavedConfirm": "✅ Saved Player {{n}}",
+    "witchDeclinedSave": "Antidote skipped",
+    "witchPoisonedConfirm": "☠️ Poisoned Player {{n}}",
+    "hunterShootConfirm": "🏹 Shoot Player {{n}}"
   }
 }

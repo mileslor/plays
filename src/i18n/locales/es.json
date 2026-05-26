@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "Juegos de Mesa para Grupos" },
-  "nav": { "home": "Inicio" },
+  "site": {
+    "title": "Plays",
+    "tagline": "Juegos de Mesa para Grupos"
+  },
+  "nav": {
+    "home": "Inicio"
+  },
   "home": {
     "heading": "Herramientas de Juego",
     "subheading": "Sin accesorios — solo abre el navegador",
@@ -53,11 +58,82 @@
     "backHome": "Inicio"
   },
   "games": {
-    "undercover": { "name": "¿Quién es el Infiltrado?", "desc": "Cada jugador recibe una palabra, uno tiene una diferente — encuéntralo" },
-    "werewolf": { "name": "Hombre Lobo", "desc": "Aldeanos vs Hombres Lobo — asigna roles con un toque" }
+    "undercover": {
+      "name": "¿Quién es el Infiltrado?",
+      "desc": "Cada jugador recibe una palabra, uno tiene una diferente — encuéntralo"
+    },
+    "werewolf": {
+      "name": "Hombre Lobo",
+      "desc": "Aldeanos vs Hombres Lobo — asigna roles con un toque"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
+  },
+  "werewolf": {
+    "title": "Hombre Lobo",
+    "setup": "Configurar roles",
+    "preset": "Configuración rápida",
+    "startGame": "¡Empezar!",
+    "role_werewolf": "Hombre Lobo",
+    "role_villager": "Aldeano",
+    "role_seer": "Vidente",
+    "role_witch": "Bruja",
+    "role_hunter": "Cazador",
+    "ability_werewolf": "Matar a un jugador cada noche",
+    "ability_villager": "Sin habilidad especial",
+    "ability_seer": "Verificar un jugador cada noche",
+    "ability_witch": "Antídoto×1 para salvar, Veneno×1 para matar",
+    "ability_hunter": "Llevarse a alguien al ser eliminado",
+    "progress": "{{current}} / {{total}} listos",
+    "doubleTapReveal": "Doble toque para ver tu rol 👀",
+    "yourRole": "🃏 Eres",
+    "tapToHide": "¡Oculta antes de pasar!",
+    "allReady": "¡Todos listos!",
+    "nightPhase": "🌙 Noche",
+    "dayPhase": "☀️ Día",
+    "roundN": "Noche {{n}}",
+    "allClose": "Todos cierren los ojos 👇",
+    "werewolvesOpen": "Hombres Lobo abran los ojos — elijan su objetivo",
+    "werewolvesClose": "Hombres Lobo cierren los ojos",
+    "seerOpen": "Vidente abre los ojos — señala a quien quieras verificar",
+    "seerResult_wolf": "🔴 ¡Hombre Lobo!",
+    "seerResult_good": "🟢 Buena persona",
+    "seerClose": "Vidente cierra los ojos",
+    "witchOpen": "Bruja abre los ojos",
+    "witchSave": "El jugador {{n}} fue asesinado. ¿Usar antídoto?",
+    "witchPoison": "¿Usar veneno para matar?",
+    "witchUsed": "(Usado)",
+    "witchClose": "Bruja cierra los ojos",
+    "nightResult": "¡Amanece!",
+    "died": "{{names}} murió esta noche",
+    "peacefulNight": "Noche tranquila — nadie murió 🕊️",
+    "discuss": "Discutid y luego votad",
+    "startVote": "🗳️ ¡Votar!",
+    "voting": "Votar para exiliar",
+    "voteHint": "¿Quién crees que es el Hombre Lobo?",
+    "confirmEliminate": "¡Exiliarlo!",
+    "eliminated": "¡Exiliado!",
+    "hunterShot": "¡Cazador! ¿A quién te llevas?",
+    "skipShot": "Sin disparo",
+    "wolfWin": "😈 ¡Ganan los Hombres Lobo!",
+    "goodWin": "🎉 ¡Ganan los Aldeanos!",
+    "newGame": "¡Otra partida!",
+    "backHome": "Inicio",
+    "alive": "Vivos",
+    "dead": "Muertos",
+    "nextNight": "Siguiente noche",
+    "yes": "Sí, usar",
+    "no": "No",
+    "witchSkipPoison": "No usar veneno",
+    "witchSavedConfirm": "✅ Jugador {{n}} salvado",
+    "witchDeclinedSave": "Antídoto no usado",
+    "witchPoisonedConfirm": "☠️ Jugador {{n}} envenenado",
+    "hunterShootConfirm": "🏹 Disparar al Jugador {{n}}"
   }
 }
