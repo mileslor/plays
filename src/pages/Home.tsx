@@ -17,6 +17,13 @@ const GAMES = [
     color: 'from-red-700 to-orange-700',
     ready: true,
   },
+  {
+    key: 'blackmagic',
+    path: '/black-magic',
+    emoji: '🖤',
+    color: 'from-gray-800 to-gray-950',
+    ready: true,
+  },
 ]
 
 export default function Home() {

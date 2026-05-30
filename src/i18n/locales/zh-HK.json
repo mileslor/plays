@@ -117,7 +117,8 @@
   },
   "games": {
     "undercover": { "name": "誰是臥底", "desc": "每人收到一個詞，其中一個唔同，靠描述找出臥底" },
-    "werewolf": { "name": "狼人殺", "desc": "平民vs狼人，角色分配一鍵搞掂" }
+    "werewolf": { "name": "狼人殺", "desc": "平民vs狼人，角色分配一鍵搞掂" },
+    "blackmagic": { "name": "黑魔法", "desc": "心靈感應魔術，助手暗號引導表演者每次答岩" }
   },
   "lang": {
     "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
