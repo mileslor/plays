@@ -90,6 +90,25 @@ export const wordPairs: Record<string, WordPair[]> = {
     { main: '獅子山', undercover: '大帽山' },
     { main: '天星小輪', undercover: '海底隧道' },
     { main: '粵語', undercover: '普通話' },
+    // 天氣自然
+    { main: '颱風', undercover: '暴雨' },
+    { main: '彩虹', undercover: '朝霞' },
+    { main: '大霧', undercover: '薄霧' },
+    { main: '海浪', undercover: '河流' },
+    // 港式食品
+    { main: '出前一丁', undercover: '公仔麵' },
+    { main: '腸仔包', undercover: '熱狗' },
+    { main: '格仔餅', undercover: '班戟' },
+    { main: '豬扒包', undercover: '漢堡包' },
+    { main: '西多士', undercover: '法蘭西多士' },
+    // 家庭關係
+    { main: '兄弟', undercover: '表兄弟' },
+    { main: '老公', undercover: '男朋友' },
+    { main: '父母', undercover: '祖父母' },
+    // 情緒感受
+    { main: '緊張', undercover: '興奮' },
+    { main: '開心', undercover: '滿足' },
+    { main: '疲倦', undercover: '無聊' },
   ],
   'zh-TW': [
     // 食物飲料
@@ -256,6 +275,21 @@ export const wordPairs: Record<string, WordPair[]> = {
     { main: 'Forest', undercover: 'Jungle' },
     { main: 'Sunrise', undercover: 'Sunset' },
     { main: 'Desert', undercover: 'Grassland' },
+    { main: 'Typhoon', undercover: 'Hurricane' },
+    { main: 'Rainbow', undercover: 'Aurora' },
+    // Apps & Devices
+    { main: 'iPhone', undercover: 'Android' },
+    { main: 'WhatsApp', undercover: 'Telegram' },
+    { main: 'YouTube', undercover: 'Netflix' },
+    { main: 'Laptop', undercover: 'Desktop' },
+    // Family
+    { main: 'Husband', undercover: 'Boyfriend' },
+    { main: 'Parents', undercover: 'Grandparents' },
+    { main: 'Brother', undercover: 'Cousin' },
+    // Feelings
+    { main: 'Nervous', undercover: 'Excited' },
+    { main: 'Tired', undercover: 'Bored' },
+    { main: 'Happy', undercover: 'Satisfied' },
   ],
   'es': [
     // Comida y bebida
