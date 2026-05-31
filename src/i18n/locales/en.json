@@ -70,6 +70,10 @@
     "werewolf": {
       "name": "Werewolf",
       "desc": "Villagers vs Werewolves — one-tap role assignment"
+    },
+    "blackmagic": {
+      "name": "Black Magic",
+      "desc": "A mind-reading trick — the assistant's secret code guides the performer every time"
     }
   },
   "lang": {

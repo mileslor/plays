@@ -70,6 +70,10 @@
     "werewolf": {
       "name": "Hombre Lobo",
       "desc": "Aldeanos vs Hombres Lobo — asigna roles con un toque"
+    },
+    "blackmagic": {
+      "name": "Magia Negra",
+      "desc": "Un truco de lectura mental — el asistente usa un código secreto para guiar al mago"
     }
   },
   "lang": {

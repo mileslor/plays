@@ -70,6 +70,10 @@
     "werewolf": {
       "name": "Lobisomem",
       "desc": "Aldeões vs Lobisomens — atribua papéis com um toque"
+    },
+    "blackmagic": {
+      "name": "Magia Negra",
+      "desc": "Um truque de leitura mental — o assistente usa um código secreto para guiar o mágico"
     }
   },
   "lang": {
