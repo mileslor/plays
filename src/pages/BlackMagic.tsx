@@ -231,7 +231,8 @@ export default function BlackMagic() {
           {isSignal && <div className="text-4xl mb-3">🖤</div>}
           <div className="text-4xl font-bold text-white">{itemName}</div>
           {isSignal && <div className="text-gray-500 text-sm mt-2">指向呢件黑色/深色嘅嘢</div>}
-          {isTarget && <div className="text-purple-200 text-sm mt-2">👆 下一件就係目標！</div>}
+          {isSignal && <div className="text-yellow-400 text-sm mt-1 font-semibold">👆 下一件就係目標！</div>}
+          {isTarget && <div className="text-purple-200 text-sm mt-2">✅ 呢件就係！正常指向佢</div>}
         </div>
 
         {/* Guidance */}
