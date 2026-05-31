@@ -118,7 +118,10 @@
     "witchSavedConfirm": "✅ 救咗 {{n}} 號",
     "witchDeclinedSave": "跳過解藥",
     "witchPoisonedConfirm": "☠️ 毒咗 {{n}} 號",
-    "hunterShootConfirm": "🏹 射 {{n}} 號"
+    "hunterShootConfirm": "🏹 射 {{n}} 號",
+    "antidote": "解藥",
+    "poison": "毒藥",
+    "used": "已用"
   },
   "games": {
     "undercover": { "name": "誰是臥底", "desc": "每人收到一個詞，其中一個唔同，靠描述找出臥底" },

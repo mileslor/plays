@@ -139,6 +139,9 @@
     "witchSavedConfirm": "✅ Jugador {{n}} salvado",
     "witchDeclinedSave": "Antídoto no usado",
     "witchPoisonedConfirm": "☠️ Jugador {{n}} envenenado",
-    "hunterShootConfirm": "🏹 Disparar al Jugador {{n}}"
+    "hunterShootConfirm": "🏹 Shoot player {{n}}",
+    "antidote": "Antidote",
+    "poison": "Poison",
+    "used": "Used"
   }
 }

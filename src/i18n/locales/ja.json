@@ -139,6 +139,9 @@
     "witchSavedConfirm": "✅ プレイヤー{{n}}を救出",
     "witchDeclinedSave": "解毒薬スキップ",
     "witchPoisonedConfirm": "☠️ プレイヤー{{n}}に毒を盛った",
-    "hunterShootConfirm": "🏹 プレイヤー{{n}}を射る"
+    "hunterShootConfirm": "🏹 Shoot player {{n}}",
+    "antidote": "Antidote",
+    "poison": "Poison",
+    "used": "Used"
   }
 }

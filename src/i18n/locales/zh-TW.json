@@ -139,6 +139,9 @@
     "witchSavedConfirm": "✅ 救了 {{n}} 號",
     "witchDeclinedSave": "跳過解藥",
     "witchPoisonedConfirm": "☠️ 毒了 {{n}} 號",
-    "hunterShootConfirm": "🏹 射 {{n}} 號"
+    "hunterShootConfirm": "🏹 Shoot player {{n}}",
+    "antidote": "Antidote",
+    "poison": "Poison",
+    "used": "Used"
   }
 }

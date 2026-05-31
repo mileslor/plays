@@ -319,11 +319,11 @@ export default function Werewolf() {
       {/* ── NIGHT INTRO ── */}
       {phase === 'night_intro' && (
         <div className="max-w-sm mx-auto text-center">
-          <div className="text-6xl mb-4">🌙</div>
-          <h2 className="text-2xl font-bold mb-2">{t('werewolf.roundN', { n: night })}</h2>
-          <p className="text-gray-300 text-lg mb-8">{t('werewolf.allClose')}</p>
+          <div className="text-8xl mb-4">🌙</div>
+          <h2 className="text-3xl font-bold mb-3">{t('werewolf.roundN', { n: night })}</h2>
+          <p className="text-xl text-gray-300 mb-10">{t('werewolf.allClose')}</p>
           <button onClick={afterNightIntro}
-            className="w-full py-4 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold text-lg transition-colors">
+            className="w-full py-5 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold text-xl transition-colors">
             {t('werewolf.role_werewolf')} 🐺
           </button>
         </div>
@@ -332,9 +332,9 @@ export default function Werewolf() {
       {/* ── WOLVES ACT ── */}
       {phase === 'night_wolves' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-6">
-            <span className="text-4xl">🐺</span>
-            <p className="text-lg font-bold mt-2">{t('werewolf.werewolvesOpen')}</p>
+          <div className="text-center mb-6 bg-red-950/60 rounded-2xl py-5">
+            <span className="text-6xl">🐺</span>
+            <p className="text-2xl font-bold mt-2">{t('werewolf.werewolvesOpen')}</p>
           </div>
           <div className="grid grid-cols-2 gap-3 mb-6">
             {alivePlayers.filter((p) => p.role !== 'werewolf').map((p) => (
@@ -354,9 +354,9 @@ export default function Werewolf() {
       {/* ── SEER ── */}
       {phase === 'night_seer' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-6">
-            <span className="text-4xl">🔮</span>
-            <p className="text-lg font-bold mt-2">{t('werewolf.seerOpen')}</p>
+          <div className="text-center mb-6 bg-purple-950/60 rounded-2xl py-5">
+            <span className="text-6xl">🔮</span>
+            <p className="text-2xl font-bold mt-2">{t('werewolf.seerOpen')}</p>
           </div>
           {seerResult === null ? (
             <>
@@ -391,9 +391,18 @@ export default function Werewolf() {
       {/* ── WITCH ── */}
       {phase === 'night_witch' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-6">
-            <span className="text-4xl">🧙‍♀️</span>
-            <p className="text-lg font-bold mt-2">{t('werewolf.witchOpen')}</p>
+          <div className="text-center mb-4 bg-emerald-950/60 rounded-2xl py-4">
+            <span className="text-6xl">🧙‍♀️</span>
+            <p className="text-2xl font-bold mt-2">{t('werewolf.witchOpen')}</p>
+          </div>
+          {/* 解藥/毒藥狀態 */}
+          <div className="flex gap-3 justify-center mb-4">
+            <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${witchSaveUsed ? 'bg-gray-800 text-gray-500 line-through' : 'bg-green-900 text-green-300'}`}>
+              💊 {t('werewolf.antidote')} {witchSaveUsed ? t('werewolf.used') : '✓'}
+            </span>
+            <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${witchPoisonUsed ? 'bg-gray-800 text-gray-500 line-through' : 'bg-red-900 text-red-300'}`}>
+              ☠️ {t('werewolf.poison')} {witchPoisonUsed ? t('werewolf.used') : '✓'}
+            </span>
           </div>
 
           {/* Save */}
