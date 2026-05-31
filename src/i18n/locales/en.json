@@ -57,6 +57,11 @@
     "newGame": "Play Again!",
     "backHome": "Home"
   },
+  "timer": {
+    "speechTime": "Speech Time",
+    "voteTime": "Vote Time",
+    "timeUp": "Time's Up!"
+  },
   "games": {
     "undercover": {
       "name": "Who's Undercover",

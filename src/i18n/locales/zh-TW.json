@@ -57,6 +57,11 @@
     "newGame": "再玩一局！",
     "backHome": "回首頁"
   },
+  "timer": {
+    "speechTime": "發言時間",
+    "voteTime": "投票時間",
+    "timeUp": "時間到！"
+  },
   "games": {
     "undercover": {
       "name": "誰是臥底",

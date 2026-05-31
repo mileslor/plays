@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
+import Timer from '../components/Timer'
 import { ROLE_CONFIG, PRESETS, type WerewolfRole } from '../data/werewolfRoles'
 
 type Phase =
@@ -173,10 +174,9 @@ export default function Werewolf() {
 
   // ── Day / vote ──
 
-  const handleVoteConfirm = () => {
-    if (voteTarget === null) return
-    const target = players.find((p) => p.id === voteTarget)!
-    const updated = killPlayers([voteTarget])
+  const eliminateTarget = (targetId: number) => {
+    const target = players.find((p) => p.id === targetId)!
+    const updated = killPlayers([targetId])
     setPlayers(updated)
     setEliminatedPlayer(target)
     setVoteTarget(null)
@@ -187,6 +187,11 @@ export default function Werewolf() {
     const w = checkWin(updated.filter((p) => p.alive))
     if (w) { setWinner(w); setPhase('gameover'); return }
     setPhase('eliminated')
+  }
+
+  const handleVoteConfirm = () => {
+    if (voteTarget === null) return
+    eliminateTarget(voteTarget)
   }
 
   const handleHunterShoot = (targetId: number | null) => {
@@ -478,6 +483,7 @@ export default function Werewolf() {
       {/* ── DAY ── */}
       {phase === 'day' && (
         <div className="max-w-sm mx-auto">
+          <Timer seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
             <span className="text-sm text-gray-400">{t('werewolf.alive')} {alivePlayers.length}</span>
@@ -500,6 +506,14 @@ export default function Werewolf() {
       {/* ── VOTING ── */}
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
+          <Timer
+            seconds={30}
+            label={t('timer.voteTime')}
+            onExpire={() => {
+              const target = voteTarget ?? alivePlayers[Math.floor(Math.random() * alivePlayers.length)]?.id
+              if (target != null) eliminateTarget(target)
+            }}
+          />
           <h2 className="text-xl font-bold text-center mb-2">{t('werewolf.voting')}</h2>
           <p className="text-sm text-gray-400 text-center mb-6">{t('werewolf.voteHint')}</p>
           <div className="grid grid-cols-2 gap-3 mb-6">

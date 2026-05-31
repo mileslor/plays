@@ -57,6 +57,11 @@
     "newGame": "もう一回！",
     "backHome": "ホーム"
   },
+  "timer": {
+    "speechTime": "発言タイム",
+    "voteTime": "投票タイム",
+    "timeUp": "時間切れ！"
+  },
   "games": {
     "undercover": {
       "name": "裏切り者は誰だ",

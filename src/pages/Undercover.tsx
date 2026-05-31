@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { getRandomPair } from '../data/undercoverWords'
 import Layout from '../components/Layout'
+import Timer from '../components/Timer'
 
 type Role = 'civilian' | 'undercover' | 'whiteboard'
 type Phase = 'setup' | 'reveal' | 'round' | 'voting' | 'eliminated' | 'wb_guess' | 'gameover'
@@ -110,10 +111,9 @@ export default function Undercover() {
     }
   }
 
-  const handleVoteConfirm = () => {
-    if (voteTarget === null) return
-    const target = players.find((p) => p.id === voteTarget)!
-    const updated = players.map((p) => (p.id === voteTarget ? { ...p, alive: false } : p))
+  const eliminateTarget = (targetId: number) => {
+    const target = players.find((p) => p.id === targetId)!
+    const updated = players.map((p) => (p.id === targetId ? { ...p, alive: false } : p))
     setPlayers(updated)
     setEliminatedPlayer(target)
     setVoteTarget(null)
@@ -126,6 +126,11 @@ export default function Undercover() {
       if (w) { setWinner(w); setPhase('gameover') }
       else setPhase('eliminated')
     }
+  }
+
+  const handleVoteConfirm = () => {
+    if (voteTarget === null) return
+    eliminateTarget(voteTarget)
   }
 
   const handleWbSubmit = () => {
@@ -272,6 +277,7 @@ export default function Undercover() {
       {/* ── ROUND ── */}
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
+          <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('undercover.roundN', { n: round })}</h2>
             <span className="text-sm text-gray-400">
@@ -308,6 +314,14 @@ export default function Undercover() {
       {/* ── VOTING ── */}
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
+          <Timer
+            seconds={30}
+            label={t('timer.voteTime')}
+            onExpire={() => {
+              const target = voteTarget ?? alivePlayers[Math.floor(Math.random() * alivePlayers.length)]?.id
+              if (target != null) eliminateTarget(target)
+            }}
+          />
           <h2 className="text-xl font-bold text-center mb-2">{t('undercover.voting')}</h2>
           <p className="text-sm text-gray-400 text-center mb-6">{t('undercover.voteHint')}</p>
 

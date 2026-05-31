@@ -57,6 +57,11 @@
     "newGame": "Jogar de novo!",
     "backHome": "Início"
   },
+  "timer": {
+    "speechTime": "Tempo de fala",
+    "voteTime": "Tempo de votar",
+    "timeUp": "Tempo esgotado!"
+  },
   "games": {
     "undercover": {
       "name": "Quem é o Infiltrado?",
