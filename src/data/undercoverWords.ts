@@ -73,6 +73,23 @@ export const wordPairs: Record<string, WordPair[]> = {
     { main: '生日會', undercover: '婚禮' },
     { main: '月餅', undercover: '年糕' },
     { main: '煙花', undercover: '燈籠' },
+    // 科技
+    { main: 'TikTok', undercover: 'Instagram' },
+    { main: 'ChatGPT', undercover: 'Gemini' },
+    { main: '藍牙耳機', undercover: '有線耳機' },
+    { main: 'WiFi', undercover: '數據' },
+    { main: '充電寶', undercover: '充電器' },
+    { main: '直播', undercover: '短片' },
+    // 香港特色
+    { main: '茶餐廳', undercover: '冰室' },
+    { main: '麥當勞', undercover: '肯德基' },
+    { main: '維多利亞港', undercover: '維多利亞公園' },
+    { main: '紅磡', undercover: '旺角' },
+    { main: '離島', undercover: '新界' },
+    { main: '港幣', undercover: '人民幣' },
+    { main: '獅子山', undercover: '大帽山' },
+    { main: '天星小輪', undercover: '海底隧道' },
+    { main: '粵語', undercover: '普通話' },
   ],
   'zh-TW': [
     // 食物飲料
@@ -143,6 +160,19 @@ export const wordPairs: Record<string, WordPair[]> = {
     { main: '生日派對', undercover: '婚禮' },
     { main: '月餅', undercover: '年糕' },
     { main: '煙火', undercover: '燈籠' },
+    // 科技
+    { main: 'TikTok', undercover: 'Instagram' },
+    { main: 'ChatGPT', undercover: 'Gemini' },
+    { main: '藍牙耳機', undercover: '有線耳機' },
+    { main: 'WiFi', undercover: '行動網路' },
+    { main: '行動電源', undercover: '充電器' },
+    { main: '直播', undercover: '短影音' },
+    // 台灣特色
+    { main: '夜市', undercover: '市集' },
+    { main: '悠遊卡', undercover: '一卡通' },
+    { main: '便利商店', undercover: '超商' },
+    { main: '台北101', undercover: '阿里山' },
+    { main: '九份', undercover: '淡水' },
   ],
   'en': [
     // Food & Drink
@@ -213,6 +243,19 @@ export const wordPairs: Record<string, WordPair[]> = {
     { main: 'Fireworks', undercover: 'Lanterns' },
     { main: 'Carnival', undercover: 'Parade' },
     { main: 'Thanksgiving', undercover: 'Easter' },
+    // Tech
+    { main: 'TikTok', undercover: 'Instagram' },
+    { main: 'ChatGPT', undercover: 'Gemini' },
+    { main: 'Bluetooth Earbuds', undercover: 'Wired Headphones' },
+    { main: 'WiFi', undercover: 'Mobile Data' },
+    { main: 'Power Bank', undercover: 'Charger' },
+    { main: 'Live Stream', undercover: 'Short Video' },
+    // Nature
+    { main: 'Mountain', undercover: 'Hill' },
+    { main: 'River', undercover: 'Lake' },
+    { main: 'Forest', undercover: 'Jungle' },
+    { main: 'Sunrise', undercover: 'Sunset' },
+    { main: 'Desert', undercover: 'Grassland' },
   ],
   'es': [
     // Comida y bebida
