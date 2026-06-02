@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
@@ -57,6 +57,11 @@ export default function Werewolf() {
   const [eliminatedPlayer, setEliminatedPlayer] = useState<Player | null>(null)
   const [hunterTarget, setHunterTarget] = useState<number | null>(null)
   const [winner, setWinner] = useState<'wolf' | 'good' | null>(null)
+
+  // Speaker order tracking
+  const [speakerOrder, setSpeakerOrder] = useState<number[]>([])
+  const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0)
+  const [skippedSpeakers, setSkippedSpeakers] = useState<Set<number>>(new Set())
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -169,6 +174,7 @@ export default function Werewolf() {
     setPlayers(updated)
     const w = checkWin(updated.filter((p) => p.alive))
     if (w) { setWinner(w); setPhase('gameover'); return }
+    clearSpeakerState()
     setPhase('dawn')
   }
 
@@ -192,6 +198,55 @@ export default function Werewolf() {
   const handleVoteConfirm = () => {
     if (voteTarget === null) return
     eliminateTarget(voteTarget)
+  }
+
+  // ── Speaker order ──
+
+  const spokenIds = useMemo(() => new Set(speakerOrder), [speakerOrder])
+
+  const advanceToNextSpeaker = () => {
+    const next = currentSpeakerIndex + 1
+    if (next >= alivePlayers.length) {
+      // All have spoken — go to voting
+      setPhase('voting')
+    } else {
+      setCurrentSpeakerIndex(next)
+    }
+  }
+
+  const markCurrentSpeakerDone = () => {
+    const current = alivePlayers[currentSpeakerIndex]
+    if (!current) return
+    if (!spokenIds.has(current.id)) {
+      setSpeakerOrder((prev) => [...prev, current.id])
+    }
+    advanceToNextSpeaker()
+  }
+
+  const skipCurrentSpeaker = () => {
+    const current = alivePlayers[currentSpeakerIndex]
+    if (!current) return
+    setSkippedSpeakers((prev) => new Set(prev).add(current.id))
+    if (!spokenIds.has(current.id)) {
+      setSpeakerOrder((prev) => [...prev, current.id])
+    }
+    advanceToNextSpeaker()
+  }
+
+  const finishAllSpeakers = () => {
+    // Mark remaining as spoken in order
+    const remaining = alivePlayers
+      .filter((p) => !spokenIds.has(p.id))
+      .map((p) => p.id)
+    setSpeakerOrder((prev) => [...prev, ...remaining])
+    setPhase('voting')
+  }
+
+  // Clear speaker state when entering night
+  const clearSpeakerState = () => {
+    setSpeakerOrder([])
+    setCurrentSpeakerIndex(0)
+    setSkippedSpeakers(new Set())
   }
 
   const handleHunterShoot = (targetId: number | null) => {
@@ -230,6 +285,7 @@ export default function Werewolf() {
     setEliminatedPlayer(null)
     setHunterTarget(null)
     setWinner(null)
+    clearSpeakerState()
   }
 
   const rc = (role: WerewolfRole) => ROLE_CONFIG[role]
@@ -482,7 +538,7 @@ export default function Werewolf() {
               {t('werewolf.died', { names: nightDead.map((id) => `${id}號`).join('、') })}
             </p>
           )}
-          <button onClick={() => setPhase('day')}
+          <button onClick={() => { clearSpeakerState(); setPhase('day') }}
             className="w-full py-4 bg-yellow-700 hover:bg-yellow-600 rounded-2xl font-bold text-lg transition-colors">
             {t('werewolf.discuss')}
           </button>
@@ -492,22 +548,101 @@ export default function Werewolf() {
       {/* ── DAY ── */}
       {phase === 'day' && (
         <div className="max-w-sm mx-auto">
-          <Timer seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
-            <span className="text-sm text-gray-400">{t('werewolf.alive')} {alivePlayers.length}</span>
+          <Timer seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
+
+          {/* Speaker Order Indicator */}
+          <div className="mb-4">
+            <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">{t('speaker.speechOrder')}</p>
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              {alivePlayers.map((p, idx) => {
+                const spoken = spokenIds.has(p.id)
+                const skipped = skippedSpeakers.has(p.id)
+                const current = idx === currentSpeakerIndex
+                return (
+                  <div
+                    key={p.id}
+                    className={`
+                      flex-shrink-0 px-3 py-1.5 rounded-full text-sm whitespace-nowrap border-2 transition-all
+                      ${current
+                        ? 'border-yellow-400 bg-yellow-900/50 text-yellow-300 font-bold'
+                        : spoken
+                          ? skipped
+                            ? 'bg-gray-800 border-gray-700 text-gray-500 line-through italic'
+                            : 'bg-gray-700 border-gray-600 text-gray-400'
+                          : 'bg-blue-900/40 border-blue-700 text-blue-300'
+                      }
+                    `}
+                  >
+                    {t('undercover.playerN', { n: p.id })}
+                    {spoken && (skipped ? t('speaker.skipped') : ' ✓')}
+                  </div>
+                )
+              })}
+            </div>
           </div>
-          <div className="grid grid-cols-3 gap-2 mb-6">
-            {alivePlayers.map((p) => (
-              <div key={p.id} className="bg-gray-800 rounded-xl p-3 text-center">
+
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
+            <span className="text-sm text-gray-400">
+              {t('werewolf.alive')} {alivePlayers.length}
+            </span>
+          </div>
+
+          {/* Current speaker highlight */}
+          {alivePlayers[currentSpeakerIndex] && (
+            <div className="bg-yellow-900/30 border-2 border-yellow-600 rounded-2xl p-4 mb-4 text-center">
+              <p className="text-xs text-yellow-400 uppercase tracking-widest mb-1">{t('speaker.current')}</p>
+              <p className="text-2xl font-bold text-yellow-200">
+                {t('undercover.playerN', { n: alivePlayers[currentSpeakerIndex].id })}
+              </p>
+            </div>
+          )}
+
+          <div className="grid grid-cols-3 gap-2 mb-4">
+            {alivePlayers.map((p, idx) => (
+              <div
+                key={p.id}
+                className={`rounded-xl p-3 text-center transition-all ${
+                  idx === currentSpeakerIndex
+                    ? 'bg-yellow-800 ring-2 ring-yellow-400'
+                    : spokenIds.has(p.id)
+                      ? 'bg-gray-800 opacity-60'
+                      : 'bg-gray-800'
+                }`}
+              >
                 <p className="font-bold text-sm">{t('undercover.playerN', { n: p.id })}</p>
+                {spokenIds.has(p.id) && (
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    {skippedSpeakers.has(p.id) ? t('speaker.skipped') : '✓'}
+                  </p>
+                )}
               </div>
             ))}
           </div>
-          <p className="text-gray-500 text-sm text-center mb-6">{t('werewolf.discuss')}</p>
-          <button onClick={() => setPhase('voting')}
-            className="w-full py-4 bg-red-700 hover:bg-red-600 rounded-2xl font-bold text-lg transition-colors">
-            {t('werewolf.startVote')}
+
+          {/* Speaker controls */}
+          <div className="flex gap-2 mb-3">
+            <button
+              onClick={markCurrentSpeakerDone}
+              disabled={!alivePlayers[currentSpeakerIndex] || spokenIds.has(alivePlayers[currentSpeakerIndex]?.id)}
+              className="flex-1 py-3 bg-green-700 hover:bg-green-600 disabled:opacity-40 rounded-xl font-bold transition-colors"
+            >
+              {t('speaker.speechComplete')}
+            </button>
+            <button
+              onClick={skipCurrentSpeaker}
+              disabled={!alivePlayers[currentSpeakerIndex]}
+              className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 disabled:opacity-40 rounded-xl font-bold transition-colors"
+            >
+              {t('speaker.skipped')}
+            </button>
+          </div>
+
+          <button
+            onClick={finishAllSpeakers}
+            className="w-full py-3 bg-red-700 hover:bg-red-600 rounded-xl font-bold text-base transition-colors"
+          >
+            {t('speaker.allSpoken')}
           </button>
         </div>
       )}

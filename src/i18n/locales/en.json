@@ -62,6 +62,15 @@
     "voteTime": "Vote Time",
     "timeUp": "Time's Up!"
   },
+  "speaker": {
+    "speechOrder": "Speaking Order",
+    "spoken": "Spoken",
+    "current": "Speaking",
+    "waiting": "Waiting",
+    "skipped": "Skipped",
+    "allSpoken": "All Have Spoken — Vote!",
+    "speechComplete": "Done Speaking"
+  },
   "games": {
     "undercover": {
       "name": "Who's Undercover",

@@ -57,6 +57,15 @@
     "voteTime": "投票時間",
     "timeUp": "時間到！"
   },
+  "speaker": {
+    "speechOrder": "發言順序",
+    "spoken": "已發言",
+    "current": "發言中",
+    "waiting": "等待發言",
+    "skipped": "跳過",
+    "allSpoken": "全部發言完畢，投票！",
+    "speechComplete": "發言完畢"
+  },
   "werewolf": {
     "title": "狼人殺",
     "setup": "角色設定",

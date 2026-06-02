@@ -62,6 +62,15 @@
     "voteTime": "Tempo de votar",
     "timeUp": "Tempo esgotado!"
   },
+  "speaker": {
+    "speechOrder": "Ordem de fala",
+    "spoken": "Falou",
+    "current": "Falando",
+    "waiting": "Aguardando",
+    "skipped": "Pulado",
+    "allSpoken": "Todos falaram — Votar!",
+    "speechComplete": "Terminou de falar"
+  },
   "games": {
     "undercover": {
       "name": "Quem é o Infiltrado?",

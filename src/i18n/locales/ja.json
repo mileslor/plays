@@ -62,6 +62,15 @@
     "voteTime": "投票タイム",
     "timeUp": "時間切れ！"
   },
+  "speaker": {
+    "speechOrder": "发言順序",
+    "spoken": "発言済み",
+    "current": "発言中",
+    "waiting": "待機中",
+    "skipped": "スキップ",
+    "allSpoken": "全員発言済み — 投票！",
+    "speechComplete": "発言終了"
+  },
   "games": {
     "undercover": {
       "name": "裏切り者は誰だ",
