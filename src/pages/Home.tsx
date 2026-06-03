@@ -9,6 +9,7 @@ const GAMES = [
     emoji: '🕵️',
     color: 'from-purple-600 to-indigo-700',
     ready: true,
+    players: '4–12',
   },
   {
     key: 'werewolf',
@@ -16,6 +17,7 @@ const GAMES = [
     emoji: '🐺',
     color: 'from-red-700 to-orange-700',
     ready: true,
+    players: '6–18',
   },
   {
     key: 'blackmagic',
@@ -23,6 +25,7 @@ const GAMES = [
     emoji: '🖤',
     color: 'from-gray-800 to-gray-950',
     ready: true,
+    players: '3+',
   },
 ]
 
@@ -68,7 +71,14 @@ export default function Home() {
               to={game.path}
               className={`relative rounded-2xl bg-gradient-to-br ${game.color} p-6 hover:scale-[1.02] transition-transform`}
             >
-              <div className="text-4xl mb-3">{game.emoji}</div>
+              <div className="flex items-start justify-between mb-3">
+                <span className="text-4xl leading-none">{game.emoji}</span>
+                {game.players && (
+                  <span className="text-xs bg-black/25 px-2 py-1 rounded-full text-white/80">
+                    👥 {game.players}
+                  </span>
+                )}
+              </div>
               <h2 className="text-xl font-bold mb-1">{t(`games.${game.key}.name`)}</h2>
               <p className="text-sm text-white/75">{t(`games.${game.key}.desc`)}</p>
             </Link>
@@ -77,7 +87,9 @@ export default function Home() {
               key={game.key}
               className={`relative rounded-2xl bg-gradient-to-br ${game.color} p-6 opacity-40`}
             >
-              <div className="text-4xl mb-3">{game.emoji}</div>
+              <div className="flex items-start justify-between mb-3">
+                <span className="text-4xl leading-none">{game.emoji}</span>
+              </div>
               <h2 className="text-xl font-bold mb-1">{t(`games.${game.key}.name`)}</h2>
               <p className="text-sm text-white/75">{t(`games.${game.key}.desc`)}</p>
               <span className="absolute top-3 right-3 text-xs bg-black/30 px-2 py-1 rounded-full">
