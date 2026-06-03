@@ -203,7 +203,7 @@ export default function BlackMagic() {
               揭曉秘密 🔓
             </button>
             <button
-              onClick={() => { setGame({ ...game, currentStep: 0, playOrder: buildPlayOrder(game.items, game.targetIndex) }); setPhase('pick-target') }}
+              onClick={() => { setGame({ ...game, currentStep: 0, playOrder: [] }); setPhase('performer-out') }}
               className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
             >
               再玩一次
@@ -279,7 +279,7 @@ export default function BlackMagic() {
       </div>
       <div className="flex flex-col gap-3 w-full">
         <button
-          onClick={() => { setPhase('pick-target'); setSecretRevealed(false) }}
+          onClick={() => { setGame(g => g ? { ...g, currentStep: 0, playOrder: [] } : null); setSecretRevealed(false); setPhase('performer-out') }}
           className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
         >
           再玩一次
