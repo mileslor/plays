@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import Layout from '../components/Layout'
 
 type Phase = 'menu' | 'setup' | 'performer-out' | 'pick-target' | 'performer-back' | 'play' | 'reveal-secret'
 
@@ -290,20 +291,14 @@ export default function BlackMagic() {
   )
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <header className="border-b border-gray-800 px-4 py-3 flex items-center justify-between max-w-2xl mx-auto">
-        <Link to="/" className="font-bold text-lg tracking-tight hover:text-purple-400 transition-colors">🎮 Plays</Link>
-        <span className="text-gray-500 text-sm">🖤 黑魔法</span>
-      </header>
-      <main className="max-w-2xl mx-auto px-4 py-6">
-        {phase === 'menu' && renderMenu()}
-        {phase === 'setup' && renderSetup()}
-        {phase === 'performer-out' && renderPerformerOut()}
-        {phase === 'pick-target' && renderPickTarget()}
-        {phase === 'performer-back' && renderPerformerBack()}
-        {phase === 'play' && renderPlay()}
-        {phase === 'reveal-secret' && renderRevealSecret()}
-      </main>
-    </div>
+    <Layout>
+      {phase === 'menu' && renderMenu()}
+      {phase === 'setup' && renderSetup()}
+      {phase === 'performer-out' && renderPerformerOut()}
+      {phase === 'pick-target' && renderPickTarget()}
+      {phase === 'performer-back' && renderPerformerBack()}
+      {phase === 'play' && renderPlay()}
+      {phase === 'reveal-secret' && renderRevealSecret()}
+    </Layout>
   )
 }
