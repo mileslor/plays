@@ -535,7 +535,7 @@ export default function Werewolf() {
             <p className="text-xl text-gray-300 mb-8">{t('werewolf.peacefulNight')}</p>
           ) : (
             <p className="text-xl mb-8">
-              {t('werewolf.died', { names: nightDead.map((id) => `${id}號`).join('、') })}
+              {t('werewolf.died', { names: nightDead.map((id) => t('undercover.playerN', { n: id })).join(', ') })}
             </p>
           )}
           <button onClick={() => { clearSpeakerState(); setPhase('day') }}
