@@ -108,5 +108,13 @@
     "antidote": "解药",
     "poison": "毒药",
     "used": "已用"
+  },
+  "undercover": {
+    "difficulty": {
+      "label": "难度",
+      "easy": "简单",
+      "medium": "中等",
+      "hard": "专家"
+    }
   }
 }

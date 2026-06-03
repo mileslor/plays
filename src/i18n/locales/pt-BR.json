@@ -55,7 +55,13 @@
     "win_whiteboard": "🕵️ O Sr. Branco vence! Ninguém desconfiou!",
     "mainWordWas": "A palavra civil era",
     "newGame": "Jogar de novo!",
-    "backHome": "Início"
+    "backHome": "Início",
+    "difficulty": {
+      "label": "Dificuldade",
+      "easy": "Fácil",
+      "medium": "Médio",
+      "hard": "Especialista"
+    }
   },
   "timer": {
     "speechTime": "Tempo de fala",

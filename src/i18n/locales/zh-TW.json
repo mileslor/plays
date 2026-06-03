@@ -55,7 +55,13 @@
     "win_whiteboard": "🕵️ 白板神勝！所有人都不知道他是白板！",
     "mainWordWas": "平民詞是",
     "newGame": "再玩一局！",
-    "backHome": "回首頁"
+    "backHome": "回首頁",
+    "difficulty": {
+      "label": "難度",
+      "easy": "簡單",
+      "medium": "中等",
+      "hard": "高手"
+    }
   },
   "timer": {
     "speechTime": "發言時間",

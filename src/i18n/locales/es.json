@@ -55,7 +55,13 @@
     "win_whiteboard": "🕵️ ¡El Sr. Blanco gana! ¡Nadie lo sospechó!",
     "mainWordWas": "La palabra civil era",
     "newGame": "¡Otra partida!",
-    "backHome": "Inicio"
+    "backHome": "Inicio",
+    "difficulty": {
+      "label": "Dificultad",
+      "easy": "Fácil",
+      "medium": "Medio",
+      "hard": "Experto"
+    }
   },
   "timer": {
     "speechTime": "Turno de hablar",

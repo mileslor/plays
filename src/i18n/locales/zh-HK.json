@@ -1,6 +1,11 @@
 {
-  "site": { "title": "Plays", "tagline": "派對遊戲工具集" },
-  "nav": { "home": "首頁" },
+  "site": {
+    "title": "Plays",
+    "tagline": "派對遊戲工具集"
+  },
+  "nav": {
+    "home": "首頁"
+  },
   "home": {
     "heading": "派對遊戲工具",
     "subheading": "唔需要買道具，開瀏覽器就玩",
@@ -50,7 +55,13 @@
     "win_whiteboard": "🕵️ 白板神勝！所有人都唔知佢係白板！",
     "mainWordWas": "平民詞係",
     "newGame": "再玩一局！",
-    "backHome": "返主頁"
+    "backHome": "返主頁",
+    "difficulty": {
+      "label": "難度",
+      "easy": "簡單",
+      "medium": "中等",
+      "hard": "專家"
+    }
   },
   "timer": {
     "speechTime": "發言時間",
@@ -133,12 +144,25 @@
     "used": "已用"
   },
   "games": {
-    "undercover": { "name": "誰是臥底", "desc": "每人收到一個詞，其中一個唔同，靠描述找出臥底" },
-    "werewolf": { "name": "狼人殺", "desc": "平民vs狼人，角色分配一鍵搞掂" },
-    "blackmagic": { "name": "黑魔法", "desc": "心靈感應魔術，助手暗號引導表演者每次答岩" }
+    "undercover": {
+      "name": "誰是臥底",
+      "desc": "每人收到一個詞，其中一個唔同，靠描述找出臥底"
+    },
+    "werewolf": {
+      "name": "狼人殺",
+      "desc": "平民vs狼人，角色分配一鍵搞掂"
+    },
+    "blackmagic": {
+      "name": "黑魔法",
+      "desc": "心靈感應魔術，助手暗號引導表演者每次答岩"
+    }
   },
   "lang": {
-    "zh-HK": "繁中（港）", "zh-TW": "繁中（台）",
-    "en": "English", "es": "Español", "pt-BR": "Português", "ja": "日本語"
+    "zh-HK": "繁中（港）",
+    "zh-TW": "繁中（台）",
+    "en": "English",
+    "es": "Español",
+    "pt-BR": "Português",
+    "ja": "日本語"
   }
 }

@@ -55,7 +55,13 @@
     "win_whiteboard": "🕵️ Mr.ホワイトの大勝利！誰も気づかなかった！",
     "mainWordWas": "市民の単語は",
     "newGame": "もう一回！",
-    "backHome": "ホーム"
+    "backHome": "ホーム",
+    "difficulty": {
+      "label": "難易度",
+      "easy": "かんたん",
+      "medium": "ふつう",
+      "hard": "むずかしい"
+    }
   },
   "timer": {
     "speechTime": "発言タイム",

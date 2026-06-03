@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { getRandomPair } from '../data/undercoverWords'
+import { getRandomPair, type Difficulty } from '../data/undercoverWords'
 import Layout from '../components/Layout'
 import Timer from '../components/Timer'
 
@@ -20,6 +20,7 @@ export default function Undercover() {
   const { t, i18n } = useTranslation()
 
   // Setup
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('medium')
   const [playerCount, setPlayerCount] = useState(5)
   const [undercoverCount, setUndercoverCount] = useState(1)
   const [hasWhiteboard, setHasWhiteboard] = useState(false)
@@ -42,7 +43,7 @@ export default function Undercover() {
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const startGame = () => {
-    const pair = getRandomPair(i18n.language)
+    const pair = getRandomPair(i18n.language, selectedDifficulty)
     setMainWord(pair.main)
     const indices = Array.from({ length: playerCount }, (_, i) => i)
     const shuffled = [...indices].sort(() => Math.random() - 0.5)
@@ -210,6 +211,21 @@ export default function Undercover() {
               <span className="text-4xl font-bold text-red-400">{undercoverCount}</span>
               <button onClick={() => setUndercoverCount((n) => Math.min(Math.floor(playerCount / 2), n + 1))}
                 className="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 text-xl font-bold transition-colors">+</button>
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-2xl p-5 mb-3">
+            <label className="text-sm text-gray-400 block mb-3">{t('undercover.difficulty.label')}</label>
+            <div className="flex gap-2">
+              {(['easy', 'medium', 'hard'] as Difficulty[]).map((d) => (
+                <button
+                  key={d}
+                  onClick={() => setSelectedDifficulty(d)}
+                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-colors ${selectedDifficulty === d ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
+                >
+                  {t(`undercover.difficulty.${d}`)}
+                </button>
+              ))}
             </div>
           </div>
 

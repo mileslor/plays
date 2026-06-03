@@ -55,7 +55,13 @@
     "win_whiteboard": "🕵️ Mr. White wins! Nobody suspected a thing!",
     "mainWordWas": "The Civilian word was",
     "newGame": "Play Again!",
-    "backHome": "Home"
+    "backHome": "Home",
+    "difficulty": {
+      "label": "Difficulty",
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Expert"
+    }
   },
   "timer": {
     "speechTime": "Speech Time",
