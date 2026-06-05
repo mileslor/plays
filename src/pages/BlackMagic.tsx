@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import Timer from '../components/Timer'
 
 type Phase = 'menu' | 'setup' | 'performer-out' | 'pick-target' | 'performer-back' | 'play' | 'reveal-secret'
 
@@ -215,9 +216,12 @@ export default function BlackMagic() {
       )
     }
 
+    const advance = () => setGame({ ...game, currentStep: currentStep + 1 })
+
     return (
       <div className="flex flex-col items-center text-center gap-8 py-8 max-w-sm mx-auto">
         <div className="text-sm text-gray-500">步驟 {currentStep + 1} / {playOrder.length}</div>
+        <Timer key={currentStep} seconds={30} onExpire={advance} />
 
         {/* Current item card */}
         <div
@@ -246,7 +250,7 @@ export default function BlackMagic() {
         </div>
 
         <button
-          onClick={() => setGame({ ...game, currentStep: currentStep + 1 })}
+          onClick={advance}
           className="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-2xl text-lg transition-colors"
         >
           {isTarget ? '表演者答係！結束 ✓' : '下一件 →'}
