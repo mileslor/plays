@@ -32,6 +32,8 @@
     "role_whiteboard": "Sr. Blanco",
     "roundN": "Ronda {{n}}",
     "alivePlayers": "Quedan {{n}}",
+    "remainingSpy": "🕵️ Espía: {{n}}",
+    "allSpiesOut": "Todos los espías eliminados ✅",
     "pickFirst": "Elegir quién habla primero",
     "firstSpeaker": "🎤 El primero en hablar es",
     "repick": "Repetir",

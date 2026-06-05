@@ -32,6 +32,8 @@
     "role_whiteboard": "Mr.ホワイト",
     "roundN": "第{{n}}ラウンド",
     "alivePlayers": "残り{{n}}人",
+    "remainingSpy": "🕵️ スパイ：{{n}}",
+    "allSpiesOut": "スパイ全員排除 ✅",
     "pickFirst": "最初の発言者をランダムに決める",
     "firstSpeaker": "🎤 最初に話すのは",
     "repick": "もう一度",

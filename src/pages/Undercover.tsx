@@ -181,6 +181,7 @@ export default function Undercover() {
   }
 
   const alivePlayers = players.filter((p) => p.alive)
+  const remainingSpies = alivePlayers.filter((p) => p.role === 'undercover').length
 
   const roleColor = (role: Role) =>
     ({ civilian: 'text-blue-400', undercover: 'text-red-400', whiteboard: 'text-gray-400' }[role])
@@ -293,15 +294,15 @@ export default function Undercover() {
       {/* ── ROUND ── */}
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
+          <div className="flex justify-end mb-3">
+            <span className="px-3 py-1 bg-red-900/60 border border-red-700 rounded-full text-sm font-bold text-red-300">
+              {t('undercover.remainingSpy', { n: remainingSpies })}
+            </span>
+          </div>
           <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('undercover.roundN', { n: round })}</h2>
-            <div className="flex gap-2 text-sm">
-              <span className="text-gray-400">{t('undercover.alivePlayers', { n: alivePlayers.length })}</span>
-              <span className="text-red-400 font-bold">
-                🕵️ {alivePlayers.filter(p => p.role === 'undercover').length}
-              </span>
-            </div>
+            <span className="text-gray-400 text-sm">{t('undercover.alivePlayers', { n: alivePlayers.length })}</span>
           </div>
 
           <div className="bg-purple-800/50 border border-purple-500 rounded-2xl p-4 mb-6 text-center">
@@ -333,6 +334,11 @@ export default function Undercover() {
       {/* ── VOTING ── */}
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
+          <div className="flex justify-end mb-3">
+            <span className="px-3 py-1 bg-red-900/60 border border-red-700 rounded-full text-sm font-bold text-red-300">
+              {t('undercover.remainingSpy', { n: remainingSpies })}
+            </span>
+          </div>
           <Timer
             seconds={30}
             label={t('timer.voteTime')}

@@ -32,6 +32,8 @@
     "role_whiteboard": "Mr. White",
     "roundN": "Round {{n}}",
     "alivePlayers": "{{n}} still in",
+    "remainingSpy": "🕵️ Spy: {{n}}",
+    "allSpiesOut": "All spies eliminated ✅",
     "pickFirst": "Pick who goes first",
     "firstSpeaker": "🎤 First to speak",
     "repick": "Repick",

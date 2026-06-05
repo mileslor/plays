@@ -32,6 +32,8 @@
     "role_whiteboard": "白板",
     "roundN": "第 {{n}} 回合",
     "alivePlayers": "還有 {{n}} 人",
+    "remainingSpy": "🕵️ 臥底：{{n}}",
+    "allSpiesOut": "臥底已全部出局 ✅",
     "pickFirst": "隨機選誰先說",
     "firstSpeaker": "🎤 第一個說的是",
     "repick": "重新抽",
