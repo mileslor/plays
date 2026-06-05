@@ -187,7 +187,9 @@ export default function Werewolf() {
     const w = checkWin(updated.filter((p) => p.alive))
     if (w) { setWinner(w); setPhase('gameover'); return }
     clearSpeakerState()
+    setDawnAnimating(true)
     setPhase('dawn')
+    setTimeout(() => setDawnAnimating(false), 1500)
   }
 
   // ── Day / vote ──
