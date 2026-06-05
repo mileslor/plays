@@ -295,8 +295,8 @@ export default function Undercover() {
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
           <div className="flex justify-end mb-3">
-            <span className="px-3 py-1 bg-red-900/60 border border-red-700 rounded-full text-sm font-bold text-red-300">
-              {t('undercover.remainingSpy', { n: remainingSpies })}
+            <span className={`px-3 py-1 rounded-full text-sm font-bold ${remainingSpies === 0 ? 'bg-green-900/60 border border-green-700 text-green-300' : 'bg-red-900/60 border border-red-700 text-red-300'}`}>
+              {remainingSpies === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remainingSpies })}
             </span>
           </div>
           <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
@@ -335,8 +335,8 @@ export default function Undercover() {
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
           <div className="flex justify-end mb-3">
-            <span className="px-3 py-1 bg-red-900/60 border border-red-700 rounded-full text-sm font-bold text-red-300">
-              {t('undercover.remainingSpy', { n: remainingSpies })}
+            <span className={`px-3 py-1 rounded-full text-sm font-bold ${remainingSpies === 0 ? 'bg-green-900/60 border border-green-700 text-green-300' : 'bg-red-900/60 border border-red-700 text-red-300'}`}>
+              {remainingSpies === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remainingSpies })}
             </span>
           </div>
           <Timer
