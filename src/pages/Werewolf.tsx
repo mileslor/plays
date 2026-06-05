@@ -1,8 +1,9 @@
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
 import Timer from '../components/Timer'
+import NightPhaseGuide from '../components/NightPhaseGuide'
 import { ROLE_CONFIG, PRESETS, type WerewolfRole } from '../data/werewolfRoles'
 
 type Phase =
@@ -58,6 +59,9 @@ export default function Werewolf() {
   const [hunterTarget, setHunterTarget] = useState<number | null>(null)
   const [winner, setWinner] = useState<'wolf' | 'good' | null>(null)
 
+  // Dawn animation
+  const [dawnAnimating, setDawnAnimating] = useState(false)
+
   // Speaker order tracking
   const [speakerOrder, setSpeakerOrder] = useState<number[]>([])
   const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0)
@@ -65,6 +69,14 @@ export default function Werewolf() {
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    if (phase === 'dawn') {
+      setDawnAnimating(true)
+      const t = setTimeout(() => setDawnAnimating(false), 1500)
+      return () => clearTimeout(t)
+    }
+  }, [phase])
 
   const roles = useCustom ? customRoles : PRESETS[preset].roles
   const alivePlayers = players.filter((p) => p.alive)
@@ -388,10 +400,7 @@ export default function Werewolf() {
       {/* ── WOLVES ACT ── */}
       {phase === 'night_wolves' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-6 bg-red-950/60 rounded-2xl py-5">
-            <span className="text-6xl">🐺</span>
-            <p className="text-2xl font-bold mt-2">{t('werewolf.werewolvesOpen')}</p>
-          </div>
+          <NightPhaseGuide phase="werewolf" title={t('werewolf.werewolvesOpen')} hint={t('werewolf.werewolfHint')} />
           <div className="grid grid-cols-2 gap-3 mb-6">
             {alivePlayers.filter((p) => p.role !== 'werewolf').map((p) => (
               <button key={p.id} onClick={() => setWolfTarget(p.id)}
@@ -410,10 +419,7 @@ export default function Werewolf() {
       {/* ── SEER ── */}
       {phase === 'night_seer' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-6 bg-purple-950/60 rounded-2xl py-5">
-            <span className="text-6xl">🔮</span>
-            <p className="text-2xl font-bold mt-2">{t('werewolf.seerOpen')}</p>
-          </div>
+          <NightPhaseGuide phase="seer" title={t('werewolf.seerOpen')} hint={t('werewolf.seerHint')} />
           {seerResult === null ? (
             <>
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -447,10 +453,7 @@ export default function Werewolf() {
       {/* ── WITCH ── */}
       {phase === 'night_witch' && (
         <div className="max-w-sm mx-auto">
-          <div className="text-center mb-4 bg-emerald-950/60 rounded-2xl py-4">
-            <span className="text-6xl">🧙‍♀️</span>
-            <p className="text-2xl font-bold mt-2">{t('werewolf.witchOpen')}</p>
-          </div>
+          <NightPhaseGuide phase="witch" title={t('werewolf.witchOpen')} hint={t('werewolf.witchHint')} />
           {/* 解藥/毒藥狀態 */}
           <div className="flex gap-3 justify-center mb-4">
             <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${witchSaveUsed ? 'bg-gray-800 text-gray-500 line-through' : 'bg-green-900 text-green-300'}`}>
@@ -529,19 +532,28 @@ export default function Werewolf() {
       {/* ── DAWN ── */}
       {phase === 'dawn' && (
         <div className="max-w-sm mx-auto text-center">
-          <div className="text-6xl mb-4">🌅</div>
-          <h2 className="text-2xl font-bold mb-4">{t('werewolf.nightResult')}</h2>
-          {nightDead.length === 0 ? (
-            <p className="text-xl text-gray-300 mb-8">{t('werewolf.peacefulNight')}</p>
+          {dawnAnimating ? (
+            <div className="animate-fadeIn flex flex-col items-center justify-center min-h-64">
+              <div className="text-8xl mb-6">🌅</div>
+              <h2 className="text-4xl font-bold text-white">{t('werewolf.nightResult')}</h2>
+            </div>
           ) : (
-            <p className="text-xl mb-8">
-              {t('werewolf.died', { names: nightDead.map((id) => t('undercover.playerN', { n: id })).join(', ') })}
-            </p>
+            <>
+              <div className="text-6xl mb-4">🌅</div>
+              <h2 className="text-2xl font-bold mb-4">{t('werewolf.nightResult')}</h2>
+              {nightDead.length === 0 ? (
+                <p className="text-xl text-gray-300 mb-8">{t('werewolf.peacefulNight')}</p>
+              ) : (
+                <p className="text-xl mb-8">
+                  {t('werewolf.died', { names: nightDead.map((id) => t('undercover.playerN', { n: id })).join(', ') })}
+                </p>
+              )}
+              <button onClick={() => { clearSpeakerState(); setPhase('day') }}
+                className="w-full py-4 bg-yellow-700 hover:bg-yellow-600 rounded-2xl font-bold text-lg transition-colors">
+                {t('werewolf.discuss')}
+              </button>
+            </>
           )}
-          <button onClick={() => { clearSpeakerState(); setPhase('day') }}
-            className="w-full py-4 bg-yellow-700 hover:bg-yellow-600 rounded-2xl font-bold text-lg transition-colors">
-            {t('werewolf.discuss')}
-          </button>
         </div>
       )}
 
