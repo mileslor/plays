@@ -538,7 +538,7 @@ export default function Werewolf() {
               <h2 className="text-4xl font-bold text-white">{t('werewolf.nightResult')}</h2>
             </div>
           ) : (
-            <>
+            <div className="animate-fadeIn">
               <div className="text-6xl mb-4">🌅</div>
               <h2 className="text-2xl font-bold mb-4">{t('werewolf.nightResult')}</h2>
               {nightDead.length === 0 ? (
@@ -552,7 +552,7 @@ export default function Werewolf() {
                 className="w-full py-4 bg-yellow-700 hover:bg-yellow-600 rounded-2xl font-bold text-lg transition-colors">
                 {t('werewolf.discuss')}
               </button>
-            </>
+            </div>
           )}
         </div>
       )}
