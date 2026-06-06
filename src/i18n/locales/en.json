@@ -63,7 +63,9 @@
       "easy": "Easy",
       "medium": "Medium",
       "hard": "Expert"
-    }
+    },
+    "remainingSpy": "Undercover: {n}",
+    "allSpiesOut": "All undercovers eliminated ✅"
   },
   "timer": {
     "speechTime": "Speech Time",

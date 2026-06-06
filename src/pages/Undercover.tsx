@@ -38,6 +38,8 @@ export default function Undercover() {
   const [wbGuess, setWbGuess] = useState('')
   const [wbGuessResult, setWbGuessResult] = useState<'correct' | 'wrong' | null>(null)
   const [firstSpeaker, setFirstSpeaker] = useState<number | null>(null)
+  const [initialUndercoverCount, setInitialUndercoverCount] = useState(0)
+  const [eliminatedUndercoverCount, setEliminatedUndercoverCount] = useState(0)
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -61,6 +63,8 @@ export default function Undercover() {
     setRevealIndex(0)
     setWordShowing(false)
     setShowTapHint(false)
+    setInitialUndercoverCount(undercoverCount)
+    setEliminatedUndercoverCount(0)
     setPhase('reveal')
   }
 
@@ -118,6 +122,7 @@ export default function Undercover() {
     setPlayers(updated)
     setEliminatedPlayer(target)
     setVoteTarget(null)
+    if (target.role === 'undercover') setEliminatedUndercoverCount((n) => n + 1)
     if (target.role === 'whiteboard') {
       setWbGuess('')
       setWbGuessResult(null)
@@ -178,6 +183,8 @@ export default function Undercover() {
     setWbGuess('')
     setWbGuessResult(null)
     setFirstSpeaker(null)
+    setInitialUndercoverCount(0)
+    setEliminatedUndercoverCount(0)
   }
 
   const alivePlayers = players.filter((p) => p.alive)
@@ -300,6 +307,16 @@ export default function Undercover() {
             </span>
           </div>
           <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
+          <div className="mb-4 text-center">
+            {(() => {
+              const remaining = initialUndercoverCount - eliminatedUndercoverCount
+              return (
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold ${remaining === 0 ? 'bg-green-900/50 border border-green-600 text-green-300' : 'bg-red-900/50 border border-red-600 text-red-300'}`}>
+                  👥 {remaining === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remaining })}
+                </span>
+              )
+            })()}
+          </div>
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold">{t('undercover.roundN', { n: round })}</h2>
             <span className="text-gray-400 text-sm">{t('undercover.alivePlayers', { n: alivePlayers.length })}</span>
@@ -334,11 +351,16 @@ export default function Undercover() {
       {/* ── VOTING ── */}
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
-          <div className="flex justify-end mb-3">
-            <span className={`px-3 py-1 rounded-full text-sm font-bold ${remainingSpies === 0 ? 'bg-green-900/60 border border-green-700 text-green-300' : 'bg-red-900/60 border border-red-700 text-red-300'}`}>
-              {remainingSpies === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remainingSpies })}
-            </span>
-          </div>
+          {(() => {
+            const remaining = initialUndercoverCount - eliminatedUndercoverCount
+            return (
+              <div className="mb-3 text-center">
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold ${remaining === 0 ? 'bg-green-900/50 border border-green-600 text-green-300' : 'bg-red-900/50 border border-red-600 text-red-300'}`}>
+                  👥 {remaining === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remaining })}
+                </span>
+              </div>
+            )
+          })()}
           <Timer
             seconds={30}
             label={t('timer.voteTime')}

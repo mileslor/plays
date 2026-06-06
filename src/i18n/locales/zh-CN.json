@@ -119,7 +119,7 @@
       "medium": "中等",
       "hard": "专家"
     },
-    "remainingSpy": "🕵️ 卧底：{{n}}",
+    "remainingSpy": "卧底：{n}",
     "allSpiesOut": "卧底已全部出局 ✅"
   }
 }
