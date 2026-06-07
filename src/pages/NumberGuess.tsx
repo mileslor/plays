@@ -150,7 +150,12 @@ export default function NumberGuess() {
     <div className="flex flex-col gap-5 py-4 max-w-sm mx-auto">
       {/* Range display */}
       <div className="bg-white/5 rounded-2xl p-5 text-center">
-        <p className="text-gray-400 text-xs mb-2">現在範圍</p>
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-gray-400 text-xs">現在範圍</p>
+          {guesses.length > 0 && (
+            <p className="text-gray-500 text-xs">已猜 {guesses.length} 次</p>
+          )}
+        </div>
         <div className="flex items-center justify-center gap-4">
           <span className="text-3xl font-bold text-blue-400">{currentMin}</span>
           <span className="text-gray-500 text-2xl">—</span>
@@ -226,6 +231,7 @@ export default function NumberGuess() {
         <h2 className="text-3xl font-bold mb-2">受罰喇！</h2>
         <p className="text-4xl font-bold text-red-400 mt-3">{loser}</p>
         <p className="text-gray-400 mt-2">你猜中咗密碼，要受罰！</p>
+        <p className="text-gray-500 text-sm mt-1">共用咗 {guesses.length} 次</p>
         <div className="mt-4 bg-white/5 rounded-2xl px-6 py-3 inline-block">
           <span className="text-gray-400 text-sm">密碼係 </span>
           <span className="text-white font-bold text-2xl">{secretRef.current}</span>
