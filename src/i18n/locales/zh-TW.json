@@ -63,9 +63,7 @@
       "easy": "簡單",
       "medium": "中等",
       "hard": "高手"
-    },
-    "remainingSpy": "臥底：{n}",
-    "allSpiesOut": "臥底已全部出局 ✅"
+    }
   },
   "timer": {
     "speechTime": "發言時間",

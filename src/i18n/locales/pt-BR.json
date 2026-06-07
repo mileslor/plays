@@ -63,9 +63,7 @@
       "easy": "Fácil",
       "medium": "Médio",
       "hard": "Especialista"
-    },
-    "remainingSpy": "Infiltrados: {n}",
-    "allSpiesOut": "Todos os infiltrados eliminados! ✅"
+    }
   },
   "timer": {
     "speechTime": "Tempo de fala",

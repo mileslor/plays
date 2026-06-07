@@ -63,9 +63,7 @@
       "easy": "かんたん",
       "medium": "ふつう",
       "hard": "むずかしい"
-    },
-    "remainingSpy": "内奸：{n}",
-    "allSpiesOut": "内奸 全員排除 ✅"
+    }
   },
   "timer": {
     "speechTime": "発言タイム",
