@@ -237,6 +237,35 @@ export default function NumberGuess() {
           <span className="text-white font-bold text-2xl">{secretRef.current}</span>
         </div>
       </div>
+      {/* Guess recap */}
+      {guesses.length > 0 && (
+        <div className="w-full max-w-xs">
+          <p className="text-gray-500 text-xs mb-2 text-left">猜測記錄</p>
+          <div className="flex flex-col gap-1 max-h-48 overflow-y-auto">
+            {guesses.map((g, i) => (
+              <div
+                key={i}
+                className={`flex items-center justify-between rounded-xl px-3 py-2 text-sm ${
+                  g.result === 'correct'
+                    ? 'bg-red-900/50 ring-1 ring-red-500/40'
+                    : g.result === 'low'
+                    ? 'bg-orange-900/30'
+                    : 'bg-indigo-900/30'
+                }`}
+              >
+                <span className="text-white">{g.name}</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white">{g.value}</span>
+                  <span className="text-base">
+                    {g.result === 'low' ? '⬆️' : g.result === 'high' ? '⬇️' : '💥'}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col gap-3 w-full max-w-xs">
         <button
           onClick={startGame}
