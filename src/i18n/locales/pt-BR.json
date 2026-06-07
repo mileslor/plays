@@ -93,6 +93,10 @@
     "blackmagic": {
       "name": "Magia Negra",
       "desc": "Um truque de leitura mental — o assistente usa um código secreto para guiar o mágico"
+    },
+    "numberguess": {
+      "name": "Adivinhe o Número",
+      "desc": "Adivinhe o número secreto — quem acertar perde!"
     }
   },
   "lang": {

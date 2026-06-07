@@ -93,6 +93,10 @@
     "blackmagic": {
       "name": "Black Magic",
       "desc": "A mind-reading trick — the assistant's secret code guides the performer every time"
+    },
+    "numberguess": {
+      "name": "Number Guess",
+      "desc": "Guess the secret number — whoever guesses it loses!"
     }
   },
   "lang": {

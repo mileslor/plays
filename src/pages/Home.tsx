@@ -27,6 +27,14 @@ const GAMES = [
     ready: true,
     players: '3+',
   },
+  {
+    key: 'numberguess',
+    path: '/number-guess',
+    emoji: '🔢',
+    color: 'from-blue-700 to-cyan-700',
+    ready: true,
+    players: '2+',
+  },
 ]
 
 export default function Home() {
