@@ -35,6 +35,14 @@ const GAMES = [
     ready: true,
     players: '2+',
   },
+  {
+    key: 'wheel',
+    path: '/wheel',
+    emoji: '🎡',
+    color: 'from-yellow-600 to-orange-600',
+    ready: true,
+    players: '1+',
+  },
 ]
 
 export default function Home() {

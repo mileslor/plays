@@ -95,6 +95,10 @@
     "numberguess": {
       "name": "数字当て",
       "desc": "秘密の数字を当てよう — 当てた人が罰ゲーム！"
+    },
+    "wheel": {
+      "name": "ルーレット",
+      "desc": "選択肢を入力してルーレットに決めてもらおう — 決断やパーティーゲームにぴったり"
     }
   },
   "lang": {
@@ -171,5 +175,16 @@
     "antidote": "Antidote",
     "poison": "Poison",
     "used": "Used"
+  },
+  "wheel": {
+    "title": "ルーレット",
+    "enterItems": "項目を入力（1行1項目）",
+    "itemCount": "{{n}} 項目追加済み",
+    "spin": "スピン 🎡",
+    "spinning": "回転中...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "もう一回",
+    "modify": "項目を編集",
+    "needAtLeastTwo": "2項目以上が必要です"
   }
 }

@@ -164,6 +164,10 @@
     "numberguess": {
       "name": "終極密碼",
       "desc": "猜一個秘密數字，猜中嗰個人要受罰"
+    },
+    "wheel": {
+      "name": "轉輪盤",
+      "desc": "輸入選項，話輪盤決定——做決定、派對遊戲都啱"
     }
   },
   "lang": {
@@ -173,5 +177,16 @@
     "es": "Español",
     "pt-BR": "Português",
     "ja": "日本語"
+  },
+  "wheel": {
+    "title": "轉輪盤",
+    "enterItems": "輸入項目（每行一個）",
+    "itemCount": "已加入 {{n}} 個項目",
+    "spin": "開始轉動 🎡",
+    "spinning": "轉動中...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "再轉一次",
+    "modify": "修改項目",
+    "needAtLeastTwo": "至少需要 2 個項目"
   }
 }

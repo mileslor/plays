@@ -27,6 +27,10 @@
     "numberguess": {
       "name": "终极密码",
       "desc": "猜一个秘密数字，猜中的人要受罚"
+    },
+    "wheel": {
+      "name": "幸运轮盘",
+      "desc": "输入选项，让轮盘来决定——做决定或派对游戏都适合"
     }
   },
   "lang": {
@@ -125,5 +129,16 @@
     },
     "remainingSpy": "卧底：{{n}}",
     "allSpiesOut": "卧底已全部出局 ✅"
+  },
+  "wheel": {
+    "title": "转幸运轮",
+    "enterItems": "输入选项（每行一个）",
+    "itemCount": "已添加 {{n}} 个选项",
+    "spin": "开始转动 🎡",
+    "spinning": "转动中...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "再转一次",
+    "modify": "修改选项",
+    "needAtLeastTwo": "至少需要 2 个选项"
   }
 }

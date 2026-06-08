@@ -95,6 +95,10 @@
     "numberguess": {
       "name": "Adivinhe o Número",
       "desc": "Adivinhe o número secreto — quem acertar perde!"
+    },
+    "wheel": {
+      "name": "Roda da Sorte",
+      "desc": "Insira as opções e deixe a roda decidir — ótimo para decisões ou jogos de festa"
     }
   },
   "lang": {
@@ -171,5 +175,16 @@
     "antidote": "Antidote",
     "poison": "Poison",
     "used": "Used"
+  },
+  "wheel": {
+    "title": "Roda da Sorte",
+    "enterItems": "Insira itens (um por linha)",
+    "itemCount": "{{n}} itens adicionados",
+    "spin": "Girar 🎡",
+    "spinning": "Girando...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "Girar novamente",
+    "modify": "Editar itens",
+    "needAtLeastTwo": "Precisa de pelo menos 2 itens"
   }
 }

@@ -95,6 +95,10 @@
     "numberguess": {
       "name": "Adivina el Número",
       "desc": "Adivina el número secreto — ¡quien lo adivine pierde!"
+    },
+    "wheel": {
+      "name": "Ruleta de la Suerte",
+      "desc": "Ingresa opciones y deja que la ruleta decida — ideal para tomar decisiones o juegos de fiesta"
     }
   },
   "lang": {
@@ -171,5 +175,16 @@
     "antidote": "Antidote",
     "poison": "Poison",
     "used": "Used"
+  },
+  "wheel": {
+    "title": "Ruleta de la Suerte",
+    "enterItems": "Ingresa opciones (una por línea)",
+    "itemCount": "{{n}} opciones añadidas",
+    "spin": "Girar 🎡",
+    "spinning": "Girando...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "Girar de nuevo",
+    "modify": "Editar opciones",
+    "needAtLeastTwo": "Se necesitan al menos 2 opciones"
   }
 }

@@ -95,6 +95,10 @@
     "numberguess": {
       "name": "Number Guess",
       "desc": "Guess the secret number — whoever guesses it loses!"
+    },
+    "wheel": {
+      "name": "Wheel of Fortune",
+      "desc": "Enter your options and let the wheel decide — great for decisions or party games"
     }
   },
   "lang": {
@@ -171,5 +175,16 @@
     "antidote": "Antidote",
     "poison": "Poison",
     "used": "Used"
+  },
+  "wheel": {
+    "title": "Wheel of Fortune",
+    "enterItems": "Enter items (one per line)",
+    "itemCount": "{{n}} items added",
+    "spin": "Spin 🎡",
+    "spinning": "Spinning...",
+    "result": "🎉 {{item}} 🎉",
+    "again": "Spin Again",
+    "modify": "Edit Items",
+    "needAtLeastTwo": "Need at least 2 items"
   }
 }
