@@ -146,10 +146,18 @@ export default function NumberGuess() {
     </div>
   )
 
+  const remaining = currentMax - currentMin + 1
+  const dangerLevel = remaining <= 3 ? 'critical' : remaining <= 8 ? 'danger' : remaining <= 20 ? 'warn' : 'safe'
+
   const renderPlay = () => (
     <div className="flex flex-col gap-5 py-4 max-w-sm mx-auto">
       {/* Range display */}
-      <div className="bg-white/5 rounded-2xl p-5 text-center">
+      <div className={`rounded-2xl p-5 text-center transition-colors ${
+        dangerLevel === 'critical' ? 'bg-red-900/40 ring-1 ring-red-500/50' :
+        dangerLevel === 'danger' ? 'bg-orange-900/30 ring-1 ring-orange-500/30' :
+        dangerLevel === 'warn' ? 'bg-yellow-900/20' :
+        'bg-white/5'
+      }`}>
         <div className="flex items-center justify-between mb-2">
           <p className="text-gray-400 text-xs">現在範圍</p>
           {guesses.length > 0 && (
@@ -157,11 +165,21 @@ export default function NumberGuess() {
           )}
         </div>
         <div className="flex items-center justify-center gap-4">
-          <span className="text-3xl font-bold text-blue-400">{currentMin}</span>
+          <span className={`text-3xl font-bold ${dangerLevel === 'critical' ? 'text-red-400' : dangerLevel === 'danger' ? 'text-orange-400' : 'text-blue-400'}`}>{currentMin}</span>
           <span className="text-gray-500 text-2xl">—</span>
-          <span className="text-3xl font-bold text-blue-400">{currentMax}</span>
+          <span className={`text-3xl font-bold ${dangerLevel === 'critical' ? 'text-red-400' : dangerLevel === 'danger' ? 'text-orange-400' : 'text-blue-400'}`}>{currentMax}</span>
         </div>
-        <p className="text-gray-500 text-xs mt-2">共 {currentMax - currentMin + 1} 個可能</p>
+        <p className={`text-xs mt-2 ${
+          dangerLevel === 'critical' ? 'text-red-400 font-semibold' :
+          dangerLevel === 'danger' ? 'text-orange-400' :
+          dangerLevel === 'warn' ? 'text-yellow-400' :
+          'text-gray-500'
+        }`}>
+          {dangerLevel === 'critical' && remaining === 1 ? '⚠️ 注定受罰！只剩 1 個數字' :
+           dangerLevel === 'critical' ? `🔥 危險！只剩 ${remaining} 個可能` :
+           dangerLevel === 'danger' ? `⚡ 小心！${remaining} 個可能` :
+           `共 ${remaining} 個可能`}
+        </p>
       </div>
 
       {/* Input */}
