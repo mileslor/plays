@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
 
 type Phase = 'menu' | 'setup' | 'play' | 'lost'
@@ -11,6 +12,7 @@ interface Guess {
 }
 
 export default function NumberGuess() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<Phase>('menu')
   const [rangeMin, setRangeMin] = useState(1)
   const [rangeMax, setRangeMax] = useState(100)
@@ -38,7 +40,7 @@ export default function NumberGuess() {
   const submitGuess = () => {
     const val = parseInt(guessValue)
     if (isNaN(val) || val < currentMin || val > currentMax) return
-    const name = guesserName.trim() || '匿名'
+    const name = guesserName.trim() || t('numberguess.anonymous')
     const secret = secretRef.current
 
     let result: Guess['result']
@@ -69,16 +71,16 @@ export default function NumberGuess() {
     <div className="flex flex-col items-center text-center gap-8 py-8">
       <div>
         <div className="text-7xl mb-4">🔢</div>
-        <h1 className="text-4xl font-bold mb-2">終極密碼</h1>
-        <p className="text-gray-400 text-lg">數字猜謎 · 猜中就輸</p>
+        <h1 className="text-4xl font-bold mb-2">{t('numberguess.title')}</h1>
+        <p className="text-gray-400 text-lg">{t('numberguess.subtitle')}</p>
       </div>
       <div className="max-w-sm text-gray-300 text-sm leading-relaxed bg-white/5 rounded-2xl p-5 text-left">
-        <p className="font-semibold text-white mb-2">點玩？</p>
+        <p className="font-semibold text-white mb-2">{t('numberguess.howToPlay')}</p>
         <ol className="list-decimal list-inside space-y-1">
-          <li>設定數字範圍（預設 1–100）</li>
-          <li>App 秘密揀一個數字</li>
-          <li>玩家輪流猜，每次範圍會縮窄</li>
-          <li>猜中嗰個人要受罰！</li>
+          <li>{t('numberguess.rule1')}</li>
+          <li>{t('numberguess.rule2')}</li>
+          <li>{t('numberguess.rule3')}</li>
+          <li>{t('numberguess.rule4')}</li>
         </ol>
       </div>
       <div className="flex flex-col gap-3 w-full max-w-xs">
@@ -86,9 +88,9 @@ export default function NumberGuess() {
           onClick={() => setPhase('setup')}
           className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-colors"
         >
-          開始玩 →
+          {t('numberguess.startPlay')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">← 返主頁</Link>
+        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
       </div>
     </div>
   )
@@ -96,13 +98,13 @@ export default function NumberGuess() {
   const renderSetup = () => (
     <div className="flex flex-col gap-6 py-4 max-w-sm mx-auto">
       <div>
-        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm mb-4 transition-colors">← 返回</button>
-        <h2 className="text-2xl font-bold">設定範圍</h2>
-        <p className="text-gray-400 text-sm mt-1">揀一個數字範圍</p>
+        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm mb-4 transition-colors">{t('numberguess.back')}</button>
+        <h2 className="text-2xl font-bold">{t('numberguess.setupTitle')}</h2>
+        <p className="text-gray-400 text-sm mt-1">{t('numberguess.setupSubtitle')}</p>
       </div>
       <div className="flex gap-4 items-center">
         <div className="flex-1">
-          <label className="text-gray-400 text-xs mb-1 block">最小</label>
+          <label className="text-gray-400 text-xs mb-1 block">{t('numberguess.min')}</label>
           <input
             type="number"
             value={rangeMin}
@@ -112,7 +114,7 @@ export default function NumberGuess() {
         </div>
         <div className="text-gray-500 text-2xl mt-5">—</div>
         <div className="flex-1">
-          <label className="text-gray-400 text-xs mb-1 block">最大</label>
+          <label className="text-gray-400 text-xs mb-1 block">{t('numberguess.max')}</label>
           <input
             type="number"
             value={rangeMax}
@@ -141,7 +143,7 @@ export default function NumberGuess() {
         disabled={rangeMax <= rangeMin}
         className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-4 rounded-2xl text-lg transition-colors"
       >
-        開始！揀密碼 🎲
+        {t('numberguess.start')}
       </button>
     </div>
   )
@@ -159,9 +161,9 @@ export default function NumberGuess() {
         'bg-white/5'
       }`}>
         <div className="flex items-center justify-between mb-2">
-          <p className="text-gray-400 text-xs">現在範圍</p>
+          <p className="text-gray-400 text-xs">{t('numberguess.currentRange')}</p>
           {guesses.length > 0 && (
-            <p className="text-gray-500 text-xs">已猜 {guesses.length} 次</p>
+            <p className="text-gray-500 text-xs">{t('numberguess.guessCount', { n: guesses.length })}</p>
           )}
         </div>
         <div className="flex items-center justify-center gap-4">
@@ -175,10 +177,13 @@ export default function NumberGuess() {
           dangerLevel === 'warn' ? 'text-yellow-400' :
           'text-gray-500'
         }`}>
-          {dangerLevel === 'critical' && remaining === 1 ? '⚠️ 注定受罰！只剩 1 個數字' :
-           dangerLevel === 'critical' ? `🔥 危險！只剩 ${remaining} 個可能` :
-           dangerLevel === 'danger' ? `⚡ 小心！${remaining} 個可能` :
-           `共 ${remaining} 個可能`}
+          {dangerLevel === 'critical' && remaining === 1
+            ? t('numberguess.onlyOne')
+            : dangerLevel === 'critical'
+            ? t('numberguess.critical', { n: remaining })
+            : dangerLevel === 'danger'
+            ? t('numberguess.danger', { n: remaining })
+            : t('numberguess.remaining', { n: remaining })}
         </p>
       </div>
 
@@ -187,7 +192,7 @@ export default function NumberGuess() {
         <input
           value={guesserName}
           onChange={e => setGuesserName(e.target.value)}
-          placeholder="你係邊個？（可選）"
+          placeholder={t('numberguess.namePlaceholder')}
           className="bg-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:bg-white/15 transition-colors"
         />
         <div className="flex gap-3">
@@ -206,7 +211,7 @@ export default function NumberGuess() {
             disabled={!guessValue || parseInt(guessValue) < currentMin || parseInt(guessValue) > currentMax}
             className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold px-6 rounded-xl transition-colors"
           >
-            猜！
+            {t('numberguess.guess')}
           </button>
         </div>
       </div>
@@ -214,7 +219,7 @@ export default function NumberGuess() {
       {/* Guess history */}
       {guesses.length > 0 && (
         <div className="flex flex-col gap-2">
-          <p className="text-gray-500 text-xs">猜測記錄</p>
+          <p className="text-gray-500 text-xs">{t('numberguess.guessHistory')}</p>
           <div className="flex flex-col gap-2 max-h-48 overflow-y-auto">
             {[...guesses].reverse().map((g, i) => (
               <div
@@ -231,7 +236,7 @@ export default function NumberGuess() {
                 <div className="flex items-center gap-3">
                   <span className="text-white font-bold text-lg">{g.value}</span>
                   <span className="text-xl">
-                    {g.result === 'low' ? '⬆️ 細咗' : g.result === 'high' ? '⬇️ 大咗' : '💥 中！'}
+                    {g.result === 'low' ? t('numberguess.tooLow') : g.result === 'high' ? t('numberguess.tooHigh') : t('numberguess.correct')}
                   </span>
                 </div>
               </div>
@@ -246,19 +251,19 @@ export default function NumberGuess() {
     <div className="flex flex-col items-center text-center gap-8 py-16">
       <div className="text-7xl animate-bounce">💥</div>
       <div>
-        <h2 className="text-3xl font-bold mb-2">受罰喇！</h2>
+        <h2 className="text-3xl font-bold mb-2">{t('numberguess.lostTitle')}</h2>
         <p className="text-4xl font-bold text-red-400 mt-3">{loser}</p>
-        <p className="text-gray-400 mt-2">你猜中咗密碼，要受罰！</p>
-        <p className="text-gray-500 text-sm mt-1">共用咗 {guesses.length} 次</p>
+        <p className="text-gray-400 mt-2">{t('numberguess.lostDesc')}</p>
+        <p className="text-gray-500 text-sm mt-1">{t('numberguess.totalGuesses', { n: guesses.length })}</p>
         <div className="mt-4 bg-white/5 rounded-2xl px-6 py-3 inline-block">
-          <span className="text-gray-400 text-sm">密碼係 </span>
+          <span className="text-gray-400 text-sm">{t('numberguess.secretWas')} </span>
           <span className="text-white font-bold text-2xl">{secretRef.current}</span>
         </div>
       </div>
       {/* Guess recap */}
       {guesses.length > 0 && (
         <div className="w-full max-w-xs">
-          <p className="text-gray-500 text-xs mb-2 text-left">猜測記錄</p>
+          <p className="text-gray-500 text-xs mb-2 text-left">{t('numberguess.guessHistory')}</p>
           <div className="flex flex-col gap-1 max-h-48 overflow-y-auto">
             {guesses.map((g, i) => (
               <div
@@ -289,15 +294,15 @@ export default function NumberGuess() {
           onClick={startGame}
           className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl text-lg transition-colors"
         >
-          再玩一次 🎲
+          {t('numberguess.playAgain')}
         </button>
         <button
           onClick={() => setPhase('setup')}
           className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
         >
-          改範圍
+          {t('numberguess.changeRange')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">返主頁</Link>
+        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
       </div>
     </div>
   )
