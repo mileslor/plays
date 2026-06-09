@@ -1,12 +1,10 @@
 import { useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
 import Timer from '../components/Timer'
 
 type Phase = 'menu' | 'setup' | 'performer-out' | 'pick-target' | 'performer-back' | 'play' | 'reveal-secret'
-
-const SUGGESTED_ITEMS = ['杯', '書', '電話', '銀包', '筆', '鎖匙', '眼鏡', '遙控']
-const DARK_SIGNALS = ['黑色物品', '深色物品', '黑色嘅嘢', '暗色嘅嘢']
 
 interface GameState {
   items: string[]
@@ -17,7 +15,6 @@ interface GameState {
 }
 
 function buildPlayOrder(items: string[], targetIndex: number): number[] {
-  // Put some random items before signal, then signal(-1), then target, then rest
   const others = items.map((_, i) => i).filter(i => i !== targetIndex)
   const shuffle = (arr: number[]) => [...arr].sort(() => Math.random() - 0.5)
   const before = shuffle(others).slice(0, Math.min(3, others.length))
@@ -26,10 +23,14 @@ function buildPlayOrder(items: string[], targetIndex: number): number[] {
 }
 
 export default function BlackMagic() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<Phase>('menu')
   const [inputItems, setInputItems] = useState<string[]>(['', '', '', '', ''])
   const [game, setGame] = useState<GameState | null>(null)
   const [secretRevealed, setSecretRevealed] = useState(false)
+
+  const suggestedItems = t('blackmagic.suggestedItems', { returnObjects: true }) as string[]
+  const darkSignals = t('blackmagic.darkSignals', { returnObjects: true }) as string[]
 
   // ── Setup ──────────────────────────────────────────────────────────────
   const updateItem = (i: number, val: string) => {
@@ -46,10 +47,10 @@ export default function BlackMagic() {
       targetIndex: -1,
       playOrder: [],
       currentStep: 0,
-      signalLabel: DARK_SIGNALS[Math.floor(Math.random() * DARK_SIGNALS.length)],
+      signalLabel: darkSignals[Math.floor(Math.random() * darkSignals.length)],
     })
     setPhase('performer-out')
-  }, [inputItems])
+  }, [inputItems, darkSignals])
 
   const pickTarget = (idx: number) => {
     if (!game) return
@@ -68,29 +69,29 @@ export default function BlackMagic() {
     <div className="flex flex-col items-center text-center gap-8 py-8">
       <div>
         <div className="text-7xl mb-4">🖤</div>
-        <h1 className="text-4xl font-bold mb-2">黑魔法</h1>
-        <p className="text-gray-400 text-lg">心靈感應魔術系列</p>
+        <h1 className="text-4xl font-bold mb-2">{t('blackmagic.title')}</h1>
+        <p className="text-gray-400 text-lg">{t('blackmagic.tagline')}</p>
       </div>
       <div className="max-w-sm text-gray-300 text-sm leading-relaxed bg-white/5 rounded-2xl p-5 text-left">
-        <p className="font-semibold text-white mb-2">點玩？</p>
+        <p className="font-semibold text-white mb-2">{t('blackmagic.howToPlay')}</p>
         <ol className="list-decimal list-inside space-y-1">
-          <li>揀好一堆物品（用真實房間入面嘅嘢）</li>
-          <li>表演者離開，大家揀一件目標物品</li>
-          <li>助手拎住手機，逐一指向物品問「係唔係？」</li>
-          <li>表演者每次都答岩！</li>
+          <li>{t('blackmagic.rule1')}</li>
+          <li>{t('blackmagic.rule2')}</li>
+          <li>{t('blackmagic.rule3')}</li>
+          <li>{t('blackmagic.rule4')}</li>
         </ol>
       </div>
       <div className="flex flex-col gap-3 w-full max-w-xs">
         <button
           onClick={() => {
-            setInputItems(SUGGESTED_ITEMS.slice(0, 5).map(s => s))
+            setInputItems(suggestedItems.slice(0, 5))
             setPhase('setup')
           }}
           className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-colors"
         >
-          開始玩 →
+          {t('blackmagic.startBtn')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">← 返主頁</Link>
+        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('blackmagic.backHome')}</Link>
       </div>
     </div>
   )
@@ -98,9 +99,9 @@ export default function BlackMagic() {
   const renderSetup = () => (
     <div className="flex flex-col gap-6 py-4 max-w-sm mx-auto">
       <div>
-        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm mb-4 transition-colors">← 返回</button>
-        <h2 className="text-2xl font-bold">揀物品</h2>
-        <p className="text-gray-400 text-sm mt-1">輸入房間入面嘅物品（3–8件）</p>
+        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm mb-4 transition-colors">{t('blackmagic.back')}</button>
+        <h2 className="text-2xl font-bold">{t('blackmagic.setupTitle')}</h2>
+        <p className="text-gray-400 text-sm mt-1">{t('blackmagic.setupDesc')}</p>
       </div>
       <div className="flex flex-col gap-2">
         {inputItems.map((val, i) => (
@@ -109,7 +110,7 @@ export default function BlackMagic() {
             <input
               value={val}
               onChange={e => updateItem(i, e.target.value)}
-              placeholder={SUGGESTED_ITEMS[i] ?? '物品名稱'}
+              placeholder={suggestedItems[i] ?? t('blackmagic.itemPlaceholder')}
               className="flex-1 bg-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:bg-white/15 transition-colors"
             />
             {inputItems.length > 3 && (
@@ -118,7 +119,7 @@ export default function BlackMagic() {
           </div>
         ))}
         {inputItems.length < 8 && (
-          <button onClick={addItem} className="text-purple-400 hover:text-purple-300 text-sm py-2 transition-colors">+ 加多一件</button>
+          <button onClick={addItem} className="text-purple-400 hover:text-purple-300 text-sm py-2 transition-colors">{t('blackmagic.addItem')}</button>
         )}
       </div>
       <button
@@ -126,7 +127,7 @@ export default function BlackMagic() {
         disabled={inputItems.filter(s => s.trim()).length < 3}
         className="bg-purple-600 hover:bg-purple-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-4 rounded-2xl text-lg transition-colors"
       >
-        下一步 →
+        {t('blackmagic.next')}
       </button>
     </div>
   )
@@ -135,14 +136,14 @@ export default function BlackMagic() {
     <div className="flex flex-col items-center justify-center text-center gap-8 py-16">
       <div className="text-7xl animate-bounce">🚶</div>
       <div>
-        <h2 className="text-3xl font-bold mb-2">表演者請離開</h2>
-        <p className="text-gray-400">等佢行遠少少，唔見到手機先</p>
+        <h2 className="text-3xl font-bold mb-2">{t('blackmagic.performerOutTitle')}</h2>
+        <p className="text-gray-400">{t('blackmagic.performerOutDesc')}</p>
       </div>
       <button
         onClick={() => setPhase('pick-target')}
         className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-2xl text-lg transition-colors"
       >
-        表演者走咗，繼續 →
+        {t('blackmagic.performerGone')}
       </button>
     </div>
   )
@@ -150,8 +151,8 @@ export default function BlackMagic() {
   const renderPickTarget = () => (
     <div className="flex flex-col gap-6 py-4 max-w-sm mx-auto">
       <div className="text-center">
-        <h2 className="text-2xl font-bold">揀目標物品</h2>
-        <p className="text-gray-400 text-sm mt-1">大家一齊揀一件，唔好俾表演者知！</p>
+        <h2 className="text-2xl font-bold">{t('blackmagic.pickTargetTitle')}</h2>
+        <p className="text-gray-400 text-sm mt-1">{t('blackmagic.pickTargetDesc')}</p>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {game?.items.map((item, i) => (
@@ -171,14 +172,14 @@ export default function BlackMagic() {
     <div className="flex flex-col items-center justify-center text-center gap-8 py-16">
       <div className="text-7xl">👋</div>
       <div>
-        <h2 className="text-3xl font-bold mb-2">叫表演者返嚟</h2>
-        <p className="text-gray-400">準備好就開始！助手拎住手機，<br />逐一指向物品問「係唔係呢個？」</p>
+        <h2 className="text-3xl font-bold mb-2">{t('blackmagic.performerBackTitle')}</h2>
+        <p className="text-gray-400">{t('blackmagic.performerBackDesc')}</p>
       </div>
       <button
         onClick={startPlay}
         className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 px-10 rounded-2xl text-lg transition-colors"
       >
-        開始！
+        {t('blackmagic.startGame')}
       </button>
     </div>
   )
@@ -197,20 +198,20 @@ export default function BlackMagic() {
         <div className="flex flex-col items-center text-center gap-8 py-16">
           <div className="text-7xl">✨</div>
           <div>
-            <h2 className="text-3xl font-bold mb-2">表演者已經答岩！</h2>
-            <p className="text-gray-400">目標係：<span className="text-white font-bold">{items[game.targetIndex]}</span></p>
+            <h2 className="text-3xl font-bold mb-2">{t('blackmagic.finishTitle')}</h2>
+            <p className="text-gray-400">{t('blackmagic.finishTarget', { item: items[game.targetIndex] })}</p>
           </div>
           <div className="flex flex-col gap-3 w-full max-w-xs">
             <button onClick={() => setPhase('reveal-secret')} className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 rounded-2xl text-lg transition-colors">
-              揭曉秘密 🔓
+              {t('blackmagic.revealSecretBtn')}
             </button>
             <button
               onClick={() => { setGame({ ...game, currentStep: 0, playOrder: [] }); setPhase('performer-out') }}
               className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
             >
-              再玩一次
+              {t('blackmagic.playAgain')}
             </button>
-            <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm transition-colors">返主頁</button>
+            <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('blackmagic.backMenu')}</button>
           </div>
         </div>
       )
@@ -220,7 +221,7 @@ export default function BlackMagic() {
 
     return (
       <div className="flex flex-col items-center text-center gap-8 py-8 max-w-sm mx-auto">
-        <div className="text-sm text-gray-500">步驟 {currentStep + 1} / {playOrder.length}</div>
+        <div className="text-sm text-gray-500">{t('blackmagic.stepProgress', { current: currentStep + 1, total: playOrder.length })}</div>
         <Timer key={currentStep} seconds={30} onExpire={advance} />
 
         {/* Current item card */}
@@ -235,25 +236,23 @@ export default function BlackMagic() {
         >
           {isSignal && <div className="text-4xl mb-3">🖤</div>}
           <div className="text-4xl font-bold text-white">{itemName}</div>
-          {isSignal && <div className="text-gray-500 text-sm mt-2">指向呢件黑色/深色嘅嘢</div>}
-          {isSignal && <div className="text-yellow-400 text-sm mt-1 font-semibold">👆 下一件就係目標！</div>}
-          {isTarget && <div className="text-purple-200 text-sm mt-2">✅ 呢件就係！正常指向佢</div>}
+          {isSignal && <div className="text-gray-500 text-sm mt-2">{t('blackmagic.signalLabel')}</div>}
+          {isSignal && <div className="text-yellow-400 text-sm mt-1 font-semibold">{t('blackmagic.signalNext')}</div>}
+          {isTarget && <div className="text-purple-200 text-sm mt-2">{t('blackmagic.targetNote')}</div>}
         </div>
 
         {/* Guidance */}
         <div className="text-gray-400 text-sm">
           {isSignal
-            ? '指向附近任何黑色/深色物品，問「係唔係呢個？」'
-            : isTarget
-            ? '指向「' + itemName + '」，問「係唔係呢個？」'
-            : '指向「' + itemName + '」，問「係唔係呢個？」'}
+            ? t('blackmagic.signalHint')
+            : t('blackmagic.itemHint', { item: itemName })}
         </div>
 
         <button
           onClick={advance}
           className="w-full bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-2xl text-lg transition-colors"
         >
-          {isTarget ? '表演者答係！結束 ✓' : '下一件 →'}
+          {isTarget ? t('blackmagic.done') : t('blackmagic.nextItem')}
         </button>
       </div>
     )
@@ -263,22 +262,19 @@ export default function BlackMagic() {
     <div className="flex flex-col items-center text-center gap-8 py-8 max-w-sm mx-auto">
       <div className="text-6xl">🔮</div>
       <div>
-        <h2 className="text-2xl font-bold mb-2">秘密揭曉</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('blackmagic.revealTitle')}</h2>
         {!secretRevealed ? (
           <>
-            <p className="text-gray-400 text-sm mb-6">確定要睇秘密？睇完就唔神秘喇！</p>
+            <p className="text-gray-400 text-sm mb-6">{t('blackmagic.confirmReveal')}</p>
             <button onClick={() => setSecretRevealed(true)} className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-8 rounded-2xl transition-colors">
-              睇秘密！
+              {t('blackmagic.seeSecret')}
             </button>
           </>
         ) : (
           <div className="bg-white/10 rounded-2xl p-6 text-left mt-2">
-            <p className="text-white font-semibold mb-3">🖤 黑魔法嘅暗號</p>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              助手喺指向目標之前，會先指一件<span className="text-white font-bold">黑色/深色</span>嘅物品。
-              表演者見到「黑色物品」就知道：<span className="text-purple-300 font-bold">下一件就係答案！</span>
-            </p>
-            <p className="text-gray-500 text-xs">小提示：下次可以試試用唔同顏色作暗號，令人更難識穿！</p>
+            <p className="text-white font-semibold mb-3">{t('blackmagic.secretTitle')}</p>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">{t('blackmagic.secretDesc')}</p>
+            <p className="text-gray-500 text-xs">{t('blackmagic.secretTip')}</p>
           </div>
         )}
       </div>
@@ -287,9 +283,9 @@ export default function BlackMagic() {
           onClick={() => { setGame(g => g ? { ...g, currentStep: 0, playOrder: [] } : null); setSecretRevealed(false); setPhase('performer-out') }}
           className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
         >
-          再玩一次
+          {t('blackmagic.playAgain')}
         </button>
-        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm transition-colors">返主頁</button>
+        <button onClick={() => setPhase('menu')} className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('blackmagic.backMenu')}</button>
       </div>
     </div>
   )
