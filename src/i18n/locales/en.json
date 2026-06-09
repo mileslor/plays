@@ -185,6 +185,7 @@
     "result": "🎉 {{item}} 🎉",
     "again": "Spin Again",
     "modify": "Edit Items",
-    "needAtLeastTwo": "Need at least 2 items"
+    "needAtLeastTwo": "Need at least 2 items",
+    "removeWinner": "Remove Winner"
   }
 }

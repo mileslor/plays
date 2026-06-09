@@ -185,6 +185,7 @@
     "result": "🎉 {{item}} 🎉",
     "again": "Girar de nuevo",
     "modify": "Editar opciones",
-    "needAtLeastTwo": "Se necesitan al menos 2 opciones"
+    "needAtLeastTwo": "Se necesitan al menos 2 opciones",
+    "removeWinner": "Eliminar ganador"
   }
 }

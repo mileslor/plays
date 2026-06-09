@@ -185,6 +185,7 @@
     "result": "🎉 {{item}} 🎉",
     "again": "Girar novamente",
     "modify": "Editar itens",
-    "needAtLeastTwo": "Precisa de pelo menos 2 itens"
+    "needAtLeastTwo": "Precisa de pelo menos 2 itens",
+    "removeWinner": "Remover vencedor"
   }
 }

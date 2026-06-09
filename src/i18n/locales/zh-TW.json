@@ -185,6 +185,7 @@
     "result": "🎉 {{item}} 🎉",
     "again": "再轉一次",
     "modify": "修改項目",
-    "needAtLeastTwo": "至少需要 2 個項目"
+    "needAtLeastTwo": "至少需要 2 個項目",
+    "removeWinner": "移除勝出者"
   }
 }

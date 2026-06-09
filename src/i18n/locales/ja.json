@@ -185,6 +185,7 @@
     "result": "🎉 {{item}} 🎉",
     "again": "もう一回",
     "modify": "項目を編集",
-    "needAtLeastTwo": "2項目以上が必要です"
+    "needAtLeastTwo": "2項目以上が必要です",
+    "removeWinner": "勝者を除外"
   }
 }

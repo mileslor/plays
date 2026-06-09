@@ -223,6 +223,20 @@ export default function WheelOfFortune() {
             </button>
           )}
         </div>
+        {result && !spinning && items.length > 1 && (
+          <button
+            onClick={() => {
+              const next = items.filter(i => i !== result)
+              setItems(next)
+              setResult(null)
+              rotationRef.current = -Math.PI / 2
+              if (canvasRef.current) drawWheel(canvasRef.current, next, rotationRef.current)
+            }}
+            className="text-sm text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors"
+          >
+            ✕ {t('wheel.removeWinner')}
+          </button>
+        )}
       </div>
     </Layout>
   )
