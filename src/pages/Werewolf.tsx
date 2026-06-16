@@ -560,12 +560,23 @@ export default function Werewolf() {
       {/* ── DAY ── */}
       {phase === 'day' && (
         <div className="max-w-sm mx-auto">
-          <Timer seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
-
-          {/* Speaker Order Indicator */}
-          <div className="mb-4">
-            <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">{t('speaker.speechOrder')}</p>
-            <div className="flex gap-2 overflow-x-auto pb-2">
+          {/* Speaker Progress Indicator */}
+          <div className="bg-gray-900 rounded-2xl p-4 mb-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs text-gray-400 font-medium">
+                {t('speaker.speakerProgress', { current: speakerOrder.length, total: alivePlayers.length })}
+              </span>
+              {speakerOrder.length === alivePlayers.length && (
+                <span className="text-xs text-green-400 font-bold">✅</span>
+              )}
+            </div>
+            <div className="w-full bg-gray-700 rounded-full h-1.5 mb-3">
+              <div
+                className="bg-blue-500 h-1.5 rounded-full transition-all duration-300"
+                style={{ width: `${alivePlayers.length > 0 ? (speakerOrder.length / alivePlayers.length) * 100 : 0}%` }}
+              />
+            </div>
+            <div className="flex flex-wrap gap-2">
               {alivePlayers.map((p, idx) => {
                 const spoken = spokenIds.has(p.id)
                 const skipped = skippedSpeakers.has(p.id)
@@ -573,25 +584,26 @@ export default function Werewolf() {
                 return (
                   <div
                     key={p.id}
-                    className={`
-                      flex-shrink-0 px-3 py-1.5 rounded-full text-sm whitespace-nowrap border-2 transition-all
-                      ${current
-                        ? 'border-yellow-400 bg-yellow-900/50 text-yellow-300 font-bold'
+                    className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                      current
+                        ? 'bg-blue-600 text-white ring-2 ring-blue-400'
                         : spoken
                           ? skipped
-                            ? 'bg-gray-800 border-gray-700 text-gray-500 line-through italic'
-                            : 'bg-gray-700 border-gray-600 text-gray-400'
-                          : 'bg-blue-900/40 border-blue-700 text-blue-300'
-                      }
-                    `}
+                            ? 'bg-gray-800 border border-gray-700 text-gray-500 line-through'
+                            : 'bg-green-900/50 border border-green-700 text-green-300'
+                          : 'bg-gray-800 border border-gray-600 text-gray-400'
+                    }`}
                   >
-                    {t('undercover.playerN', { n: p.id })}
-                    {spoken && (skipped ? t('speaker.skipped') : ' ✓')}
+                    {current && '🎤 '}
+                    {spoken && !current && !skipped && '✅ '}
+                    <span>{t('undercover.playerN', { n: p.id })}</span>
                   </div>
                 )
               })}
             </div>
           </div>
+
+          <Timer seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
 
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
