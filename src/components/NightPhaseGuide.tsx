@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 interface NightPhaseGuideProps {
-  phase: 'werewolf' | 'witch' | 'seer'
+  phase: 'werewolf' | 'witch' | 'seer' | 'hunter'
   title: string
   hint?: string
 }
@@ -10,6 +10,7 @@ const PHASE_CONFIG = {
   werewolf: { emoji: '🐺', bg: 'bg-red-950/80', border: 'border-red-800/60' },
   seer: { emoji: '🔮', bg: 'bg-purple-950/80', border: 'border-purple-800/60' },
   witch: { emoji: '🧙♀️', bg: 'bg-emerald-950/80', border: 'border-emerald-800/60' },
+  hunter: { emoji: '🏹', bg: 'bg-orange-950/80', border: 'border-orange-800/60' },
 }
 
 export default function NightPhaseGuide({ phase, title, hint }: NightPhaseGuideProps) {

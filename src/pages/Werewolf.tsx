@@ -719,11 +719,11 @@ export default function Werewolf() {
       {/* ── HUNTER SHOT ── */}
       {phase === 'hunter_shot' && (
         <div className="max-w-sm mx-auto text-center">
-          <div className="text-5xl mb-4">🏹</div>
-          <h2 className="text-xl font-bold mb-2">
-            {t('undercover.playerN', { n: eliminatedPlayer?.id })} — {t('werewolf.role_hunter')}
-          </h2>
-          <p className="text-gray-400 mb-6">{t('werewolf.hunterShot')}</p>
+          <NightPhaseGuide
+            phase="hunter"
+            title={t('werewolf.hunterShot')}
+            hint={eliminatedPlayer ? `${t('werewolf.role_hunter')} — ${t('undercover.playerN', { n: eliminatedPlayer.id })}` : t('werewolf.role_hunter')}
+          />
           <div className="grid grid-cols-2 gap-3 mb-4">
             {alivePlayers.map((p) => (
               <button key={p.id} onClick={() => setHunterTarget(p.id)}
