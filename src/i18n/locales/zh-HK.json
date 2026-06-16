@@ -72,6 +72,7 @@
   },
   "speaker": {
     "speechOrder": "發言順序",
+    "speakerProgress": "📋 發言進度：{{current}}/{{total}}",
     "spoken": "已發言",
     "current": "發言中",
     "waiting": "等待發言",

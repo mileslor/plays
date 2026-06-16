@@ -46,6 +46,7 @@
   },
   "speaker": {
     "speechOrder": "发言顺序",
+    "speakerProgress": "📋 发言进度：{{current}}/{{total}}",
     "spoken": "已发言",
     "current": "发言中",
     "waiting": "等待发言",

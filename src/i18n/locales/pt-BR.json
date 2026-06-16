@@ -72,6 +72,7 @@
   },
   "speaker": {
     "speechOrder": "Ordem de fala",
+    "speakerProgress": "📋 {{current}}/{{total}} falaram",
     "spoken": "Falou",
     "current": "Falando",
     "waiting": "Aguardando",

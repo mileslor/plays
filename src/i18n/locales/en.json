@@ -72,6 +72,7 @@
   },
   "speaker": {
     "speechOrder": "Speaking Order",
+    "speakerProgress": "📋 {{current}}/{{total}} spoken",
     "spoken": "Spoken",
     "current": "Speaking",
     "waiting": "Waiting",
