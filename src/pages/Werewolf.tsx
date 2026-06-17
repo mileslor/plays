@@ -603,7 +603,7 @@ export default function Werewolf() {
             </div>
           </div>
 
-          <Timer seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
+          <Timer key={currentSpeakerIndex} seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
 
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
