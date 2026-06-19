@@ -149,7 +149,15 @@
     "hunterShootConfirm": "🏹 射 {{n}} 號",
     "antidote": "解藥",
     "poison": "毒藥",
-    "used": "已用"
+    "used": "已用",
+    "speakingTracker": {
+      "title": "發言順序",
+      "spoken": "已發言",
+      "notSpoken": "未發言",
+      "currentlySpeaking": "而家發言緊",
+      "skip": "跳過",
+      "resetAll": "全部重置"
+    }
   },
   "games": {
     "undercover": {

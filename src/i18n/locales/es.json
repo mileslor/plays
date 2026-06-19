@@ -177,7 +177,15 @@
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
     "antidote": "Antidote",
     "poison": "Poison",
-    "used": "Used"
+    "used": "Used",
+    "speakingTracker": {
+      "title": "Orden de Habla",
+      "spoken": "Hablado",
+      "notSpoken": "Sin hablar",
+      "currentlySpeaking": "Hablando ahora",
+      "skip": "Saltar",
+      "resetAll": "Reiniciar todo"
+    }
   },
   "wheel": {
     "title": "Ruleta de la Suerte",

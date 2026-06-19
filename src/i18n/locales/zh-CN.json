@@ -124,7 +124,15 @@
     "hunterShootConfirm": "🏹 射杀玩家 {{n}}",
     "antidote": "解药",
     "poison": "毒药",
-    "used": "已用"
+    "used": "已用",
+    "speakingTracker": {
+      "title": "发言顺序",
+      "spoken": "已发言",
+      "notSpoken": "未发言",
+      "currentlySpeaking": "正在发言",
+      "skip": "跳过",
+      "resetAll": "全部重置"
+    }
   },
   "undercover": {
     "difficulty": {

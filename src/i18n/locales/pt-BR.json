@@ -177,7 +177,15 @@
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
     "antidote": "Antidote",
     "poison": "Poison",
-    "used": "Used"
+    "used": "Used",
+    "speakingTracker": {
+      "title": "Ordem de Fala",
+      "spoken": "Falou",
+      "notSpoken": "Não falou",
+      "currentlySpeaking": "Falando agora",
+      "skip": "Pular",
+      "resetAll": "Resetar tudo"
+    }
   },
   "wheel": {
     "title": "Roda da Sorte",

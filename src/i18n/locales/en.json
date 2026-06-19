@@ -177,7 +177,15 @@
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
     "antidote": "Antidote",
     "poison": "Poison",
-    "used": "Used"
+    "used": "Used",
+    "speakingTracker": {
+      "title": "Speaking Order",
+      "spoken": "Spoken",
+      "notSpoken": "Not spoken",
+      "currentlySpeaking": "Now speaking",
+      "skip": "Skip",
+      "resetAll": "Reset all"
+    }
   },
   "wheel": {
     "title": "Wheel of Fortune",

@@ -177,7 +177,15 @@
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
     "antidote": "Antidote",
     "poison": "Poison",
-    "used": "Used"
+    "used": "Used",
+    "speakingTracker": {
+      "title": "发言順序",
+      "spoken": "発言済み",
+      "notSpoken": "未発言",
+      "currentlySpeaking": "発言中",
+      "skip": "スキップ",
+      "resetAll": "全てリセット"
+    }
   },
   "wheel": {
     "title": "ルーレット",
