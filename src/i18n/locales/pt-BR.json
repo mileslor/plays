@@ -68,7 +68,9 @@
   "timer": {
     "speechTime": "Tempo de fala",
     "voteTime": "Tempo de votar",
-    "timeUp": "Tempo esgotado!"
+    "timeUp": "Tempo esgotado!",
+    "pause": "⏸ Pausar",
+    "resume": "▶ Retomar"
   },
   "speaker": {
     "speechOrder": "Ordem de fala",

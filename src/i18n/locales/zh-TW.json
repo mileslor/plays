@@ -68,7 +68,9 @@
   "timer": {
     "speechTime": "發言時間",
     "voteTime": "投票時間",
-    "timeUp": "時間到！"
+    "timeUp": "時間到！",
+    "pause": "⏸ 暫停",
+    "resume": "▶ 繼續"
   },
   "speaker": {
     "speechOrder": "發言順序",

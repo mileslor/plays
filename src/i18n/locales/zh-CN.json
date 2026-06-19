@@ -45,7 +45,9 @@
   "timer": {
     "speechTime": "发言时间",
     "voteTime": "投票时间",
-    "timeUp": "时间到！"
+    "timeUp": "时间到！",
+    "pause": "⏸ 暂停",
+    "resume": "▶ 继续"
   },
   "speaker": {
     "speechOrder": "发言顺序",

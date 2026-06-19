@@ -2,7 +2,7 @@ import { useState, useRef, useMemo, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
-import Timer from '../components/Timer'
+import Timer, { type TimerHandle } from '../components/Timer'
 import NightPhaseGuide from '../components/NightPhaseGuide'
 import { ROLE_CONFIG, PRESETS, type WerewolfRole } from '../data/werewolfRoles'
 
@@ -66,6 +66,8 @@ export default function Werewolf() {
   const [speakerOrder, setSpeakerOrder] = useState<number[]>([])
   const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0)
   const [skippedSpeakers, setSkippedSpeakers] = useState<Set<number>>(new Set())
+  const [timerPaused, setTimerPaused] = useState(false)
+  const dayTimerRef = useRef<TimerHandle>(null)
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -219,9 +221,9 @@ export default function Werewolf() {
   const advanceToNextSpeaker = () => {
     const next = currentSpeakerIndex + 1
     if (next >= alivePlayers.length) {
-      // All have spoken — go to voting
       setPhase('voting')
     } else {
+      setTimerPaused(false)
       setCurrentSpeakerIndex(next)
     }
   }
@@ -259,6 +261,17 @@ export default function Werewolf() {
     setSpeakerOrder([])
     setCurrentSpeakerIndex(0)
     setSkippedSpeakers(new Set())
+    setTimerPaused(false)
+  }
+
+  const toggleTimerPause = () => {
+    if (timerPaused) {
+      dayTimerRef.current?.resume()
+      setTimerPaused(false)
+    } else {
+      dayTimerRef.current?.pause()
+      setTimerPaused(true)
+    }
   }
 
   const handleHunterShoot = (targetId: number | null) => {
@@ -603,7 +616,15 @@ export default function Werewolf() {
             </div>
           </div>
 
-          <Timer key={currentSpeakerIndex} seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
+          <Timer ref={dayTimerRef} key={currentSpeakerIndex} seconds={60} onExpire={markCurrentSpeakerDone} label={t('timer.speechTime')} />
+          <div className="flex justify-center mb-2">
+            <button
+              onClick={toggleTimerPause}
+              className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-700 transition-colors"
+            >
+              {timerPaused ? t('timer.resume') : t('timer.pause')}
+            </button>
+          </div>
 
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
