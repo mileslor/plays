@@ -175,9 +175,9 @@
     "witchDeclinedSave": "Antídoto no usado",
     "witchPoisonedConfirm": "☠️ Jugador {{n}} envenenado",
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
-    "antidote": "Antidote",
-    "poison": "Poison",
-    "used": "Used",
+    "antidote": "Antídoto",
+    "poison": "Veneno",
+    "used": "Usado",
     "speakingTracker": {
       "title": "Orden de Habla",
       "spoken": "Hablado",

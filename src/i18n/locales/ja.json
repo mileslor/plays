@@ -175,9 +175,9 @@
     "witchDeclinedSave": "解毒薬スキップ",
     "witchPoisonedConfirm": "☠️ プレイヤー{{n}}に毒を盛った",
     "hunterShootConfirm": "🏹 Shoot player {{n}}",
-    "antidote": "Antidote",
-    "poison": "Poison",
-    "used": "Used",
+    "antidote": "解毒薬",
+    "poison": "毒薬",
+    "used": "使用済み",
     "speakingTracker": {
       "title": "发言順序",
       "spoken": "発言済み",
