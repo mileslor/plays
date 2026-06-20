@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
 import Timer, { type TimerHandle } from '../components/Timer'
 import NightPhaseGuide from '../components/NightPhaseGuide'
+import WitchPotionStatus from '../components/WitchPotionStatus'
 import { ROLE_CONFIG, PRESETS, type WerewolfRole } from '../data/werewolfRoles'
 
 type Phase =
@@ -468,14 +469,7 @@ export default function Werewolf() {
         <div className="max-w-sm mx-auto">
           <NightPhaseGuide phase="witch" title={t('werewolf.witchOpen')} hint={t('werewolf.witchHint')} />
           {/* 解藥/毒藥狀態 */}
-          <div className="flex gap-3 justify-center mb-4">
-            <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${witchSaveUsed ? 'bg-gray-800 text-gray-500 line-through' : 'bg-green-900 text-green-300'}`}>
-              💊 {t('werewolf.antidote')} {witchSaveUsed ? t('werewolf.used') : '✓'}
-            </span>
-            <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${witchPoisonUsed ? 'bg-gray-800 text-gray-500 line-through' : 'bg-red-900 text-red-300'}`}>
-              ☠️ {t('werewolf.poison')} {witchPoisonUsed ? t('werewolf.used') : '✓'}
-            </span>
-          </div>
+          <WitchPotionStatus witchSaveUsed={witchSaveUsed} witchPoisonUsed={witchPoisonUsed} />
 
           {/* Save */}
           {wolfTarget !== null && !witchSaveUsed && !witchSaved && !witchDeclinedSave && (
