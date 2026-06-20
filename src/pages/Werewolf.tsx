@@ -579,9 +579,19 @@ export default function Werewolf() {
               <span className="text-xs text-gray-400 font-medium">
                 {t('speaker.speakerProgress', { current: speakerOrder.length, total: alivePlayers.length })}
               </span>
-              {speakerOrder.length === alivePlayers.length && (
-                <span className="text-xs text-green-400 font-bold">✅</span>
-              )}
+              <div className="flex items-center gap-2">
+                {speakerOrder.length === alivePlayers.length && (
+                  <span className="text-xs text-green-400 font-bold">✅</span>
+                )}
+                {speakerOrder.length > 0 && (
+                  <button
+                    onClick={clearSpeakerState}
+                    className="text-xs text-gray-500 hover:text-gray-300 transition-colors px-2 py-0.5 rounded border border-gray-700 hover:border-gray-500"
+                  >
+                    ↺ {t('speakingTracker.resetAll')}
+                  </button>
+                )}
+              </div>
             </div>
             <div className="w-full bg-gray-700 rounded-full h-1.5 mb-3">
               <div
