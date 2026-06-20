@@ -645,7 +645,10 @@ export default function Werewolf() {
           </div>
 
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
+            <div>
+              <h2 className="text-xl font-bold">{t('werewolf.dayPhase')}</h2>
+              <p className="text-xs text-gray-500">{t('werewolf.roundN', { n: night })}</p>
+            </div>
             <span className="text-sm text-gray-400">
               {t('werewolf.alive')} {alivePlayers.length}
             </span>
