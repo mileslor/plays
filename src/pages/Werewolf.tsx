@@ -557,9 +557,23 @@ export default function Werewolf() {
               {nightDead.length === 0 ? (
                 <p className="text-xl text-gray-300 mb-8">{t('werewolf.peacefulNight')}</p>
               ) : (
-                <p className="text-xl mb-8">
-                  {t('werewolf.died', { names: nightDead.map((id) => t('undercover.playerN', { n: id })).join(', ') })}
-                </p>
+                <div className="mb-8">
+                  {nightDead.map((id) => {
+                    const dead = players.find((p) => p.id === id)
+                    if (!dead) return null
+                    const cfg = rc(dead.role)
+                    return (
+                      <div key={id} className="bg-gray-900 rounded-2xl p-4 mb-3 flex items-center gap-4">
+                        <span className="text-4xl">{cfg.emoji}</span>
+                        <div className="text-left">
+                          <p className="text-sm text-gray-400">{t('undercover.playerN', { n: id })}</p>
+                          <p className={`text-lg font-bold ${cfg.color}`}>{t(`werewolf.role_${dead.role}`)}</p>
+                        </div>
+                        <span className="ml-auto text-gray-500 text-2xl">💀</span>
+                      </div>
+                    )
+                  })}
+                </div>
               )}
               <button onClick={() => { clearSpeakerState(); setPhase('day') }}
                 className="w-full py-4 bg-yellow-700 hover:bg-yellow-600 rounded-2xl font-bold text-lg transition-colors">
