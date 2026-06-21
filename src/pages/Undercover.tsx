@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { getRandomPair, type Difficulty } from '../data/undercoverWords'
@@ -54,6 +54,10 @@ export default function Undercover() {
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    setUndercoverCount((n) => Math.min(n, Math.floor(playerCount / 2)))
+  }, [playerCount])
 
   const startGame = () => {
     const pair = getRandomPair(gameLang, selectedDifficulty)
