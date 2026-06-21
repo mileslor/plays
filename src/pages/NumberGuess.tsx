@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
@@ -24,6 +24,12 @@ export default function NumberGuess() {
   const [guesserName, setGuesserName] = useState('')
   const [guessValue, setGuessValue] = useState('')
   const [loser, setLoser] = useState('')
+
+  useEffect(() => {
+    if (phase === 'play' && currentMin === currentMax) {
+      setGuessValue(String(currentMin))
+    }
+  }, [currentMin, currentMax, phase])
 
   const startGame = () => {
     const min = Math.max(1, rangeMin)
