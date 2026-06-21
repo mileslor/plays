@@ -199,7 +199,6 @@ export default function Undercover() {
   }
 
   const alivePlayers = players.filter((p) => p.alive)
-  const remainingSpies = alivePlayers.filter((p) => p.role === 'undercover').length
 
   const roleColor = (role: Role) =>
     ({ civilian: 'text-blue-400', undercover: 'text-red-400', whiteboard: 'text-gray-400' }[role])
@@ -330,11 +329,6 @@ export default function Undercover() {
       {/* ── ROUND ── */}
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
-          <div className="flex justify-end mb-3">
-            <span className={`px-3 py-1 rounded-full text-sm font-bold ${remainingSpies === 0 ? 'bg-green-900/60 border border-green-700 text-green-300' : 'bg-red-900/60 border border-red-700 text-red-300'}`}>
-              {remainingSpies === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remainingSpies })}
-            </span>
-          </div>
           <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
           <div className="mb-4 text-center">
             {(() => {
