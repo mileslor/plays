@@ -225,15 +225,18 @@ export default function Undercover() {
           <div className="bg-gray-900 rounded-2xl p-5 mb-3">
             <label className="text-sm text-gray-400 block mb-3">{t('undercover.difficulty.label')}</label>
             <div className="flex gap-2">
-              {(['easy', 'medium', 'hard'] as Difficulty[]).map((d) => (
-                <button
-                  key={d}
-                  onClick={() => setSelectedDifficulty(d)}
-                  className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-colors ${selectedDifficulty === d ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
-                >
-                  {t(`undercover.difficulty.${d}`)}
-                </button>
-              ))}
+              {(['easy', 'medium', 'hard'] as Difficulty[]).map((d) => {
+                const activeColor = d === 'easy' ? 'bg-green-600 text-white' : d === 'medium' ? 'bg-yellow-500 text-black' : 'bg-red-600 text-white'
+                return (
+                  <button
+                    key={d}
+                    onClick={() => setSelectedDifficulty(d)}
+                    className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-colors ${selectedDifficulty === d ? activeColor : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
+                  >
+                    {t(`undercover.difficulty.${d}`)}
+                  </button>
+                )
+              })}
             </div>
           </div>
 
