@@ -63,6 +63,7 @@
     "title": "狼人杀",
     "setup": "角色设定",
     "preset": "快速配置",
+    "customRoles": "自定义角色",
     "startGame": "开始！",
     "role_werewolf": "狼人",
     "role_villager": "平民",

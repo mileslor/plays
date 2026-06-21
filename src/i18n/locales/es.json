@@ -117,6 +117,7 @@
     "title": "Hombre Lobo",
     "setup": "Configurar roles",
     "preset": "Configuración rápida",
+    "customRoles": "Roles personalizados",
     "startGame": "¡Empezar!",
     "role_werewolf": "Hombre Lobo",
     "role_villager": "Aldeano",

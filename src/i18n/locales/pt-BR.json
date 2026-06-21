@@ -117,6 +117,7 @@
     "title": "Lobisomem",
     "setup": "Configurar papéis",
     "preset": "Configuração rápida",
+    "customRoles": "Funções personalizadas",
     "startGame": "Começar!",
     "role_werewolf": "Lobisomem",
     "role_villager": "Aldeão",

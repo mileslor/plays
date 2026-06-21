@@ -117,6 +117,7 @@
     "title": "Werewolf",
     "setup": "Role Setup",
     "preset": "Quick Setup",
+    "customRoles": "Custom Roles",
     "startGame": "Start!",
     "role_werewolf": "Werewolf",
     "role_villager": "Villager",

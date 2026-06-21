@@ -117,6 +117,7 @@
     "title": "人狼",
     "setup": "役職設定",
     "preset": "クイック設定",
+    "customRoles": "カスタム役職",
     "startGame": "ゲームスタート！",
     "role_werewolf": "人狼",
     "role_villager": "村人",
