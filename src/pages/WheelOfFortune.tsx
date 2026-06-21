@@ -77,6 +77,7 @@ export default function WheelOfFortune() {
   const [items, setItems] = useState<string[]>([])
   const [spinning, setSpinning] = useState(false)
   const [result, setResult] = useState<string | null>(null)
+  const [winners, setWinners] = useState<string[]>([])
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const rotationRef = useRef(-Math.PI / 2)
   const animRef = useRef(0)
@@ -89,6 +90,7 @@ export default function WheelOfFortune() {
   const goToSpin = () => {
     setItems(parsedItems)
     setResult(null)
+    setWinners([])
     rotationRef.current = -Math.PI / 2
     setPhase('spin')
   }
@@ -227,6 +229,7 @@ export default function WheelOfFortune() {
           <button
             onClick={() => {
               const next = items.filter(i => i !== result)
+              setWinners(prev => [...prev, result!])
               setItems(next)
               setResult(null)
               rotationRef.current = -Math.PI / 2
@@ -236,6 +239,19 @@ export default function WheelOfFortune() {
           >
             ✕ {t('wheel.removeWinner')}
           </button>
+        )}
+        {winners.length > 0 && (
+          <div className="w-full max-w-xs mt-1">
+            <p className="text-gray-500 text-xs mb-2">{t('wheel.pastWinners')}</p>
+            <div className="flex flex-col gap-1">
+              {winners.map((w, i) => (
+                <div key={i} className="flex items-center gap-2 bg-white/5 rounded-xl px-3 py-2">
+                  <span className="text-yellow-500 text-xs font-bold w-5 text-right">{i + 1}.</span>
+                  <span className="text-white text-sm">{w}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </Layout>

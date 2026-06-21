@@ -201,7 +201,8 @@
     "again": "Girar novamente",
     "modify": "Editar itens",
     "needAtLeastTwo": "Precisa de pelo menos 2 itens",
-    "removeWinner": "Remover vencedor"
+    "removeWinner": "Remover vencedor",
+    "pastWinners": "Vencedores anteriores"
   },
   "numberguess": {
     "title": "Código Secreto",

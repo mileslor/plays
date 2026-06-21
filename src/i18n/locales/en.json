@@ -201,7 +201,8 @@
     "again": "Spin Again",
     "modify": "Edit Items",
     "needAtLeastTwo": "Need at least 2 items",
-    "removeWinner": "Remove Winner"
+    "removeWinner": "Remove Winner",
+    "pastWinners": "Past Winners"
   },
   "numberguess": {
     "title": "Number Bomb",
