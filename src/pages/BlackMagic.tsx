@@ -84,7 +84,8 @@ export default function BlackMagic() {
       <div className="flex flex-col gap-3 w-full max-w-xs">
         <button
           onClick={() => {
-            setInputItems(suggestedItems.slice(0, 5))
+            const shuffled = [...suggestedItems].sort(() => Math.random() - 0.5)
+            setInputItems(shuffled.slice(0, 5))
             setPhase('setup')
           }}
           className="bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-colors"
