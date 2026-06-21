@@ -157,7 +157,8 @@
       "currentlySpeaking": "而家發言緊",
       "skip": "跳過",
       "resetAll": "全部重置"
-    }
+    },
+    "totalNights": "共 {{n}} 夜"
   },
   "games": {
     "undercover": {
@@ -184,6 +185,7 @@
   "lang": {
     "zh-HK": "繁中（港）",
     "zh-TW": "繁中（台）",
+    "zh-CN": "簡中",
     "en": "English",
     "es": "Español",
     "pt-BR": "Português",

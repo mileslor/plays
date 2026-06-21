@@ -133,7 +133,8 @@
       "skip": "跳过",
       "resetAll": "全部重置"
     },
-    "tapAgain": "再点一下！"
+    "tapAgain": "再点一下！",
+    "totalNights": "共 {{n}} 夜"
   },
   "undercover": {
     "difficulty": {
