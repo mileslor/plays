@@ -107,6 +107,7 @@
   "lang": {
     "zh-HK": "繁中（港）",
     "zh-TW": "繁中（台）",
+    "zh-CN": "簡中",
     "en": "English",
     "es": "Español",
     "pt-BR": "Português",
@@ -186,7 +187,8 @@
       "skip": "跳過",
       "resetAll": "全部重置"
     },
-    "tapAgain": "再點一次！"
+    "tapAgain": "再點一次！",
+    "totalNights": "共 {{n}} 夜"
   },
   "wheel": {
     "title": "轉輪盤",

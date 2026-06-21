@@ -107,6 +107,7 @@
   "lang": {
     "zh-HK": "繁中（港）",
     "zh-TW": "繁中（台）",
+    "zh-CN": "简中",
     "en": "English",
     "es": "Español",
     "pt-BR": "Português",
@@ -186,7 +187,8 @@
       "skip": "Skip",
       "resetAll": "Reset all"
     },
-    "tapAgain": "One more tap!"
+    "tapAgain": "One more tap!",
+    "totalNights": "{{n}} nights total"
   },
   "wheel": {
     "title": "Wheel of Fortune",

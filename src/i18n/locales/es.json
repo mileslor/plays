@@ -107,6 +107,7 @@
   "lang": {
     "zh-HK": "繁中（港）",
     "zh-TW": "繁中（台）",
+    "zh-CN": "简中",
     "en": "English",
     "es": "Español",
     "pt-BR": "Português",
@@ -186,7 +187,8 @@
       "skip": "Saltar",
       "resetAll": "Reiniciar todo"
     },
-    "tapAgain": "¡Otra vez!"
+    "tapAgain": "¡Otra vez!",
+    "totalNights": "{{n}} noches en total"
   },
   "wheel": {
     "title": "Ruleta de la Suerte",
