@@ -203,6 +203,7 @@
     "needAtLeastTwo": "2項目以上が必要です",
     "removeWinner": "勝者を除外",
     "pastWinners": "過去の優勝者",
+    "clearHistory": "履歴をクリア",
     "finalWinner": "🏆 グランドチャンピオン！",
     "newGame": "もう一度"
   },

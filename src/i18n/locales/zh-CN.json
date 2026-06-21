@@ -203,6 +203,7 @@
     "needAtLeastTwo": "至少需要 2 个选项",
     "removeWinner": "移除获胜者",
     "pastWinners": "历届获胜者",
+    "clearHistory": "清除记录",
     "finalWinner": "🏆 最终冠军！",
     "newGame": "再玩一次"
   },

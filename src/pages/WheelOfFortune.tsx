@@ -191,7 +191,15 @@ export default function WheelOfFortune() {
           </div>
           {winners.length > 0 && (
             <div className="w-full">
-              <p className="text-gray-500 text-xs mb-2">{t('wheel.pastWinners')}</p>
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-gray-500 text-xs">{t('wheel.pastWinners')}</p>
+                <button
+                  onClick={() => setWinners([])}
+                  className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                  {t('wheel.clearHistory')}
+                </button>
+              </div>
               <div className="flex flex-col gap-1">
                 {winners.map((w, i) => (
                   <div key={i} className="flex items-center gap-2 bg-white/5 rounded-xl px-3 py-2">
@@ -278,7 +286,15 @@ export default function WheelOfFortune() {
         )}
         {winners.length > 0 && (
           <div className="w-full max-w-xs mt-1">
-            <p className="text-gray-500 text-xs mb-2">{t('wheel.pastWinners')}</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-gray-500 text-xs">{t('wheel.pastWinners')}</p>
+              <button
+                onClick={() => setWinners([])}
+                className="text-gray-600 hover:text-red-400 text-xs transition-colors"
+              >
+                {t('wheel.clearHistory')}
+              </button>
+            </div>
             <div className="flex flex-col gap-1">
               {winners.map((w, i) => (
                 <div key={i} className="flex items-center gap-2 bg-white/5 rounded-xl px-3 py-2">

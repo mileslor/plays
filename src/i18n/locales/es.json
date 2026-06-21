@@ -203,6 +203,7 @@
     "needAtLeastTwo": "Se necesitan al menos 2 opciones",
     "removeWinner": "Eliminar ganador",
     "pastWinners": "Ganadores anteriores",
+    "clearHistory": "Borrar Historial",
     "finalWinner": "🏆 ¡Gran Campeón!",
     "newGame": "Nuevo Juego"
   },
