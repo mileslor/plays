@@ -803,6 +803,118 @@ export const wordPairs: Record<string, WordBank> = {
       { main: '居酒屋', undercover: 'バー' },
     ],
   },
+  'zh-CN': {
+    easy: [
+      // 食物 — 明显不同
+      { main: '苹果', undercover: '橙子' },
+      { main: '西瓜', undercover: '哈密瓜' },
+      { main: '草莓', undercover: '蓝莓' },
+      { main: '可乐', undercover: '雪碧' },
+      { main: '咖啡', undercover: '奶茶' },
+      { main: '啤酒', undercover: '白酒' },
+      { main: '汉堡', undercover: '三明治' },
+      { main: '薯条', undercover: '薯片' },
+      { main: '饺子', undercover: '汤圆' },
+      { main: '包子', undercover: '馒头' },
+      { main: '火锅', undercover: '烧烤' },
+      { main: '米饭', undercover: '面条' },
+      { main: '蛋糕', undercover: '饼干' },
+      { main: '冰淇淋', undercover: '布丁' },
+      { main: '鸡蛋', undercover: '豆腐' },
+      // 交通出行
+      { main: '公交车', undercover: '地铁' },
+      { main: '出租车', undercover: '滴滴' },
+      { main: '高铁', undercover: '动车' },
+      { main: '飞机', undercover: '直升机' },
+      { main: '自行车', undercover: '电动车' },
+      // 日常物品
+      { main: '手机', undercover: '平板' },
+      { main: '电视', undercover: '投影仪' },
+      { main: '空调', undercover: '电风扇' },
+      { main: '眼镜', undercover: '隐形眼镜' },
+      { main: '雨伞', undercover: '雨衣' },
+      { main: '枕头', undercover: '被子' },
+      // 动物
+      { main: '猫', undercover: '兔子' },
+      { main: '狗', undercover: '狼' },
+      { main: '狮子', undercover: '老虎' },
+      { main: '大象', undercover: '长颈鹿' },
+      { main: '熊猫', undercover: '棕熊' },
+      { main: '鲨鱼', undercover: '海豚' },
+      // 职业
+      { main: '医生', undercover: '护士' },
+      { main: '老师', undercover: '教授' },
+      { main: '警察', undercover: '保安' },
+      { main: '厨师', undercover: '服务员' },
+      { main: '律师', undercover: '法官' },
+      { main: '歌手', undercover: '演员' },
+    ],
+    medium: [
+      // 中国特色美食
+      { main: '烤鸭', undercover: '红烧肉' },
+      { main: '小笼包', undercover: '生煎包' },
+      { main: '麻婆豆腐', undercover: '夫妻肺片' },
+      { main: '老干妈', undercover: '辣椒酱' },
+      { main: '方便面', undercover: '挂面' },
+      { main: '粽子', undercover: '月饼' },
+      { main: '汤圆', undercover: '元宵' },
+      { main: '豆浆', undercover: '豆奶' },
+      // 科技 & 社交
+      { main: '微信', undercover: '支付宝' },
+      { main: '抖音', undercover: '快手' },
+      { main: '淘宝', undercover: '京东' },
+      { main: 'B站', undercover: '优酷' },
+      { main: '直播', undercover: '短视频' },
+      { main: '外卖', undercover: '堂食' },
+      { main: '共享单车', undercover: '共享电动车' },
+      // 地标旅游
+      { main: '故宫', undercover: '天安门' },
+      { main: '长城', undercover: '兵马俑' },
+      { main: '西湖', undercover: '洞庭湖' },
+      { main: '外滩', undercover: '陆家嘴' },
+      // 节假日
+      { main: '春节', undercover: '元宵节' },
+      { main: '中秋节', undercover: '重阳节' },
+      { main: '五一', undercover: '十一' },
+      { main: '清明节', undercover: '冬至' },
+      { main: '生日派对', undercover: '婚礼' },
+      // 情绪
+      { main: '紧张', undercover: '兴奋' },
+      { main: '开心', undercover: '满足' },
+      { main: '疲倦', undercover: '无聊' },
+      { main: '愤怒', undercover: '失望' },
+      // 人际
+      { main: '老公', undercover: '男朋友' },
+      { main: '父母', undercover: '祖父母' },
+      { main: '兄弟', undercover: '表兄弟' },
+    ],
+    hard: [
+      // 极相似食物
+      { main: '馄饨', undercover: '饺子' },
+      { main: '拉面', undercover: '刀削面' },
+      { main: '豆腐', undercover: '嫩豆腐' },
+      { main: '粽子', undercover: '汤圆' },
+      { main: '豆浆', undercover: '豆奶' },
+      { main: '煎饼果子', undercover: '鸡蛋饼' },
+      { main: '早餐', undercover: '早午餐' },
+      // 极相似科技
+      { main: '下载', undercover: '流媒体' },
+      { main: 'iPhone', undercover: '安卓' },
+      { main: '直播', undercover: '录播' },
+      { main: '关注', undercover: '订阅' },
+      { main: '信用卡', undercover: '借记卡' },
+      // 极相似情绪
+      { main: '寂寞', undercover: '孤独' },
+      { main: '后悔', undercover: '遗憾' },
+      { main: '骄傲', undercover: '自满' },
+      { main: '敬佩', undercover: '羡慕' },
+      { main: '怀念', undercover: '想念' },
+      // 极相似日常
+      { main: '租房', undercover: '买房' },
+      { main: '才能', undercover: '技能' },
+      { main: '梦想', undercover: '目标' },
+    ],
+  },
 }
 
 const lastPairRef: Record<string, string> = {}
