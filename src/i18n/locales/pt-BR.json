@@ -202,7 +202,9 @@
     "modify": "Editar itens",
     "needAtLeastTwo": "Precisa de pelo menos 2 itens",
     "removeWinner": "Remover vencedor",
-    "pastWinners": "Vencedores anteriores"
+    "pastWinners": "Vencedores anteriores",
+    "finalWinner": "🏆 Grande Campeão!",
+    "newGame": "Novo Jogo"
   },
   "numberguess": {
     "title": "Código Secreto",

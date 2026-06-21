@@ -202,7 +202,9 @@
     "modify": "Edit Items",
     "needAtLeastTwo": "Need at least 2 items",
     "removeWinner": "Remove Winner",
-    "pastWinners": "Past Winners"
+    "pastWinners": "Past Winners",
+    "finalWinner": "🏆 Grand Champion!",
+    "newGame": "New Game"
   },
   "numberguess": {
     "title": "Number Bomb",

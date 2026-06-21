@@ -178,6 +178,39 @@ export default function WheelOfFortune() {
     )
   }
 
+  if (result && !spinning && items.length === 1) {
+    return (
+      <Layout>
+        <div className="flex flex-col items-center gap-6 py-8 max-w-sm mx-auto text-center">
+          <div className="text-8xl">🏆</div>
+          <div>
+            <p className="text-gray-400 text-sm mb-1">{t('wheel.finalWinner')}</p>
+            <p className="text-3xl font-bold text-yellow-300">{result}</p>
+          </div>
+          {winners.length > 0 && (
+            <div className="w-full">
+              <p className="text-gray-500 text-xs mb-2">{t('wheel.pastWinners')}</p>
+              <div className="flex flex-col gap-1">
+                {winners.map((w, i) => (
+                  <div key={i} className="flex items-center gap-2 bg-white/5 rounded-xl px-3 py-2">
+                    <span className="text-yellow-500 text-xs font-bold w-5 text-right">{i + 1}.</span>
+                    <span className="text-white text-sm">{w}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <button
+            onClick={() => setPhase('setup')}
+            className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-white font-bold py-4 rounded-2xl text-lg transition-all"
+          >
+            {t('wheel.newGame')}
+          </button>
+        </div>
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <div className="flex flex-col items-center gap-5 py-2">

@@ -202,7 +202,9 @@
     "modify": "修改項目",
     "needAtLeastTwo": "至少需要 2 個項目",
     "removeWinner": "移除勝出者",
-    "pastWinners": "過往贏家"
+    "pastWinners": "過往贏家",
+    "finalWinner": "🏆 最終冠軍！",
+    "newGame": "再玩一次"
   },
   "numberguess": {
     "title": "終極密碼",
