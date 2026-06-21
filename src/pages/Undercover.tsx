@@ -16,14 +16,14 @@ interface Player {
   alive: boolean
 }
 
-const GAME_LANGS: { code: string; flag: string }[] = [
-  { code: 'zh-HK', flag: '🇭🇰' },
-  { code: 'zh-TW', flag: '🇹🇼' },
-  { code: 'zh-CN', flag: '🇨🇳' },
-  { code: 'en',    flag: '🇬🇧' },
-  { code: 'ja',    flag: '🇯🇵' },
-  { code: 'es',    flag: '🇪🇸' },
-  { code: 'pt-BR', flag: '🇧🇷' },
+const GAME_LANGS: { code: string; flag: string; label: string }[] = [
+  { code: 'zh-HK', flag: '🇭🇰', label: '粵語' },
+  { code: 'zh-TW', flag: '🇹🇼', label: '繁中' },
+  { code: 'zh-CN', flag: '🇨🇳', label: '简中' },
+  { code: 'en',    flag: '🇬🇧', label: 'EN' },
+  { code: 'ja',    flag: '🇯🇵', label: '日本語' },
+  { code: 'es',    flag: '🇪🇸', label: 'ES' },
+  { code: 'pt-BR', flag: '🇧🇷', label: 'BR' },
 ]
 
 export default function Undercover() {
@@ -253,13 +253,14 @@ export default function Undercover() {
           <div className="bg-gray-900 rounded-2xl p-5 mb-3">
             <label className="text-sm text-gray-400 block mb-3">{t('undercover.gameLanguage')}</label>
             <div className="flex gap-1.5 flex-wrap">
-              {GAME_LANGS.map(({ code, flag }) => (
+              {GAME_LANGS.map(({ code, flag, label }) => (
                 <button
                   key={code}
                   onClick={() => setGameLang(code)}
-                  className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-colors ${gameLang === code ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
+                  className={`flex flex-col items-center gap-0.5 px-2.5 py-1.5 rounded-xl text-sm font-medium transition-colors ${gameLang === code ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
                 >
-                  {flag}
+                  <span className="text-lg leading-none">{flag}</span>
+                  <span className="text-[10px] leading-none">{label}</span>
                 </button>
               ))}
             </div>
