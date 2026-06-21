@@ -77,6 +77,7 @@ export default function WheelOfFortune() {
   const [items, setItems] = useState<string[]>([])
   const [spinning, setSpinning] = useState(false)
   const [result, setResult] = useState<string | null>(null)
+  const [resultIndex, setResultIndex] = useState<number | null>(null)
   const [winners, setWinners] = useState<string[]>([])
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const rotationRef = useRef(-Math.PI / 2)
@@ -126,6 +127,7 @@ export default function WheelOfFortune() {
           ((pointerAngle - rotationRef.current) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2)
         const winnerIndex = Math.floor(relAngle / arc) % n
         setResult(items[winnerIndex])
+        setResultIndex(winnerIndex)
         setSpinning(false)
       }
     }
@@ -261,10 +263,11 @@ export default function WheelOfFortune() {
         {result && !spinning && items.length > 1 && (
           <button
             onClick={() => {
-              const next = items.filter(i => i !== result)
+              const next = items.filter((_, i) => i !== resultIndex)
               setWinners(prev => [...prev, result!])
               setItems(next)
               setResult(null)
+              setResultIndex(null)
               rotationRef.current = -Math.PI / 2
               if (canvasRef.current) drawWheel(canvasRef.current, next, rotationRef.current)
             }}
