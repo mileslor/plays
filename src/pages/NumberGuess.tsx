@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
 
-type Phase = 'menu' | 'setup' | 'play' | 'lost'
+type Phase = 'menu' | 'setup' | 'play' | 'lost' | 'giveup'
 
 interface Guess {
   name: string
@@ -216,6 +216,16 @@ export default function NumberGuess() {
         </div>
       </div>
 
+      {/* Give up */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setPhase('giveup')}
+          className="text-gray-600 hover:text-gray-400 text-xs transition-colors underline underline-offset-2"
+        >
+          {t('numberguess.giveUp')}
+        </button>
+      </div>
+
       {/* Guess history */}
       {guesses.length > 0 && (
         <div className="flex flex-col gap-2">
@@ -307,12 +317,43 @@ export default function NumberGuess() {
     </div>
   )
 
+  const renderGiveUp = () => (
+    <div className="flex flex-col items-center text-center gap-8 py-16">
+      <div className="text-7xl">🏳️</div>
+      <div>
+        <h2 className="text-3xl font-bold mb-2">{t('numberguess.giveUpTitle')}</h2>
+        <p className="text-gray-400 mt-2">{t('numberguess.giveUpDesc')}</p>
+        <p className="text-gray-500 text-sm mt-1">{t('numberguess.totalGuesses', { n: guesses.length })}</p>
+        <div className="mt-4 bg-white/5 rounded-2xl px-6 py-3 inline-block">
+          <span className="text-gray-400 text-sm">{t('numberguess.secretWas')} </span>
+          <span className="text-white font-bold text-2xl">{secretRef.current}</span>
+        </div>
+      </div>
+      <div className="flex flex-col gap-3 w-full max-w-xs">
+        <button
+          onClick={startGame}
+          className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl text-lg transition-colors"
+        >
+          {t('numberguess.playAgain')}
+        </button>
+        <button
+          onClick={() => setPhase('setup')}
+          className="bg-white/10 hover:bg-white/20 text-white py-3 rounded-2xl transition-colors"
+        >
+          {t('numberguess.changeRange')}
+        </button>
+        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
+      </div>
+    </div>
+  )
+
   return (
     <Layout>
       {phase === 'menu' && renderMenu()}
       {phase === 'setup' && renderSetup()}
       {phase === 'play' && renderPlay()}
       {phase === 'lost' && renderLost()}
+      {phase === 'giveup' && renderGiveUp()}
     </Layout>
   )
 }

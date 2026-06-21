@@ -241,7 +241,10 @@
     "totalGuesses": "合計 {{n}} 回",
     "secretWas": "秘密の数字は",
     "playAgain": "もう一回 🎲",
-    "changeRange": "範囲を変える"
+    "changeRange": "範囲を変える",
+    "giveUp": "ギブアップ",
+    "giveUpTitle": "誰も負けなかった！",
+    "giveUpDesc": "秘密の数字が明かされました。"
   },
   "blackmagic": {
     "title": "ブラックマジック",

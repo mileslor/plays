@@ -241,7 +241,10 @@
     "totalGuesses": "共猜了 {{n}} 次",
     "secretWas": "密码是",
     "playAgain": "再玩一次 🎲",
-    "changeRange": "更改范围"
+    "changeRange": "更改范围",
+    "giveUp": "放弃",
+    "giveUpTitle": "没有人输！",
+    "giveUpDesc": "密码已揭晓。"
   },
   "blackmagic": {
     "title": "黑魔法",

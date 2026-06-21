@@ -241,7 +241,10 @@
     "totalGuesses": "{{n}} palpites no total",
     "secretWas": "O segredo era",
     "playAgain": "Jogar de novo 🎲",
-    "changeRange": "Mudar intervalo"
+    "changeRange": "Mudar intervalo",
+    "giveUp": "Desistir",
+    "giveUpTitle": "Ninguém Perdeu!",
+    "giveUpDesc": "O número secreto foi revelado."
   },
   "blackmagic": {
     "title": "Magia Negra",

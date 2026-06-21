@@ -241,7 +241,10 @@
     "totalGuesses": "{{n}} total guesses",
     "secretWas": "The secret was",
     "playAgain": "Play Again 🎲",
-    "changeRange": "Change Range"
+    "changeRange": "Change Range",
+    "giveUp": "Give Up",
+    "giveUpTitle": "Nobody Lost!",
+    "giveUpDesc": "The secret number has been revealed."
   },
   "blackmagic": {
     "title": "Black Magic",

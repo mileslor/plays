@@ -241,7 +241,10 @@
     "totalGuesses": "{{n}} intentos en total",
     "secretWas": "El secreto era",
     "playAgain": "Jugar de nuevo 🎲",
-    "changeRange": "Cambiar rango"
+    "changeRange": "Cambiar rango",
+    "giveUp": "Rendirse",
+    "giveUpTitle": "¡Nadie Perdió!",
+    "giveUpDesc": "El número secreto ha sido revelado."
   },
   "blackmagic": {
     "title": "Magia Negra",
