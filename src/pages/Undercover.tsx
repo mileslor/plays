@@ -16,11 +16,22 @@ interface Player {
   alive: boolean
 }
 
+const GAME_LANGS: { code: string; flag: string }[] = [
+  { code: 'zh-HK', flag: '🇭🇰' },
+  { code: 'zh-TW', flag: '🇹🇼' },
+  { code: 'zh-CN', flag: '🇨🇳' },
+  { code: 'en',    flag: '🇬🇧' },
+  { code: 'ja',    flag: '🇯🇵' },
+  { code: 'es',    flag: '🇪🇸' },
+  { code: 'pt-BR', flag: '🇧🇷' },
+]
+
 export default function Undercover() {
   const { t, i18n } = useTranslation()
 
   // Setup
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('medium')
+  const [gameLang, setGameLang] = useState(() => i18n.language)
   const [playerCount, setPlayerCount] = useState(5)
   const [undercoverCount, setUndercoverCount] = useState(1)
   const [hasWhiteboard, setHasWhiteboard] = useState(false)
@@ -45,7 +56,7 @@ export default function Undercover() {
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const startGame = () => {
-    const pair = getRandomPair(i18n.language, selectedDifficulty)
+    const pair = getRandomPair(gameLang, selectedDifficulty)
     setMainWord(pair.main)
     const indices = Array.from({ length: playerCount }, (_, i) => i)
     const shuffled = [...indices].sort(() => Math.random() - 0.5)
@@ -237,6 +248,21 @@ export default function Undercover() {
                   </button>
                 )
               })}
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded-2xl p-5 mb-3">
+            <label className="text-sm text-gray-400 block mb-3">{t('undercover.gameLanguage')}</label>
+            <div className="flex gap-1.5 flex-wrap">
+              {GAME_LANGS.map(({ code, flag }) => (
+                <button
+                  key={code}
+                  onClick={() => setGameLang(code)}
+                  className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-colors ${gameLang === code ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
+                >
+                  {flag}
+                </button>
+              ))}
             </div>
           </div>
 
