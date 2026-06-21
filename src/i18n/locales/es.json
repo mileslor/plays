@@ -185,7 +185,8 @@
       "currentlySpeaking": "Hablando ahora",
       "skip": "Saltar",
       "resetAll": "Reiniciar todo"
-    }
+    },
+    "tapAgain": "¡Otra vez!"
   },
   "wheel": {
     "title": "Ruleta de la Suerte",

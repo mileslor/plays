@@ -386,7 +386,7 @@ export default function Werewolf() {
             })() : showTapHint ? (
               <>
                 <span className="text-4xl mb-3">☝️</span>
-                <p className="text-xl text-white font-bold">{t('undercover.tapAgain')}</p>
+                <p className="text-xl text-white font-bold">{t('werewolf.tapAgain')}</p>
               </>
             ) : (
               <>

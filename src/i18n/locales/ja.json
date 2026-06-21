@@ -185,7 +185,8 @@
       "currentlySpeaking": "発言中",
       "skip": "スキップ",
       "resetAll": "全てリセット"
-    }
+    },
+    "tapAgain": "もう一回！"
   },
   "wheel": {
     "title": "ルーレット",

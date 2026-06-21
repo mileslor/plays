@@ -185,7 +185,8 @@
       "currentlySpeaking": "Falando agora",
       "skip": "Pular",
       "resetAll": "Resetar tudo"
-    }
+    },
+    "tapAgain": "Mais uma vez!"
   },
   "wheel": {
     "title": "Roda da Sorte",

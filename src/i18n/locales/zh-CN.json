@@ -132,7 +132,8 @@
       "currentlySpeaking": "正在发言",
       "skip": "跳过",
       "resetAll": "全部重置"
-    }
+    },
+    "tapAgain": "再点一下！"
   },
   "undercover": {
     "difficulty": {

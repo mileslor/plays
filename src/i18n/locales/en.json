@@ -185,7 +185,8 @@
       "currentlySpeaking": "Now speaking",
       "skip": "Skip",
       "resetAll": "Reset all"
-    }
+    },
+    "tapAgain": "One more tap!"
   },
   "wheel": {
     "title": "Wheel of Fortune",

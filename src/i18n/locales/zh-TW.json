@@ -185,7 +185,8 @@
       "currentlySpeaking": "現在發言中",
       "skip": "跳過",
       "resetAll": "全部重置"
-    }
+    },
+    "tapAgain": "再點一次！"
   },
   "wheel": {
     "title": "轉輪盤",
