@@ -17,6 +17,7 @@ export default function NumberGuess() {
   const [rangeMin, setRangeMin] = useState(1)
   const [rangeMax, setRangeMax] = useState(100)
   const secretRef = useRef(0)
+  const guessInputRef = useRef<HTMLInputElement>(null)
 
   const [currentMin, setCurrentMin] = useState(1)
   const [currentMax, setCurrentMax] = useState(100)
@@ -198,11 +199,13 @@ export default function NumberGuess() {
         <input
           value={guesserName}
           onChange={e => setGuesserName(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && guessInputRef.current?.focus()}
           placeholder={t('numberguess.namePlaceholder')}
           className="bg-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:bg-white/15 transition-colors"
         />
         <div className="flex gap-3">
           <input
+            ref={guessInputRef}
             type="number"
             value={guessValue}
             onChange={e => setGuessValue(e.target.value)}
