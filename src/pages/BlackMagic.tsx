@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/Layout'
-import Timer from '../components/Timer'
+import Timer, { type TimerHandle } from '../components/Timer'
 
 type Phase = 'menu' | 'setup' | 'performer-out' | 'pick-target' | 'performer-back' | 'play' | 'reveal-secret'
 
@@ -28,6 +28,8 @@ export default function BlackMagic() {
   const [inputItems, setInputItems] = useState<string[]>(['', '', '', '', ''])
   const [game, setGame] = useState<GameState | null>(null)
   const [secretRevealed, setSecretRevealed] = useState(false)
+  const [timerPaused, setTimerPaused] = useState(false)
+  const timerRef = useRef<TimerHandle>(null)
 
   const suggestedItems = t('blackmagic.suggestedItems', { returnObjects: true }) as string[]
   const darkSignals = t('blackmagic.darkSignals', { returnObjects: true }) as string[]
@@ -218,12 +220,21 @@ export default function BlackMagic() {
       )
     }
 
-    const advance = () => setGame({ ...game, currentStep: currentStep + 1 })
+    const advance = () => { setTimerPaused(false); setGame({ ...game, currentStep: currentStep + 1 }) }
 
     return (
       <div className="flex flex-col items-center text-center gap-8 py-8 max-w-sm mx-auto">
         <div className="text-sm text-gray-500">{t('blackmagic.stepProgress', { current: currentStep + 1, total: playOrder.length })}</div>
-        <Timer key={currentStep} seconds={30} onExpire={advance} />
+        <Timer ref={timerRef} key={currentStep} seconds={30} onExpire={advance} />
+        <button
+          onClick={() => {
+            if (timerPaused) { timerRef.current?.resume(); setTimerPaused(false) }
+            else { timerRef.current?.pause(); setTimerPaused(true) }
+          }}
+          className="text-gray-400 hover:text-white text-sm transition-colors"
+        >
+          {timerPaused ? t('timer.resume') : t('timer.pause')}
+        </button>
 
         {/* Current item card */}
         <div
