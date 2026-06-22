@@ -31,7 +31,7 @@ export default function Werewolf() {
   const { t } = useTranslation()
 
   // Setup
-  const [preset, setPreset] = useState(0)
+  const [preset, setPreset] = useState(() => Number(localStorage.getItem('werewolf-preset')) || 0)
   const [customRoles] = useState<WerewolfRole[]>([])
   const [useCustom] = useState(false)
 
@@ -327,7 +327,7 @@ export default function Werewolf() {
           <p className="text-xs text-gray-500 mb-3 text-center uppercase tracking-widest">{t('werewolf.preset')}</p>
           <div className="grid grid-cols-4 gap-2 mb-6">
             {PRESETS.map((p, i) => (
-              <button key={i} onClick={() => { setPreset(i) }}
+              <button key={i} onClick={() => { setPreset(i); localStorage.setItem('werewolf-preset', String(i)) }}
                 className={`rounded-xl py-3 font-bold text-sm transition-all ${!useCustom && preset === i ? 'bg-red-700 ring-2 ring-red-400 scale-105' : 'bg-gray-800 hover:bg-gray-700'}`}>
                 {p.label}
               </button>
