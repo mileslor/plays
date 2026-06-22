@@ -73,7 +73,7 @@ function drawWheel(canvas: HTMLCanvasElement, items: string[], rotation: number)
 export default function WheelOfFortune() {
   const { t } = useTranslation()
   const [phase, setPhase] = useState<'setup' | 'spin'>('setup')
-  const [itemText, setItemText] = useState('')
+  const [itemText, setItemText] = useState(() => localStorage.getItem('wheel-items') || '')
   const [items, setItems] = useState<string[]>([])
   const [spinning, setSpinning] = useState(false)
   const [result, setResult] = useState<string | null>(null)
@@ -82,6 +82,10 @@ export default function WheelOfFortune() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const rotationRef = useRef(-Math.PI / 2)
   const animRef = useRef(0)
+
+  useEffect(() => {
+    localStorage.setItem('wheel-items', itemText)
+  }, [itemText])
 
   const parsedItems = itemText
     .split('\n')
