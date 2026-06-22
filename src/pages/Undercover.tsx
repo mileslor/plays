@@ -30,8 +30,12 @@ export default function Undercover() {
   const { t, i18n } = useTranslation()
 
   // Setup
-  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>('medium')
-  const [gameLang, setGameLang] = useState(() => i18n.language)
+  const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>(
+    () => (localStorage.getItem('undercover-difficulty') as Difficulty) || 'medium'
+  )
+  const [gameLang, setGameLang] = useState(
+    () => localStorage.getItem('undercover-game-lang') || i18n.language
+  )
   const [playerCount, setPlayerCount] = useState(5)
   const [undercoverCount, setUndercoverCount] = useState(1)
   const [hasWhiteboard, setHasWhiteboard] = useState(false)
@@ -54,6 +58,16 @@ export default function Undercover() {
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleDifficulty = (d: Difficulty) => {
+    setSelectedDifficulty(d)
+    localStorage.setItem('undercover-difficulty', d)
+  }
+
+  const handleGameLang = (code: string) => {
+    setGameLang(code)
+    localStorage.setItem('undercover-game-lang', code)
+  }
 
   useEffect(() => {
     setUndercoverCount((n) => Math.min(n, Math.floor(playerCount / 2)))
@@ -244,7 +258,7 @@ export default function Undercover() {
                 return (
                   <button
                     key={d}
-                    onClick={() => setSelectedDifficulty(d)}
+                    onClick={() => handleDifficulty(d)}
                     className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-colors ${selectedDifficulty === d ? activeColor : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
                   >
                     {t(`undercover.difficulty.${d}`)}
@@ -260,7 +274,7 @@ export default function Undercover() {
               {GAME_LANGS.map(({ code, flag, label }) => (
                 <button
                   key={code}
-                  onClick={() => setGameLang(code)}
+                  onClick={() => handleGameLang(code)}
                   className={`flex flex-col items-center gap-0.5 px-2.5 py-1.5 rounded-xl text-sm font-medium transition-colors ${gameLang === code ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-300'}`}
                 >
                   <span className="text-lg leading-none">{flag}</span>
