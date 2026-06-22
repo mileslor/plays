@@ -14,8 +14,14 @@ interface Guess {
 export default function NumberGuess() {
   const { t } = useTranslation()
   const [phase, setPhase] = useState<Phase>('menu')
-  const [rangeMin, setRangeMin] = useState(1)
-  const [rangeMax, setRangeMax] = useState(100)
+  const [rangeMin, setRangeMin] = useState(() => {
+    const saved = localStorage.getItem('numberguess-range-min')
+    return saved ? parseInt(saved) : 1
+  })
+  const [rangeMax, setRangeMax] = useState(() => {
+    const saved = localStorage.getItem('numberguess-range-max')
+    return saved ? parseInt(saved) : 100
+  })
   const secretRef = useRef(0)
   const guessInputRef = useRef<HTMLInputElement>(null)
 
@@ -25,6 +31,11 @@ export default function NumberGuess() {
   const [guesserName, setGuesserName] = useState('')
   const [guessValue, setGuessValue] = useState('')
   const [loser, setLoser] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('numberguess-range-min', String(rangeMin))
+    localStorage.setItem('numberguess-range-max', String(rangeMax))
+  }, [rangeMin, rangeMax])
 
   useEffect(() => {
     if (phase === 'play' && currentMin === currentMax) {
