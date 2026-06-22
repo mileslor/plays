@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { getRandomPair, type Difficulty } from '../data/undercoverWords'
 import Layout from '../components/Layout'
-import Timer from '../components/Timer'
+import Timer, { type TimerHandle } from '../components/Timer'
 
 type Role = 'civilian' | 'undercover' | 'whiteboard'
 type Phase = 'setup' | 'reveal' | 'round' | 'voting' | 'eliminated' | 'wb_guess' | 'gameover'
@@ -55,6 +55,9 @@ export default function Undercover() {
   const [firstSpeaker, setFirstSpeaker] = useState<number | null>(null)
   const [initialUndercoverCount, setInitialUndercoverCount] = useState(0)
   const [eliminatedUndercoverCount, setEliminatedUndercoverCount] = useState(0)
+
+  const [roundTimerPaused, setRoundTimerPaused] = useState(false)
+  const roundTimerRef = useRef<TimerHandle>(null)
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -189,6 +192,7 @@ export default function Undercover() {
   const continueRound = () => {
     setRound((r) => r + 1)
     setEliminatedPlayer(null)
+    setRoundTimerPaused(false)
     goToRound(players.filter((p) => p.alive))
   }
 
@@ -348,7 +352,18 @@ export default function Undercover() {
       {/* ── ROUND ── */}
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
-          <Timer key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
+          <Timer ref={roundTimerRef} key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
+          <div className="flex justify-center mb-2">
+            <button
+              onClick={() => {
+                if (roundTimerPaused) { roundTimerRef.current?.resume(); setRoundTimerPaused(false) }
+                else { roundTimerRef.current?.pause(); setRoundTimerPaused(true) }
+              }}
+              className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-700 transition-colors"
+            >
+              {roundTimerPaused ? t('timer.resume') : t('timer.pause')}
+            </button>
+          </div>
           <div className="mb-4 text-center">
             {(() => {
               const remaining = initialUndercoverCount - eliminatedUndercoverCount
