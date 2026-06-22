@@ -243,6 +243,11 @@ export const wordPairs: Record<string, WordBank> = {
       { main: '行李箱', undercover: '旅行袋' },
       { main: '信用卡', undercover: '八達通' },
       { main: '租樓', undercover: '買樓' },
+      // 極相似飲食
+      { main: '粥', undercover: '稀飯' },
+      { main: '蛋撻', undercover: '葡撻' },
+      { main: '豬扒飯', undercover: '雞扒飯' },
+      { main: '烏冬', undercover: '拉麵' },
     ],
   },
   'zh-TW': {
@@ -303,6 +308,17 @@ export const wordPairs: Record<string, WordBank> = {
       { main: '警察', undercover: '保全' },
       { main: '廚師', undercover: '服務生' },
       { main: '歌手', undercover: '演員' },
+      // 更多日常 — 明顯
+      { main: '吉他', undercover: '鋼琴' },
+      { main: '沙發', undercover: '椅子' },
+      { main: '大象', undercover: '長頸鹿' },
+      { main: '太陽', undercover: '月亮' },
+      { main: '山', undercover: '海洋' },
+      { main: '花', undercover: '草' },
+      { main: '牛', undercover: '馬' },
+      { main: '魚', undercover: '蝦' },
+      { main: '春天', undercover: '秋天' },
+      { main: '企鵝', undercover: '北極熊' },
     ],
     medium: [
       // 台灣特色食物
@@ -442,6 +458,11 @@ export const wordPairs: Record<string, WordBank> = {
       { main: 'River', undercover: 'Lake' },
       { main: 'Forest', undercover: 'Jungle' },
       { main: 'Desert', undercover: 'Grassland' },
+      // More easy pairs
+      { main: 'Guitar', undercover: 'Piano' },
+      { main: 'Jacket', undercover: 'Hoodie' },
+      { main: 'Sofa', undercover: 'Chair' },
+      { main: 'Cow', undercover: 'Horse' },
     ],
     medium: [
       // Medium similarity food
@@ -488,6 +509,36 @@ export const wordPairs: Record<string, WordBank> = {
       { main: 'Designer', undercover: 'Architect' },
       { main: 'Journalist', undercover: 'Newscaster' },
       { main: 'Concert', undercover: 'Festival' },
+      // Food/drink medium
+      { main: 'Gin', undercover: 'Vodka' },
+      { main: 'Ramen', undercover: 'Pho' },
+      { main: 'Stout', undercover: 'Porter' },
+      { main: 'Sashimi', undercover: 'Ceviche' },
+      { main: 'Mojito', undercover: 'Daiquiri' },
+      // Sports medium
+      { main: 'Marathon', undercover: 'Triathlon' },
+      { main: 'Boxing', undercover: 'MMA' },
+      { main: 'Volleyball', undercover: 'Badminton' },
+      { main: 'Surfing', undercover: 'Wakeboarding' },
+      // Jobs medium
+      { main: 'Pharmacist', undercover: 'Chemist' },
+      { main: 'Pilot', undercover: 'Air Traffic Controller' },
+      { main: 'Accountant', undercover: 'Auditor' },
+      // Tech medium
+      { main: 'VPN', undercover: 'Firewall' },
+      { main: 'Podcast', undercover: 'Audiobook' },
+      { main: 'QR Code', undercover: 'Barcode' },
+      // Entertainment medium
+      { main: 'Musical', undercover: 'Opera' },
+      { main: 'Novel', undercover: 'Screenplay' },
+      { main: 'Gallery', undercover: 'Museum' },
+      // Travel medium
+      { main: 'Backpacking', undercover: 'Road Trip' },
+      { main: 'Resort', undercover: 'Bed & Breakfast' },
+      { main: 'Tour Guide', undercover: 'Travel Agent' },
+      // Finance medium
+      { main: 'Stocks', undercover: 'Crypto' },
+      { main: 'Savings Account', undercover: 'Fixed Deposit' },
     ],
     hard: [
       // Very similar food/drink
