@@ -11,8 +11,16 @@ const COLORS = [
 
 function drawWheel(canvas: HTMLCanvasElement, items: string[], rotation: number) {
   const ctx = canvas.getContext('2d')!
-  const W = canvas.width
-  const H = canvas.height
+  const dpr = window.devicePixelRatio || 1
+  const SIZE = 300
+  if (canvas.width !== SIZE * dpr || canvas.height !== SIZE * dpr) {
+    canvas.width = SIZE * dpr
+    canvas.height = SIZE * dpr
+  }
+  ctx.save()
+  ctx.scale(dpr, dpr)
+  const W = SIZE
+  const H = SIZE
   const cx = W / 2
   const cy = H / 2
   const r = Math.min(cx, cy) - 8
@@ -68,6 +76,7 @@ function drawWheel(canvas: HTMLCanvasElement, items: string[], rotation: number)
   ctx.strokeStyle = 'rgba(255,255,255,0.25)'
   ctx.lineWidth = 2.5
   ctx.stroke()
+  ctx.restore()
 }
 
 export default function WheelOfFortune() {
@@ -241,7 +250,7 @@ export default function WheelOfFortune() {
               }}
             />
           </div>
-          <canvas ref={canvasRef} width={300} height={300} className="block" />
+          <canvas ref={canvasRef} className="block" style={{ width: 300, height: 300 }} />
         </div>
 
         {/* Result */}
