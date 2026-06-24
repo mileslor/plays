@@ -106,6 +106,10 @@
     "ludo": {
       "name": "Ludo",
       "desc": "Role o dado e leve seus 4 peões para casa para ganhar"
+    },
+    "chess": {
+      "name": "Xadrez Chinês",
+      "desc": "Jogo de estratégia clássico: capture o general inimigo para vencer"
     }
   },
   "lang": {

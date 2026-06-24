@@ -106,6 +106,10 @@
     "ludo": {
       "name": "Ludo",
       "desc": "Roll the dice and race your 4 tokens home to win"
+    },
+    "chess": {
+      "name": "Chinese Chess",
+      "desc": "Classic two-player strategy: capture the opponent's general to win"
     }
   },
   "lang": {

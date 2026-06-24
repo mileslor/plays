@@ -51,6 +51,14 @@ const GAMES = [
     ready: true,
     players: '2–4',
   },
+  {
+    key: 'chess',
+    path: '/chess',
+    emoji: '♟️',
+    color: 'from-amber-700 to-yellow-800',
+    ready: false,
+    players: '2',
+  },
 ]
 
 export default function Home() {

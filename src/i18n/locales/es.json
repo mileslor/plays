@@ -106,6 +106,10 @@
     "ludo": {
       "name": "Ludo",
       "desc": "Tira el dado y lleva tus 4 fichas a casa para ganar"
+    },
+    "chess": {
+      "name": "Ajedrez Chino",
+      "desc": "Estrategia clásica para dos: captura al general enemigo para ganar"
     }
   },
   "lang": {
