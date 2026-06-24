@@ -57,7 +57,8 @@ const GAMES: { key: string; path: string; emoji: string; color: string; ready: b
     path: '/chess',
     emoji: '♟️',
     color: 'from-amber-700 to-yellow-800',
-    ready: false,
+    ready: true,
+    isNew: true,
     players: '2',
   },
 ]

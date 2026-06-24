@@ -7,6 +7,7 @@ import BlackMagic from './pages/BlackMagic'
 import NumberGuess from './pages/NumberGuess'
 import WheelOfFortune from './pages/WheelOfFortune'
 import Ludo from './pages/Ludo'
+import Chess from './pages/Chess'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/number-guess" element={<NumberGuess />} />
       <Route path="/wheel" element={<WheelOfFortune />} />
       <Route path="/ludo" element={<Ludo />} />
+      <Route path="/chess" element={<Chess />} />
     </Routes>
   )
 }
