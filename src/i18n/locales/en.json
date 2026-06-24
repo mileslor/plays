@@ -9,7 +9,8 @@
   "home": {
     "heading": "Party Game Tools",
     "subheading": "No props needed — just open your browser",
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "new": "New!"
   },
   "undercover": {
     "title": "Who's Undercover",
@@ -109,7 +110,13 @@
     },
     "chess": {
       "name": "Chinese Chess",
-      "desc": "Classic two-player strategy: capture the opponent's general to win"
+      "desc": "Classic two-player strategy: capture the opponent's general to win",
+      "red_turn": "Red's Turn",
+      "black_turn": "Black's Turn",
+      "check": "Check!",
+      "red_wins": "Red Wins!",
+      "black_wins": "Black Wins!",
+      "new_game": "New Game"
     }
   },
   "lang": {

@@ -9,7 +9,8 @@
   "home": {
     "heading": "派对游戏工具",
     "subheading": "不需要买道具，打开浏览器就玩",
-    "comingSoon": "即将推出"
+    "comingSoon": "即将推出",
+    "new": "新游戏！"
   },
   "games": {
     "undercover": {
@@ -38,7 +39,13 @@
     },
     "chess": {
       "name": "象棋",
-      "desc": "中国传统棋艺，两人对弈，将死对手的将帅即胜"
+      "desc": "中国传统棋艺，两人对弈，将死对手的将帅即胜",
+      "red_turn": "红方行棋",
+      "black_turn": "黑方行棋",
+      "check": "将！",
+      "red_wins": "红方胜利！",
+      "black_wins": "黑方胜利！",
+      "new_game": "新局"
     }
   },
   "lang": {

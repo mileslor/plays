@@ -9,7 +9,8 @@
   "home": {
     "heading": "Herramientas de Juego",
     "subheading": "Sin accesorios — solo abre el navegador",
-    "comingSoon": "Próximamente"
+    "comingSoon": "Próximamente",
+    "new": "¡Nuevo!"
   },
   "undercover": {
     "title": "¿Quién es el Infiltrado?",
@@ -109,7 +110,13 @@
     },
     "chess": {
       "name": "Ajedrez Chino",
-      "desc": "Estrategia clásica para dos: captura al general enemigo para ganar"
+      "desc": "Estrategia clásica para dos: captura al general enemigo para ganar",
+      "red_turn": "Turno Rojo",
+      "black_turn": "Turno Negro",
+      "check": "¡Jaque!",
+      "red_wins": "¡Gana el Rojo!",
+      "black_wins": "¡Gana el Negro!",
+      "new_game": "Nueva Partida"
     }
   },
   "lang": {

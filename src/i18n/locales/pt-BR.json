@@ -9,7 +9,8 @@
   "home": {
     "heading": "Ferramentas de Jogos",
     "subheading": "Sem acessórios — só abra o navegador",
-    "comingSoon": "Em Breve"
+    "comingSoon": "Em Breve",
+    "new": "Novo!"
   },
   "undercover": {
     "title": "Quem é o Infiltrado?",
@@ -109,7 +110,13 @@
     },
     "chess": {
       "name": "Xadrez Chinês",
-      "desc": "Jogo de estratégia clássico: capture o general inimigo para vencer"
+      "desc": "Jogo de estratégia clássico: capture o general inimigo para vencer",
+      "red_turn": "Vez do Vermelho",
+      "black_turn": "Vez do Preto",
+      "check": "Xeque!",
+      "red_wins": "Vermelho Vence!",
+      "black_wins": "Preto Vence!",
+      "new_game": "Novo Jogo"
     }
   },
   "lang": {

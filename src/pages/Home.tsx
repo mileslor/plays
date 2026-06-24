@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { LANGUAGES, LANG_FLAGS, type Language } from '../i18n'
 
-const GAMES = [
+const GAMES: { key: string; path: string; emoji: string; color: string; ready: boolean; players: string; isNew?: boolean }[] = [
   {
     key: 'undercover',
     path: '/undercover',
@@ -50,6 +50,7 @@ const GAMES = [
     color: 'from-teal-600 to-cyan-700',
     ready: true,
     players: '2–4',
+    isNew: true,
   },
   {
     key: 'chess',
@@ -113,6 +114,11 @@ export default function Home() {
               </div>
               <h2 className="text-xl font-bold mb-1">{t(`games.${game.key}.name`)}</h2>
               <p className="text-sm text-white/75">{t(`games.${game.key}.desc`)}</p>
+              {game.isNew && (
+                <span className="absolute bottom-3 right-3 text-xs bg-green-500/80 px-2 py-1 rounded-full font-semibold">
+                  {t('home.new')}
+                </span>
+              )}
             </Link>
           ) : (
             <div
@@ -121,6 +127,11 @@ export default function Home() {
             >
               <div className="flex items-start justify-between mb-3">
                 <span className="text-4xl leading-none">{game.emoji}</span>
+                {game.players && (
+                  <span className="text-xs bg-black/25 px-2 py-1 rounded-full text-white/80">
+                    👥 {game.players}
+                  </span>
+                )}
               </div>
               <h2 className="text-xl font-bold mb-1">{t(`games.${game.key}.name`)}</h2>
               <p className="text-sm text-white/75">{t(`games.${game.key}.desc`)}</p>

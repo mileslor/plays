@@ -9,7 +9,8 @@
   "home": {
     "heading": "パーティーゲームツール",
     "subheading": "道具不要 — ブラウザを開くだけ",
-    "comingSoon": "近日公開"
+    "comingSoon": "近日公開",
+    "new": "新着！"
   },
   "undercover": {
     "title": "裏切り者は誰だ",
@@ -109,7 +110,13 @@
     },
     "chess": {
       "name": "象棋（中国将棋）",
-      "desc": "相手の将を詰めたら勝ち。中国の伝統的な二人用ボードゲーム"
+      "desc": "相手の将を詰めたら勝ち。中国の伝統的な二人用ボードゲーム",
+      "red_turn": "赤の番",
+      "black_turn": "黒の番",
+      "check": "将軍！",
+      "red_wins": "赤の勝利！",
+      "black_wins": "黒の勝利！",
+      "new_game": "新しいゲーム"
     }
   },
   "lang": {
