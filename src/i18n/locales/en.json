@@ -102,6 +102,10 @@
     "wheel": {
       "name": "Wheel of Fortune",
       "desc": "Enter your options and let the wheel decide — great for decisions or party games"
+    },
+    "ludo": {
+      "name": "Ludo",
+      "desc": "Roll the dice and race your 4 tokens home to win"
     }
   },
   "lang": {

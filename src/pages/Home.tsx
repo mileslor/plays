@@ -43,6 +43,14 @@ const GAMES = [
     ready: true,
     players: '1+',
   },
+  {
+    key: 'ludo',
+    path: '/ludo',
+    emoji: '✈️',
+    color: 'from-teal-600 to-cyan-700',
+    ready: true,
+    players: '2–4',
+  },
 ]
 
 export default function Home() {

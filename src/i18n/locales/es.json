@@ -102,6 +102,10 @@
     "wheel": {
       "name": "Ruleta de la Suerte",
       "desc": "Ingresa opciones y deja que la ruleta decida — ideal para tomar decisiones o juegos de fiesta"
+    },
+    "ludo": {
+      "name": "Ludo",
+      "desc": "Tira el dado y lleva tus 4 fichas a casa para ganar"
     }
   },
   "lang": {

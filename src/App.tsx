@@ -6,6 +6,7 @@ import Werewolf from './pages/Werewolf'
 import BlackMagic from './pages/BlackMagic'
 import NumberGuess from './pages/NumberGuess'
 import WheelOfFortune from './pages/WheelOfFortune'
+import Ludo from './pages/Ludo'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/black-magic" element={<BlackMagic />} />
       <Route path="/number-guess" element={<NumberGuess />} />
       <Route path="/wheel" element={<WheelOfFortune />} />
+      <Route path="/ludo" element={<Ludo />} />
     </Routes>
   )
 }

@@ -102,6 +102,10 @@
     "wheel": {
       "name": "Roda da Sorte",
       "desc": "Insira as opções e deixe a roda decidir — ótimo para decisões ou jogos de festa"
+    },
+    "ludo": {
+      "name": "Ludo",
+      "desc": "Role o dado e leve seus 4 peões para casa para ganhar"
     }
   },
   "lang": {
