@@ -69,6 +69,8 @@ export default function Werewolf() {
   const [skippedSpeakers, setSkippedSpeakers] = useState<Set<number>>(new Set())
   const [timerPaused, setTimerPaused] = useState(false)
   const dayTimerRef = useRef<TimerHandle>(null)
+  const [voteTimerPaused, setVoteTimerPaused] = useState(false)
+  const voteTimerRef = useRef<TimerHandle>(null)
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -223,6 +225,7 @@ export default function Werewolf() {
     const next = currentSpeakerIndex + 1
     if (next >= alivePlayers.length) {
       setPhase('voting')
+      setVoteTimerPaused(false)
     } else {
       setTimerPaused(false)
       setCurrentSpeakerIndex(next)
@@ -255,6 +258,7 @@ export default function Werewolf() {
       .map((p) => p.id)
     setSpeakerOrder((prev) => [...prev, ...remaining])
     setPhase('voting')
+    setVoteTimerPaused(false)
   }
 
   // Clear speaker state when entering night
@@ -717,6 +721,7 @@ export default function Werewolf() {
       {phase === 'voting' && (
         <div className="max-w-sm mx-auto">
           <Timer
+            ref={voteTimerRef}
             seconds={30}
             label={t('timer.voteTime')}
             onExpire={() => {
@@ -724,6 +729,17 @@ export default function Werewolf() {
               if (target != null) eliminateTarget(target)
             }}
           />
+          <div className="flex justify-center mb-2">
+            <button
+              onClick={() => {
+                if (voteTimerPaused) { voteTimerRef.current?.resume(); setVoteTimerPaused(false) }
+                else { voteTimerRef.current?.pause(); setVoteTimerPaused(true) }
+              }}
+              className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-700 transition-colors"
+            >
+              {voteTimerPaused ? t('timer.resume') : t('timer.pause')}
+            </button>
+          </div>
           <h2 className="text-xl font-bold text-center mb-2">{t('werewolf.voting')}</h2>
           <p className="text-sm text-gray-400 text-center mb-6">{t('werewolf.voteHint')}</p>
           <div className="grid grid-cols-2 gap-3 mb-6">

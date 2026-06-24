@@ -58,6 +58,8 @@ export default function Undercover() {
 
   const [roundTimerPaused, setRoundTimerPaused] = useState(false)
   const roundTimerRef = useRef<TimerHandle>(null)
+  const [voteTimerPaused, setVoteTimerPaused] = useState(false)
+  const voteTimerRef = useRef<TimerHandle>(null)
 
   const lastTapRef = useRef<number>(0)
   const hintTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -352,7 +354,7 @@ export default function Undercover() {
       {/* ── ROUND ── */}
       {phase === 'round' && (
         <div className="max-w-sm mx-auto">
-          <Timer ref={roundTimerRef} key={round} seconds={60} onExpire={() => setPhase('voting')} label={t('timer.speechTime')} />
+          <Timer ref={roundTimerRef} key={round} seconds={60} onExpire={() => { setPhase('voting'); setVoteTimerPaused(false) }} label={t('timer.speechTime')} />
           <div className="flex justify-center mb-2">
             <button
               onClick={() => {
@@ -398,7 +400,7 @@ export default function Undercover() {
 
           <p className="text-gray-500 text-sm text-center mb-6">{t('undercover.describeHint')}</p>
 
-          <button onClick={() => setPhase('voting')}
+          <button onClick={() => { setPhase('voting'); setVoteTimerPaused(false) }}
             className="w-full py-4 bg-red-700 hover:bg-red-600 rounded-2xl font-bold text-lg transition-colors">
             {t('undercover.startVote')}
           </button>
@@ -419,6 +421,7 @@ export default function Undercover() {
             )
           })()}
           <Timer
+            ref={voteTimerRef}
             seconds={30}
             label={t('timer.voteTime')}
             onExpire={() => {
@@ -426,6 +429,17 @@ export default function Undercover() {
               if (target != null) eliminateTarget(target)
             }}
           />
+          <div className="flex justify-center mb-2">
+            <button
+              onClick={() => {
+                if (voteTimerPaused) { voteTimerRef.current?.resume(); setVoteTimerPaused(false) }
+                else { voteTimerRef.current?.pause(); setVoteTimerPaused(true) }
+              }}
+              className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-800 hover:bg-gray-700 transition-colors"
+            >
+              {voteTimerPaused ? t('timer.resume') : t('timer.pause')}
+            </button>
+          </div>
           <h2 className="text-xl font-bold text-center mb-2">{t('undercover.voting')}</h2>
           <p className="text-sm text-gray-400 text-center mb-6">{t('undercover.voteHint')}</p>
 
