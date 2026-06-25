@@ -374,6 +374,7 @@ export default function Chess() {
               const isCapture = isHighlight && piece !== null
               const isLastMoveFrom = lastMove && lastMove[0][0] === row && lastMove[0][1] === col
               const isLastMoveTo = lastMove && lastMove[1][0] === row && lastMove[1][1] === col
+              const isCheckedGeneral = check && piece?.type === 'general' && piece?.color === turn
 
               return (
                 <div
@@ -413,6 +414,7 @@ export default function Chess() {
                         font-bold select-none transition-transform
                         ${isSelected ? 'scale-110 ring-2 ring-yellow-300' : ''}
                         ${isCapture ? 'ring-2 ring-yellow-400' : ''}
+                        ${isCheckedGeneral ? 'ring-2 ring-red-400 animate-pulse' : ''}
                       `}
                       style={{
                         width: CELL - 4,
