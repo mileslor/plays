@@ -116,7 +116,8 @@
       "check": "Xeque!",
       "red_wins": "Vermelho Vence!",
       "black_wins": "Preto Vence!",
-      "new_game": "Novo Jogo"
+      "new_game": "Novo Jogo",
+      "undo": "Desfazer"
     }
   },
   "lang": {

@@ -161,6 +161,8 @@ function hasAnyMoves(board: Board, color: Color): boolean {
   return false
 }
 
+type Snapshot = { board: Board; turn: Color; check: boolean }
+
 export default function Chess() {
   const { t } = useTranslation()
   const [board, setBoard] = useState<Board>(initBoard)
@@ -169,6 +171,7 @@ export default function Chess() {
   const [turn, setTurn] = useState<Color>('red')
   const [winner, setWinner] = useState<Color | null>(null)
   const [check, setCheck] = useState(false)
+  const [history, setHistory] = useState<Snapshot[]>([])
 
   const restart = useCallback(() => {
     setBoard(initBoard())
@@ -177,7 +180,20 @@ export default function Chess() {
     setTurn('red')
     setWinner(null)
     setCheck(false)
+    setHistory([])
   }, [])
+
+  const undo = useCallback(() => {
+    if (history.length === 0) return
+    const prev = history[history.length - 1]
+    setBoard(prev.board)
+    setTurn(prev.turn)
+    setCheck(prev.check)
+    setWinner(null)
+    setSelected(null)
+    setHighlights(new Set())
+    setHistory(h => h.slice(0, -1))
+  }, [history])
 
   const handleClick = useCallback((row: number, col: number) => {
     if (winner) return
@@ -189,6 +205,8 @@ export default function Chess() {
       const [fr, fc] = selected
       const nb = applyMove(board, fr, fc, row, col)
       const opp: Color = turn === 'red' ? 'black' : 'red'
+
+      setHistory(h => [...h, { board, turn, check }])
 
       // Win: opponent general captured or no moves left
       const [ogr] = findGeneral(nb, opp)
@@ -219,7 +237,7 @@ export default function Chess() {
 
     setSelected(null)
     setHighlights(new Set())
-  }, [board, selected, highlights, turn, winner])
+  }, [board, selected, highlights, turn, winner, check])
 
   const statusText = winner
     ? t(`games.chess.${winner}_wins`)
@@ -243,9 +261,18 @@ export default function Chess() {
         <div className="flex items-center justify-between mb-3">
           <Link to="/" className="text-amber-300 hover:text-amber-100 text-sm">← {t('home.heading')}</Link>
           <h1 className="text-xl font-bold text-amber-200">{t('games.chess.name')}</h1>
-          <button onClick={restart} className="text-amber-300 hover:text-amber-100 text-sm bg-amber-900/40 px-2 py-1 rounded">
-            {t('games.chess.new_game')}
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={undo}
+              disabled={history.length === 0}
+              className="text-amber-300 hover:text-amber-100 text-sm bg-amber-900/40 px-2 py-1 rounded disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              ↩ {t('games.chess.undo')}
+            </button>
+            <button onClick={restart} className="text-amber-300 hover:text-amber-100 text-sm bg-amber-900/40 px-2 py-1 rounded">
+              {t('games.chess.new_game')}
+            </button>
+          </div>
         </div>
 
         {/* Status bar */}

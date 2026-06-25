@@ -116,7 +116,8 @@
       "check": "Check!",
       "red_wins": "Red Wins!",
       "black_wins": "Black Wins!",
-      "new_game": "New Game"
+      "new_game": "New Game",
+      "undo": "Undo"
     }
   },
   "lang": {

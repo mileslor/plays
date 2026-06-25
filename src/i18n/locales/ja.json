@@ -116,7 +116,8 @@
       "check": "将軍！",
       "red_wins": "赤の勝利！",
       "black_wins": "黒の勝利！",
-      "new_game": "新しいゲーム"
+      "new_game": "新しいゲーム",
+      "undo": "待った"
     }
   },
   "lang": {
