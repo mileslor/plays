@@ -118,6 +118,7 @@
       "black_wins": "¡Gana el Negro!",
       "new_game": "Nueva Partida",
       "undo": "Deshacer",
+      "move": "Jugada {{count}}",
       "resign": "Rendirse",
       "resign_confirm": "¿Seguro que quieres rendirte?",
       "resigned": "{{color}} se rinde. ¡Gana el oponente!"

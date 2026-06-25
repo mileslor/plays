@@ -461,6 +461,9 @@ export default function Chess() {
 
         {/* Legend */}
         <div className="mt-3 text-center text-xs text-amber-400/60">
+          {!winner && (
+            <span className="mr-2">{t('games.chess.move', { count: history.length + 1 })}</span>
+          )}
           {turn === 'red' ? '🔴' : '⚫'} {t(`games.chess.${turn}_turn`)}
         </div>
       </div>

@@ -196,6 +196,7 @@
       "black_wins": "黑方勝利！",
       "new_game": "新局",
       "undo": "悔棋",
+      "move": "第 {{count}} 步",
       "resign": "認輸",
       "resign_confirm": "確定認輸？",
       "resigned": "{{color}}認輸，對手勝利！"

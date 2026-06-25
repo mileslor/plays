@@ -118,6 +118,7 @@
       "black_wins": "Black Wins!",
       "new_game": "New Game",
       "undo": "Undo",
+      "move": "Move {{count}}",
       "resign": "Resign",
       "resign_confirm": "Resign and concede the game?",
       "resigned": "{{color}} resigned. Opponent wins!"

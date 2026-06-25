@@ -118,6 +118,7 @@
       "black_wins": "Preto Vence!",
       "new_game": "Novo Jogo",
       "undo": "Desfazer",
+      "move": "Lance {{count}}",
       "resign": "Desistir",
       "resign_confirm": "Tem certeza que quer desistir?",
       "resigned": "{{color}} desistiu. Oponente vence!"
