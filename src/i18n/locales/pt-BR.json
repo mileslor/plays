@@ -117,7 +117,8 @@
       "red_wins": "Vermelho Vence!",
       "black_wins": "Preto Vence!",
       "new_game": "Novo Jogo",
-      "undo": "Desfazer"
+      "undo": "Desfazer",
+      "move": "Lance {{count}}"
     }
   },
   "lang": {
