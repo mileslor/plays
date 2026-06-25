@@ -173,6 +173,7 @@ export default function Chess() {
   const [check, setCheck] = useState(false)
   const [history, setHistory] = useState<Snapshot[]>([])
   const [lastMove, setLastMove] = useState<[[number,number],[number,number]] | null>(null)
+  const [resignedBy, setResignedBy] = useState<Color | null>(null)
 
   const restart = useCallback(() => {
     setBoard(initBoard())
@@ -183,7 +184,18 @@ export default function Chess() {
     setCheck(false)
     setHistory([])
     setLastMove(null)
+    setResignedBy(null)
   }, [])
+
+  const resign = useCallback(() => {
+    if (winner) return
+    if (!window.confirm(t('games.chess.resign_confirm'))) return
+    const opp: Color = turn === 'red' ? 'black' : 'red'
+    setResignedBy(turn)
+    setWinner(opp)
+    setSelected(null)
+    setHighlights(new Set())
+  }, [winner, turn, t])
 
   const undo = useCallback(() => {
     if (history.length === 0) return
@@ -245,8 +257,11 @@ export default function Chess() {
     setHighlights(new Set())
   }, [board, selected, highlights, turn, winner, check])
 
+  const resignedColor = resignedBy === 'red' ? t('games.chess.red_turn') : resignedBy === 'black' ? t('games.chess.black_turn') : ''
   const statusText = winner
-    ? t(`games.chess.${winner}_wins`)
+    ? resignedBy
+      ? t('games.chess.resigned', { color: resignedColor })
+      : t(`games.chess.${winner}_wins`)
     : check
       ? `⚠️ ${t(`games.chess.${turn}_turn`)} — ${t('games.chess.check')}`
       : t(`games.chess.${turn}_turn`)
@@ -274,6 +289,13 @@ export default function Chess() {
               className="text-amber-300 hover:text-amber-100 text-sm bg-amber-900/40 px-2 py-1 rounded disabled:opacity-30 disabled:cursor-not-allowed"
             >
               ↩ {t('games.chess.undo')}
+            </button>
+            <button
+              onClick={resign}
+              disabled={!!winner}
+              className="text-red-400 hover:text-red-200 text-sm bg-red-900/30 px-2 py-1 rounded disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              ⚑ {t('games.chess.resign')}
             </button>
             <button onClick={restart} className="text-amber-300 hover:text-amber-100 text-sm bg-amber-900/40 px-2 py-1 rounded">
               {t('games.chess.new_game')}

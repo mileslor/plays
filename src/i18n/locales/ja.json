@@ -117,7 +117,10 @@
       "red_wins": "赤の勝利！",
       "black_wins": "黒の勝利！",
       "new_game": "新しいゲーム",
-      "undo": "待った"
+      "undo": "待った",
+      "resign": "投了",
+      "resign_confirm": "投了しますか？",
+      "resigned": "{{color}}が投了。相手の勝利！"
     }
   },
   "lang": {

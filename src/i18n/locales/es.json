@@ -117,7 +117,10 @@
       "red_wins": "¡Gana el Rojo!",
       "black_wins": "¡Gana el Negro!",
       "new_game": "Nueva Partida",
-      "undo": "Deshacer"
+      "undo": "Deshacer",
+      "resign": "Rendirse",
+      "resign_confirm": "¿Seguro que quieres rendirte?",
+      "resigned": "{{color}} se rinde. ¡Gana el oponente!"
     }
   },
   "lang": {

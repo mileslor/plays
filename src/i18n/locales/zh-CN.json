@@ -46,7 +46,10 @@
       "red_wins": "红方胜利！",
       "black_wins": "黑方胜利！",
       "new_game": "新局",
-      "undo": "悔棋"
+      "undo": "悔棋",
+      "resign": "认输",
+      "resign_confirm": "确定认输？",
+      "resigned": "{{color}}认输，对手胜利！"
     }
   },
   "lang": {

@@ -195,7 +195,10 @@
       "red_wins": "紅方勝利！",
       "black_wins": "黑方勝利！",
       "new_game": "新局",
-      "undo": "悔棋"
+      "undo": "悔棋",
+      "resign": "認輸",
+      "resign_confirm": "確定認輸？",
+      "resigned": "{{color}}認輸，對手勝利！"
     }
   },
   "lang": {
