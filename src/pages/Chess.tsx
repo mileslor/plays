@@ -161,7 +161,7 @@ function hasAnyMoves(board: Board, color: Color): boolean {
   return false
 }
 
-type Snapshot = { board: Board; turn: Color; check: boolean }
+type Snapshot = { board: Board; turn: Color; check: boolean; lastMove: [[number,number],[number,number]] | null }
 
 export default function Chess() {
   const { t } = useTranslation()
@@ -172,6 +172,7 @@ export default function Chess() {
   const [winner, setWinner] = useState<Color | null>(null)
   const [check, setCheck] = useState(false)
   const [history, setHistory] = useState<Snapshot[]>([])
+  const [lastMove, setLastMove] = useState<[[number,number],[number,number]] | null>(null)
 
   const restart = useCallback(() => {
     setBoard(initBoard())
@@ -181,6 +182,7 @@ export default function Chess() {
     setWinner(null)
     setCheck(false)
     setHistory([])
+    setLastMove(null)
   }, [])
 
   const undo = useCallback(() => {
@@ -189,6 +191,7 @@ export default function Chess() {
     setBoard(prev.board)
     setTurn(prev.turn)
     setCheck(prev.check)
+    setLastMove(prev.lastMove)
     setWinner(null)
     setSelected(null)
     setHighlights(new Set())
@@ -205,8 +208,9 @@ export default function Chess() {
       const [fr, fc] = selected
       const nb = applyMove(board, fr, fc, row, col)
       const opp: Color = turn === 'red' ? 'black' : 'red'
+      const move: [[number,number],[number,number]] = [[fr, fc], [row, col]]
 
-      setHistory(h => [...h, { board, turn, check }])
+      setHistory(h => [...h, { board, turn, check, lastMove }])
 
       // Win: opponent general captured or no moves left
       const [ogr] = findGeneral(nb, opp)
@@ -216,6 +220,7 @@ export default function Chess() {
         setHighlights(new Set())
         setWinner(turn)
         setCheck(false)
+        setLastMove(move)
         return
       }
 
@@ -224,6 +229,7 @@ export default function Chess() {
       setHighlights(new Set())
       setTurn(opp)
       setCheck(isInCheck(nb, opp))
+      setLastMove(move)
       return
     }
 
@@ -366,6 +372,8 @@ export default function Chess() {
               const isSelected = selected?.[0] === row && selected?.[1] === col
               const isHighlight = highlights.has(key)
               const isCapture = isHighlight && piece !== null
+              const isLastMoveFrom = lastMove && lastMove[0][0] === row && lastMove[0][1] === col
+              const isLastMoveTo = lastMove && lastMove[1][0] === row && lastMove[1][1] === col
 
               return (
                 <div
@@ -379,6 +387,19 @@ export default function Chess() {
                     height: CELL,
                   }}
                 >
+                  {/* Last move highlight */}
+                  {(isLastMoveFrom || isLastMoveTo) && !isSelected && (
+                    <div
+                      className="absolute rounded-sm"
+                      style={{
+                        width: CELL - 2,
+                        height: CELL - 2,
+                        background: isLastMoveTo ? 'rgba(250,204,21,0.25)' : 'rgba(250,204,21,0.12)',
+                        border: isLastMoveTo ? '1px solid rgba(250,204,21,0.4)' : '1px solid rgba(250,204,21,0.2)',
+                      }}
+                    />
+                  )}
+
                   {/* Move highlight dot */}
                   {isHighlight && !isCapture && (
                     <div className="absolute w-3 h-3 rounded-full bg-yellow-300/60 z-10" />
