@@ -108,7 +108,7 @@ export default function NumberGuess() {
         >
           {t('numberguess.startPlay')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
+        <Link to="/" className="game-back-btn">{t('numberguess.backHome')}</Link>
       </div>
     </div>
   )
@@ -332,7 +332,7 @@ export default function NumberGuess() {
         >
           {t('numberguess.changeRange')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
+        <Link to="/" className="game-back-btn">{t('numberguess.backHome')}</Link>
       </div>
     </div>
   )
@@ -387,7 +387,7 @@ export default function NumberGuess() {
         >
           {t('numberguess.changeRange')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('numberguess.backHome')}</Link>
+        <Link to="/" className="game-back-btn">{t('numberguess.backHome')}</Link>
       </div>
     </div>
   )

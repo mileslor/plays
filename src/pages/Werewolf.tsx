@@ -734,7 +734,7 @@ export default function Werewolf() {
             </button>
             <Link to="/"
               className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold transition-colors text-center">
-              {t('werewolf.backHome')}
+← {t('werewolf.backHome')}
             </Link>
           </div>
         </div>

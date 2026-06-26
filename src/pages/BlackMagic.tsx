@@ -94,7 +94,7 @@ export default function BlackMagic() {
         >
           {t('blackmagic.startBtn')}
         </button>
-        <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">{t('blackmagic.backHome')}</Link>
+        <Link to="/" className="game-back-btn">{t('blackmagic.backHome')}</Link>
       </div>
     </div>
   )

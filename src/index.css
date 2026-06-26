@@ -18,3 +18,16 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.7s ease-out forwards;
 }
+
+/* Unified back-to-home button for games without theme-colored header */
+.game-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.game-back-btn:hover {
+  color: #d1d5db;
+}
