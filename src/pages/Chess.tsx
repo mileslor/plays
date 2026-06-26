@@ -467,6 +467,31 @@ export default function Chess() {
           {turn === 'red' ? '🔴' : '⚫'} {t(`games.chess.${turn}_turn`)}
         </div>
       </div>
+
+      {/* Game Over Overlay */}
+      {winner && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="bg-amber-900 border-2 border-amber-500 rounded-3xl p-8 text-center shadow-2xl max-w-xs mx-4">
+            <div className="text-5xl mb-4">{winner === 'red' ? '🔴' : '⚫'}</div>
+            <h2 className="text-2xl font-bold text-amber-200 mb-1">{statusText}</h2>
+            <p className="text-amber-400/70 text-sm mb-6">{t('games.chess.move', { count: history.length })}</p>
+            <div className="flex gap-3">
+              <button
+                onClick={restart}
+                className="flex-1 py-3 bg-amber-700 hover:bg-amber-600 rounded-2xl font-bold transition-colors"
+              >
+                {t('games.chess.new_game')}
+              </button>
+              <Link
+                to="/"
+                className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold transition-colors text-center"
+              >
+                ← {t('home.heading')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
