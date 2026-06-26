@@ -244,7 +244,7 @@ export default function Ludo() {
   if (state.phase === 'setup') {
     return (
       <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-6">
-        <Link to="/" className="absolute top-4 left-4 text-gray-400 hover:text-white text-sm">
+        <Link to="/" className="game-back-btn absolute top-4 left-4">
           ← 返回主頁
         </Link>
         <div className="text-7xl mb-4">✈️</div>

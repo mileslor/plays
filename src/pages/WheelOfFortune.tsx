@@ -185,7 +185,7 @@ export default function WheelOfFortune() {
           >
             {parsedItems.length < 2 ? t('wheel.needAtLeastTwo') : t('wheel.spin')}
           </button>
-          <Link to="/" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+          <Link to="/" className="game-back-btn">
             ← {t('nav.home')}
           </Link>
         </div>
