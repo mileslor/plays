@@ -73,7 +73,7 @@ export default function SpeakingTracker({
                       ? skipped
                         ? 'bg-gray-800 border border-gray-700 text-gray-500 line-through'
                         : 'bg-green-900/50 border border-green-700 text-green-300'
-                      : 'bg-gray-800 border border-gray-600 text-gray-400'
+                      : 'bg-gray-800 border border-red-900 text-gray-300 animate-pulse-unspoken'
                 }`}
               >
                 {isCurrent && '🎤 '}
@@ -105,7 +105,7 @@ export default function SpeakingTracker({
                 ? 'bg-yellow-800 ring-2 ring-yellow-400'
                 : spokenIds.has(p.id)
                   ? 'bg-gray-800 opacity-60'
-                  : 'bg-gray-800'
+                  : 'bg-red-950/40 border border-red-900/60'
             }`}
           >
             <p className="font-bold text-sm">{t('undercover.playerN', { n: p.id })}</p>

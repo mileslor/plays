@@ -20,6 +20,16 @@ body {
 }
 
 /* Unified back-to-home button for games without theme-colored header */
+@keyframes pulse-unspoken {
+  0%, 100% { border-color: rgb(153 27 27 / 0.6); }
+  50% { border-color: rgb(239 68 68 / 0.9); box-shadow: 0 0 6px rgb(239 68 68 / 0.3); }
+}
+
+.animate-pulse-unspoken {
+  animation: pulse-unspoken 2s ease-in-out infinite;
+}
+
+/* Unified back-to-home button for games without theme-colored header */
 .game-back-btn {
   display: inline-flex;
   align-items: center;
