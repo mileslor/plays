@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 // ── Board constants ────────────────────────────────────────
 
@@ -50,7 +51,7 @@ const PLAYER_BG   = ['bg-red-600','bg-blue-600','bg-green-600','bg-yellow-500']
 const PLAYER_LIGHT = ['bg-red-950','bg-blue-950','bg-green-950','bg-yellow-950']
 const PLAYER_HOME  = ['bg-red-400','bg-blue-400','bg-green-400','bg-yellow-400']
 const PLAYER_TRI   = ['bg-red-700','bg-blue-700','bg-green-700','bg-yellow-700']
-const PLAYER_NAME  = ['紅隊','藍隊','綠隊','黃隊']
+const PLAYER_COLOR_KEY = ['red','blue','green','yellow']
 const PLAYER_EMOJI = ['🔴','🔵','🟢','🟡']
 const DICE_FACE    = ['⚀','⚁','⚂','⚃','⚄','⚅']
 
@@ -139,6 +140,9 @@ function advancePos(pos: PiecePos, dice: number): PiecePos {
 // ── Component ─────────────────────────────────────────────
 
 export default function Ludo() {
+  const { t } = useTranslation()
+  const PLAYER_NAME = PLAYER_COLOR_KEY.map(k => t(`games.ludo.${k}`))
+
   const [state, setState] = useState<GameState>({
     phase: 'setup',
     numPlayers: 4,
@@ -245,11 +249,11 @@ export default function Ludo() {
     return (
       <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-6">
         <Link to="/" className="game-back-btn absolute top-4 left-4">
-          ← 返回主頁
+          ← {t('home.heading')}
         </Link>
         <div className="text-7xl mb-4">✈️</div>
-        <h1 className="text-4xl font-bold mb-2">飛行棋</h1>
-        <p className="text-gray-400 mb-10">選擇玩家人數</p>
+        <h1 className="text-4xl font-bold mb-2">{t('games.ludo.name')}</h1>
+        <p className="text-gray-400 mb-10">{t('games.ludo.choose_players')}</p>
         <div className="flex gap-6">
           {[2, 3, 4].map(n => (
             <button
@@ -273,21 +277,21 @@ export default function Ludo() {
       <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-6 text-center">
         <div className="text-8xl mb-4">🏆</div>
         <h1 className="text-4xl font-bold mb-2">
-          {PLAYER_EMOJI[w]} {PLAYER_NAME[w]} 勝利！
+          {t('games.ludo.wins', { name: `${PLAYER_EMOJI[w]} ${PLAYER_NAME[w]}` })}
         </h1>
-        <p className="text-gray-400 mb-10">4隻棋全數回家！</p>
+        <p className="text-gray-400 mb-10">{t('games.ludo.win_desc')}</p>
         <div className="flex gap-4">
           <button
             onClick={() => startGame(state.numPlayers)}
             className="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 font-bold text-lg"
           >
-            再玩一次
+            {t('games.ludo.play_again')}
           </button>
           <Link
             to="/"
             className="px-8 py-4 rounded-2xl bg-gray-700 hover:bg-gray-600 font-bold text-lg"
           >
-            返回主頁
+            {t('home.heading')}
           </Link>
         </div>
       </div>
@@ -311,12 +315,12 @@ export default function Ludo() {
       {/* Header */}
       <div className="flex items-center w-full max-w-[440px] mb-3">
         <Link to="/" className="text-gray-400 hover:text-white text-sm mr-3">←</Link>
-        <h1 className="text-lg font-bold flex-1 text-center">✈️ 飛行棋</h1>
+        <h1 className="text-lg font-bold flex-1 text-center">✈️ {t('games.ludo.name')}</h1>
         <button
           onClick={() => startGame(state.numPlayers)}
           className="text-xs text-gray-500 hover:text-gray-300"
         >
-          重新開始
+          {t('games.ludo.restart')}
         </button>
       </div>
 
@@ -332,7 +336,7 @@ export default function Ludo() {
             }`}
           >
             {PLAYER_EMOJI[i]} {PLAYER_NAME[i]}
-            {i === cp && ' 出招'}
+            {i === cp && ` ${t('games.ludo.current_turn')}`}
           </div>
         ))}
       </div>
@@ -421,24 +425,24 @@ export default function Ludo() {
 
         <p className="text-sm text-gray-400 text-center min-h-[20px]">
           {state.noMoves && state.dice !== null
-            ? `擲到 ${state.dice}，冇棋可走，自動跳過…`
+            ? t('games.ludo.no_moves', { dice: state.dice })
             : !state.rolled
-            ? `${PLAYER_EMOJI[cp]} ${PLAYER_NAME[cp]}，點骰子！`
+            ? t('games.ludo.roll_prompt', { name: `${PLAYER_EMOJI[cp]} ${PLAYER_NAME[cp]}` })
             : state.dice !== null
-            ? `擲到 ${state.dice}，揀一隻棋移動`
+            ? t('games.ludo.pick_piece', { dice: state.dice })
             : ''}
         </p>
 
         {state.dice === 6 && state.rolled && !state.noMoves && (
-          <p className="text-yellow-400 text-xs font-bold">🎉 擲到 6！走完可以再擲！</p>
+          <p className="text-yellow-400 text-xs font-bold">{t('games.ludo.bonus_roll')}</p>
         )}
       </div>
 
       {/* Legend */}
       <div className="mt-4 flex gap-4 text-xs text-gray-500 flex-wrap justify-center">
-        <span>★ 安全格</span>
-        <span>擲6先可出棋</span>
-        <span>4隻棋回家先贏</span>
+        <span>{t('games.ludo.safe_square')}</span>
+        <span>{t('games.ludo.exit_rule')}</span>
+        <span>{t('games.ludo.win_rule')}</span>
       </div>
     </div>
   )

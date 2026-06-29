@@ -107,7 +107,24 @@
     },
     "ludo": {
       "name": "すごろく",
-      "desc": "サイコロを振って4つのコマをゴールに戻したら勝ち"
+      "desc": "サイコロを振って4つのコマをゴールに戻したら勝ち",
+      "choose_players": "プレイヤー数を選択",
+      "wins": "{{name}}の勝利！",
+      "win_desc": "4つのコマがゴールに到達！",
+      "play_again": "もう一度",
+      "restart": "最初から",
+      "current_turn": "出番！",
+      "roll_prompt": "{{name}}、サイコロを振ろう！",
+      "no_moves": "{{dice}}が出た — 動けるコマなし、スキップ…",
+      "pick_piece": "{{dice}}が出た — 動かすコマを選ぼう",
+      "bonus_roll": "🎉 6が出た！動かした後もう一度振れる！",
+      "safe_square": "★ セーフマス",
+      "exit_rule": "6を出すとコマを出せる",
+      "win_rule": "4つ全部ゴールに戻したら勝ち",
+      "red": "赤",
+      "blue": "青",
+      "green": "緑",
+      "yellow": "黄"
     },
     "chess": {
       "name": "象棋（中国将棋）",

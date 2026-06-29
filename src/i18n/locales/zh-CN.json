@@ -35,7 +35,24 @@
     },
     "ludo": {
       "name": "飞行棋",
-      "desc": "骰子决定命运，4颗棋先回家就赢"
+      "desc": "骰子决定命运，4颗棋先回家就赢",
+      "choose_players": "选择玩家人数",
+      "wins": "{{name}}获胜！",
+      "win_desc": "4颗棋全数回家！",
+      "play_again": "再玩一次",
+      "restart": "重新开始",
+      "current_turn": "出招",
+      "roll_prompt": "{{name}}，点骰子！",
+      "no_moves": "掷到 {{dice}}，没棋可走，自动跳过…",
+      "pick_piece": "掷到 {{dice}}，选一颗棋移动",
+      "bonus_roll": "🎉 掷到 6！走完可以再掷！",
+      "safe_square": "★ 安全格",
+      "exit_rule": "掷6先可出棋",
+      "win_rule": "4颗棋回家先赢",
+      "red": "红队",
+      "blue": "蓝队",
+      "green": "绿队",
+      "yellow": "黄队"
     },
     "chess": {
       "name": "象棋",

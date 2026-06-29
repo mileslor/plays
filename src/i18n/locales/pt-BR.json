@@ -107,7 +107,24 @@
     },
     "ludo": {
       "name": "Ludo",
-      "desc": "Role o dado e leve seus 4 peões para casa para ganhar"
+      "desc": "Role o dado e leve seus 4 peões para casa para ganhar",
+      "choose_players": "Escolha o número de jogadores",
+      "wins": "{{name}} Venceu!",
+      "win_desc": "Todos os 4 peões chegaram em casa!",
+      "play_again": "Jogar novamente",
+      "restart": "Reiniciar",
+      "current_turn": "Sua vez!",
+      "roll_prompt": "{{name}}, role o dado!",
+      "no_moves": "Rolou {{dice}} — sem movimentos, passando…",
+      "pick_piece": "Rolou {{dice}} — escolha um peão para mover",
+      "bonus_roll": "🎉 Rolou 6! Role novamente após mover!",
+      "safe_square": "★ Casa segura",
+      "exit_rule": "Role 6 para sair da base",
+      "win_rule": "Leve os 4 peões para casa para vencer",
+      "red": "Vermelho",
+      "blue": "Azul",
+      "green": "Verde",
+      "yellow": "Amarelo"
     },
     "chess": {
       "name": "Xadrez Chinês",

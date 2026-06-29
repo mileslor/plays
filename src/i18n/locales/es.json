@@ -107,7 +107,24 @@
     },
     "ludo": {
       "name": "Ludo",
-      "desc": "Tira el dado y lleva tus 4 fichas a casa para ganar"
+      "desc": "Tira el dado y lleva tus 4 fichas a casa para ganar",
+      "choose_players": "Elige el número de jugadores",
+      "wins": "¡{{name}} Gana!",
+      "win_desc": "¡Las 4 fichas llegaron a casa!",
+      "play_again": "Jugar de nuevo",
+      "restart": "Reiniciar",
+      "current_turn": "¡Tu turno!",
+      "roll_prompt": "{{name}}, ¡tira el dado!",
+      "no_moves": "Sacaste {{dice}} — sin movimientos, pasando turno…",
+      "pick_piece": "Sacaste {{dice}} — elige una ficha",
+      "bonus_roll": "🎉 ¡Sacaste 6! ¡Vuelves a tirar!",
+      "safe_square": "★ Casilla segura",
+      "exit_rule": "Saca 6 para salir de la base",
+      "win_rule": "Lleva las 4 fichas a casa para ganar",
+      "red": "Rojo",
+      "blue": "Azul",
+      "green": "Verde",
+      "yellow": "Amarillo"
     },
     "chess": {
       "name": "Ajedrez Chino",

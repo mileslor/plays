@@ -107,7 +107,24 @@
     },
     "ludo": {
       "name": "Ludo",
-      "desc": "Roll the dice and race your 4 tokens home to win"
+      "desc": "Roll the dice and race your 4 tokens home to win",
+      "choose_players": "Choose number of players",
+      "wins": "{{name}} Wins!",
+      "win_desc": "All 4 tokens made it home!",
+      "play_again": "Play Again",
+      "restart": "Restart",
+      "current_turn": "Go!",
+      "roll_prompt": "{{name}}, roll the dice!",
+      "no_moves": "Rolled {{dice}} — no moves, skipping…",
+      "pick_piece": "Rolled {{dice}} — pick a token to move",
+      "bonus_roll": "🎉 Rolled 6! Roll again after moving!",
+      "safe_square": "★ Safe square",
+      "exit_rule": "Roll 6 to exit base",
+      "win_rule": "Get all 4 tokens home to win",
+      "red": "Red",
+      "blue": "Blue",
+      "green": "Green",
+      "yellow": "Yellow"
     },
     "chess": {
       "name": "Chinese Chess",
