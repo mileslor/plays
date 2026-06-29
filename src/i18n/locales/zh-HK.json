@@ -63,7 +63,8 @@
       "label": "難度",
       "easy": "簡單",
       "medium": "中等",
-      "hard": "專家"
+      "hard": "專家",
+      "pairCount": "{{n}} 對詞可用"
     }
   },
   "timer": {
@@ -199,7 +200,8 @@
       "move": "第 {{count}} 步",
       "resign": "認輸",
       "resign_confirm": "確定認輸？",
-      "resigned": "{{color}}認輸，對手勝利！"
+      "resigned": "{{color}}認輸，對手勝利！",
+      "backHome": "← 返主頁"
     }
   },
   "lang": {

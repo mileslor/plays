@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { getRandomPair, type Difficulty } from '../data/undercoverWords'
+import { getRandomPair, getPairCount, type Difficulty } from '../data/undercoverWords'
 import Layout from '../components/Layout'
 import Timer, { type TimerHandle } from '../components/Timer'
 
@@ -258,7 +258,7 @@ export default function Undercover() {
 
           <div className="bg-gray-900 rounded-2xl p-5 mb-3">
             <label className="text-sm text-gray-400 block mb-3">{t('undercover.difficulty.label')}</label>
-            <div className="flex gap-2">
+            <div className="flex gap-2 mb-2">
               {(['easy', 'medium', 'hard'] as Difficulty[]).map((d) => {
                 const activeColor = d === 'easy' ? 'bg-green-600 text-white' : d === 'medium' ? 'bg-yellow-500 text-black' : 'bg-red-600 text-white'
                 return (
@@ -272,6 +272,9 @@ export default function Undercover() {
                 )
               })}
             </div>
+            <p className="text-xs text-gray-500 text-center">
+              {t('undercover.difficulty.pairCount', { n: getPairCount(gameLang, selectedDifficulty) })}
+            </p>
           </div>
 
           <div className="bg-gray-900 rounded-2xl p-5 mb-3">

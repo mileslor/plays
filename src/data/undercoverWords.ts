@@ -1937,6 +1937,11 @@ export const wordPairs: Record<string, WordBank> = {
 
 const lastPairRef: Record<string, string> = {}
 
+export function getPairCount(lang: string, difficulty: Difficulty = 'medium'): number {
+  const bank = wordPairs[lang] ?? wordPairs['en']
+  return (bank[difficulty] ?? bank['medium']).length
+}
+
 export function getRandomPair(lang: string, difficulty: Difficulty = 'medium'): WordPair {
   const bank = wordPairs[lang] ?? wordPairs['en']
   const pairs = bank[difficulty] ?? bank['medium']

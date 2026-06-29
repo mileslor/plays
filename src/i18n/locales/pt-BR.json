@@ -63,7 +63,8 @@
       "label": "Dificuldade",
       "easy": "Fácil",
       "medium": "Médio",
-      "hard": "Especialista"
+      "hard": "Especialista",
+      "pairCount": "{{n}} pares disponíveis"
     }
   },
   "timer": {
@@ -121,7 +122,8 @@
       "move": "Lance {{count}}",
       "resign": "Desistir",
       "resign_confirm": "Tem certeza que quer desistir?",
-      "resigned": "{{color}} desistiu. Oponente vence!"
+      "resigned": "{{color}} desistiu. Oponente vence!",
+      "backHome": "← Início"
     }
   },
   "lang": {

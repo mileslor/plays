@@ -63,7 +63,8 @@
       "label": "Difficulty",
       "easy": "Easy",
       "medium": "Medium",
-      "hard": "Expert"
+      "hard": "Expert",
+      "pairCount": "{{n}} pairs available"
     }
   },
   "timer": {
@@ -121,7 +122,8 @@
       "move": "Move {{count}}",
       "resign": "Resign",
       "resign_confirm": "Resign and concede the game?",
-      "resigned": "{{color}} resigned. Opponent wins!"
+      "resigned": "{{color}} resigned. Opponent wins!",
+      "backHome": "← Home"
     }
   },
   "lang": {

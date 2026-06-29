@@ -63,7 +63,8 @@
       "label": "Dificultad",
       "easy": "Fácil",
       "medium": "Medio",
-      "hard": "Experto"
+      "hard": "Experto",
+      "pairCount": "{{n}} pares disponibles"
     }
   },
   "timer": {
@@ -121,7 +122,8 @@
       "move": "Jugada {{count}}",
       "resign": "Rendirse",
       "resign_confirm": "¿Seguro que quieres rendirte?",
-      "resigned": "{{color}} se rinde. ¡Gana el oponente!"
+      "resigned": "{{color}} se rinde. ¡Gana el oponente!",
+      "backHome": "← Inicio"
     }
   },
   "lang": {
