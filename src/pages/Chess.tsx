@@ -280,7 +280,7 @@ export default function Chess() {
       <div className="w-full" style={{ maxWidth: CELL * 9 + 32 }}>
         {/* Header */}
         <div className="flex items-center justify-between mb-3">
-          <Link to="/" className="text-amber-300 hover:text-amber-100 text-sm">← {t('home.heading')}</Link>
+          <Link to="/" className="text-amber-300 hover:text-amber-100 text-sm">{t('games.chess.backHome')}</Link>
           <h1 className="text-xl font-bold text-amber-200">{t('games.chess.name')}</h1>
           <div className="flex gap-2">
             <button
