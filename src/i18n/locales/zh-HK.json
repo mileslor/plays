@@ -219,6 +219,10 @@
       "resign_confirm": "確定認輸？",
       "resigned": "{{color}}認輸，對手勝利！",
       "backHome": "← 返主頁"
+    },
+    "celebrity": {
+      "name": "名人估估",
+      "desc": "估出主持人心諗嘅名人，20條問題要猜中！"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "黑色嘅嘢",
       "暗色嘅嘢"
     ]
+  },
+  "celebrity": {
+    "title": "名人估估",
+    "tagline": "佢係男係女？係唱歌係打波？估中就贏！",
+    "howToPlay": "點玩？",
+    "rule1": "一位主持人秘密諗一個名人",
+    "rule2": "其他人輪流問「係/唔係」問題",
+    "rule3": "主持人只可答：係、唔係、差唔多",
+    "rule4": "20條問題之內估中就勝利！",
+    "startGame": "開始遊戲 →",
+    "backHome": "← 返主頁",
+    "secretPhase": "主持人秘密輸入",
+    "secretHint": "輸入一個名人名字，唔好俾其他人睇到！",
+    "secretPlaceholder": "名人名字…",
+    "secretLabel": "輸入後交俾其他人繼續",
+    "confirm": "確認，開始問！",
+    "questionsLeft": "剩餘 {{n}} 問",
+    "noQuestionsYet": "尚未提問，快開始！",
+    "questionPlaceholder": "輸入問題（主持人答）…",
+    "answer_yes": "係",
+    "answer_no": "唔係",
+    "answer_kinda": "差唔多",
+    "guessButton": "估佢係邊個！",
+    "guessPrompt": "你估係邊位名人？",
+    "guessPlaceholder": "名人名字…",
+    "submitGuess": "就係佢！",
+    "backToQuestions": "返去繼續問",
+    "win": "🎉 估中喇！",
+    "lose": "😅 估錯喇！",
+    "questionCount": "共用咗 {{n}} 條問題",
+    "correctAnswer": "正確答案係：",
+    "reveal": "點擊睇答案",
+    "newGame": "再玩一局"
   }
 }

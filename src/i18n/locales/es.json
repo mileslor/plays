@@ -141,6 +141,10 @@
       "resign_confirm": "¿Seguro que quieres rendirte?",
       "resigned": "{{color}} se rinde. ¡Gana el oponente!",
       "backHome": "← Inicio"
+    },
+    "celebrity": {
+      "name": "Adivina al Famoso",
+      "desc": "¡Adivina al famoso secreto en 20 preguntas de sí/no!"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "Objeto negro",
       "Algo oscuro"
     ]
+  },
+  "celebrity": {
+    "title": "Adivina al Famoso",
+    "tagline": "¿Hombre o mujer? ¿Cantante o deportista? ¡Adivina en 20 preguntas!",
+    "howToPlay": "¿Cómo jugar?",
+    "rule1": "Un anfitrión piensa en secreto en un famoso",
+    "rule2": "Los demás hacen preguntas de sí/no por turnos",
+    "rule3": "El anfitrión solo puede responder: Sí, No o Más o menos",
+    "rule4": "¡Adivina correctamente en 20 preguntas para ganar!",
+    "startGame": "Empezar →",
+    "backHome": "← Inicio",
+    "secretPhase": "Anfitrión: Ingresa al Famoso",
+    "secretHint": "¡Escribe un nombre de famoso sin que los demás lo vean!",
+    "secretPlaceholder": "Nombre del famoso…",
+    "secretLabel": "Pasa el teléfono a los demás después de confirmar",
+    "confirm": "¡Confirmar, a jugar!",
+    "questionsLeft": "Quedan {{n}} preguntas",
+    "noQuestionsYet": "Aún no hay preguntas — ¡empieza a preguntar!",
+    "questionPlaceholder": "Escribe una pregunta (el anfitrión responde)…",
+    "answer_yes": "Sí",
+    "answer_no": "No",
+    "answer_kinda": "Más o menos",
+    "guessButton": "¡Adivinar!",
+    "guessPrompt": "¿Quién crees que es?",
+    "guessPlaceholder": "Nombre del famoso…",
+    "submitGuess": "¡Es esa persona!",
+    "backToQuestions": "← Seguir preguntando",
+    "win": "🎉 ¡Correcto!",
+    "lose": "😅 ¡Incorrecto!",
+    "questionCount": "Usaste {{n}} preguntas",
+    "correctAnswer": "La respuesta era:",
+    "reveal": "Toca para revelar",
+    "newGame": "Jugar de nuevo"
   }
 }

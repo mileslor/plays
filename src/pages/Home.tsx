@@ -58,8 +58,16 @@ const GAMES: { key: string; path: string; emoji: string; color: string; ready: b
     emoji: '♟️',
     color: 'from-amber-700 to-yellow-800',
     ready: true,
-    isNew: true,
     players: '2',
+  },
+  {
+    key: 'celebrity',
+    path: '/celebrity',
+    emoji: '🌟',
+    color: 'from-pink-700 to-rose-800',
+    ready: true,
+    isNew: true,
+    players: '3+',
   },
 ]
 

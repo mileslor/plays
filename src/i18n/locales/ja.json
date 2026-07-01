@@ -141,6 +141,10 @@
       "resign_confirm": "投了しますか？",
       "resigned": "{{color}}が投了。相手の勝利！",
       "backHome": "← ホームへ"
+    },
+    "celebrity": {
+      "name": "有名人当てゲーム",
+      "desc": "20回の質問で有名人を当てよう！"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "黒い物体",
       "暗い色のもの"
     ]
+  },
+  "celebrity": {
+    "title": "有名人当てゲーム",
+    "tagline": "男？女？歌手？スポーツ選手？20問で当てよう！",
+    "howToPlay": "遊び方",
+    "rule1": "司会者が有名人をひとり秘密に選ぶ",
+    "rule2": "他のプレイヤーが交互に「はい/いいえ」で答えられる質問をする",
+    "rule3": "司会者は「はい」「いいえ」「まあそうかな」のみ答えられる",
+    "rule4": "20問以内に正解すれば勝利！",
+    "startGame": "ゲームスタート →",
+    "backHome": "← ホームへ",
+    "secretPhase": "司会者：有名人を入力",
+    "secretHint": "他のプレイヤーに見せないように有名人の名前を入力！",
+    "secretPlaceholder": "有名人の名前…",
+    "secretLabel": "確認後、他のプレイヤーに渡してください",
+    "confirm": "確定、スタート！",
+    "questionsLeft": "残り {{n}} 問",
+    "noQuestionsYet": "まだ質問がありません。始めましょう！",
+    "questionPlaceholder": "質問を入力（司会者が回答）…",
+    "answer_yes": "はい",
+    "answer_no": "いいえ",
+    "answer_kinda": "まあそうかな",
+    "guessButton": "答えを言う！",
+    "guessPrompt": "誰だと思いますか？",
+    "guessPlaceholder": "有名人の名前…",
+    "submitGuess": "この人です！",
+    "backToQuestions": "← 質問に戻る",
+    "win": "🎉 正解！",
+    "lose": "😅 残念、ハズレ！",
+    "questionCount": "{{n}} 問使いました",
+    "correctAnswer": "正解は：",
+    "reveal": "タップして答えを見る",
+    "newGame": "もう一度"
   }
 }

@@ -141,6 +141,10 @@
       "resign_confirm": "確定認輸？",
       "resigned": "{{color}}認輸，對手勝利！",
       "backHome": "← 返主頁"
+    },
+    "celebrity": {
+      "name": "名人猜猜",
+      "desc": "猜出主持人心中的名人，20個問題內猜中就贏！"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "黑色的東西",
       "暗色的東西"
     ]
+  },
+  "celebrity": {
+    "title": "名人猜猜",
+    "tagline": "他是男是女？唱歌還是運動？猜中就贏！",
+    "howToPlay": "怎麼玩？",
+    "rule1": "一位主持人秘密想一個名人",
+    "rule2": "其他人輪流問「是/不是」的問題",
+    "rule3": "主持人只能回答：是、不是、差不多",
+    "rule4": "20個問題內猜中就勝利！",
+    "startGame": "開始遊戲 →",
+    "backHome": "← 返回首頁",
+    "secretPhase": "主持人秘密輸入",
+    "secretHint": "輸入一個名人名字，不要讓其他人看到！",
+    "secretPlaceholder": "名人名字…",
+    "secretLabel": "輸入後交給其他人繼續",
+    "confirm": "確認，開始提問！",
+    "questionsLeft": "剩餘 {{n}} 題",
+    "noQuestionsYet": "尚未提問，快開始！",
+    "questionPlaceholder": "輸入問題（主持人回答）…",
+    "answer_yes": "是",
+    "answer_no": "不是",
+    "answer_kinda": "差不多",
+    "guessButton": "猜猜看！",
+    "guessPrompt": "你猜是哪位名人？",
+    "guessPlaceholder": "名人名字…",
+    "submitGuess": "就是他/她！",
+    "backToQuestions": "返回繼續提問",
+    "win": "🎉 猜中了！",
+    "lose": "😅 猜錯了！",
+    "questionCount": "共用了 {{n}} 題",
+    "correctAnswer": "正確答案是：",
+    "reveal": "點擊看答案",
+    "newGame": "再玩一局"
   }
 }

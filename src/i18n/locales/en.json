@@ -141,6 +141,10 @@
       "resign_confirm": "Resign and concede the game?",
       "resigned": "{{color}} resigned. Opponent wins!",
       "backHome": "← Home"
+    },
+    "celebrity": {
+      "name": "Celebrity Guess",
+      "desc": "Guess the secret celebrity in 20 yes/no questions!"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "Something dark",
       "Something black"
     ]
+  },
+  "celebrity": {
+    "title": "Celebrity Guess",
+    "tagline": "Male or female? Singer or athlete? Guess in 20 questions!",
+    "howToPlay": "How to play?",
+    "rule1": "One host secretly thinks of a celebrity",
+    "rule2": "Others take turns asking yes/no questions",
+    "rule3": "Host can only answer: Yes, No, or Kind of",
+    "rule4": "Guess correctly within 20 questions to win!",
+    "startGame": "Start Game →",
+    "backHome": "← Home",
+    "secretPhase": "Host: Enter Celebrity",
+    "secretHint": "Type a celebrity name — keep it hidden from others!",
+    "secretPlaceholder": "Celebrity name…",
+    "secretLabel": "Pass the phone to the other players after confirming",
+    "confirm": "Confirm, let's go!",
+    "questionsLeft": "{{n}} questions left",
+    "noQuestionsYet": "No questions yet — start asking!",
+    "questionPlaceholder": "Type a question (host answers)…",
+    "answer_yes": "Yes",
+    "answer_no": "No",
+    "answer_kinda": "Kind of",
+    "guessButton": "Make a Guess!",
+    "guessPrompt": "Who do you think it is?",
+    "guessPlaceholder": "Celebrity name…",
+    "submitGuess": "That's my answer!",
+    "backToQuestions": "← Keep asking",
+    "win": "🎉 Correct!",
+    "lose": "😅 Wrong guess!",
+    "questionCount": "Used {{n}} questions",
+    "correctAnswer": "The answer was:",
+    "reveal": "Tap to reveal",
+    "newGame": "Play Again"
   }
 }

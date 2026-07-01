@@ -141,6 +141,10 @@
       "resign_confirm": "Tem certeza que quer desistir?",
       "resigned": "{{color}} desistiu. Oponente vence!",
       "backHome": "← Início"
+    },
+    "celebrity": {
+      "name": "Adivinhe o Famoso",
+      "desc": "Adivinhe o famoso secreto em 20 perguntas de sim/não!"
     }
   },
   "lang": {
@@ -344,5 +348,38 @@
       "Objeto preto",
       "Algo escuro"
     ]
+  },
+  "celebrity": {
+    "title": "Adivinhe o Famoso",
+    "tagline": "Homem ou mulher? Cantor ou atleta? Adivinhe em 20 perguntas!",
+    "howToPlay": "Como jogar?",
+    "rule1": "Um anfitrião pensa em segredo em um famoso",
+    "rule2": "Os outros fazem perguntas de sim/não por turnos",
+    "rule3": "O anfitrião só pode responder: Sim, Não ou Mais ou menos",
+    "rule4": "Adivinhe corretamente em 20 perguntas para vencer!",
+    "startGame": "Começar →",
+    "backHome": "← Início",
+    "secretPhase": "Anfitrião: Digite o Famoso",
+    "secretHint": "Digite um nome de famoso sem que os outros vejam!",
+    "secretPlaceholder": "Nome do famoso…",
+    "secretLabel": "Passe o celular para os outros após confirmar",
+    "confirm": "Confirmar, vamos lá!",
+    "questionsLeft": "Restam {{n}} perguntas",
+    "noQuestionsYet": "Ainda sem perguntas — comece a perguntar!",
+    "questionPlaceholder": "Digite uma pergunta (o anfitrião responde)…",
+    "answer_yes": "Sim",
+    "answer_no": "Não",
+    "answer_kinda": "Mais ou menos",
+    "guessButton": "Fazer um palpite!",
+    "guessPrompt": "Quem você acha que é?",
+    "guessPlaceholder": "Nome do famoso…",
+    "submitGuess": "É essa pessoa!",
+    "backToQuestions": "← Continuar perguntando",
+    "win": "🎉 Correto!",
+    "lose": "😅 Errou!",
+    "questionCount": "Usou {{n}} perguntas",
+    "correctAnswer": "A resposta era:",
+    "reveal": "Toque para revelar",
+    "newGame": "Jogar novamente"
   }
 }
