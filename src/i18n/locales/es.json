@@ -380,6 +380,7 @@
     "questionCount": "Usaste {{n}} preguntas",
     "correctAnswer": "La respuesta era:",
     "reveal": "Toca para revelar",
-    "newGame": "Jugar de nuevo"
+    "newGame": "Jugar de nuevo",
+    "yourGuess": "Tu respuesta:"
   }
 }

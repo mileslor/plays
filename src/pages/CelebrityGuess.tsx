@@ -22,6 +22,7 @@ export default function CelebrityGuess() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [result, setResult] = useState<'win' | 'lose' | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const [submittedGuess, setSubmittedGuess] = useState('')
 
   const remaining = MAX_Q - questions.length
 
@@ -45,6 +46,7 @@ export default function CelebrityGuess() {
     if (!currentGuess.trim()) return
     const correct =
       currentGuess.trim().toLowerCase() === celebrity.trim().toLowerCase()
+    setSubmittedGuess(currentGuess.trim())
     setResult(correct ? 'win' : 'lose')
     setPhase('result')
   }
@@ -58,6 +60,7 @@ export default function CelebrityGuess() {
     setCurrentGuess('')
     setResult(null)
     setRevealed(false)
+    setSubmittedGuess('')
   }
 
   if (phase === 'setup') {
@@ -246,9 +249,17 @@ export default function CelebrityGuess() {
         <div className="text-7xl mb-4">{result === 'win' ? '🎉' : '😅'}</div>
         <h2 className="text-3xl font-bold mb-2">{t(`celebrity.${result}`)}</h2>
         <p className="text-pink-300 mb-4">{t('celebrity.questionCount', { n: questions.length })}</p>
+        {result === 'lose' && submittedGuess && (
+          <div className="bg-white/10 rounded-2xl p-3 mb-3">
+            <p className="text-pink-400 text-xs mb-1">{t('celebrity.yourGuess')}</p>
+            <p className="text-lg font-bold text-red-300 line-through">{submittedGuess}</p>
+          </div>
+        )}
         <div className="bg-white/10 rounded-2xl p-4 mb-6">
           <p className="text-pink-400 text-sm mb-2">{t('celebrity.correctAnswer')}</p>
-          {revealed ? (
+          {result === 'win' ? (
+            <p className="text-2xl font-bold text-white">{celebrity}</p>
+          ) : revealed ? (
             <p className="text-2xl font-bold text-white">{celebrity}</p>
           ) : (
             <button

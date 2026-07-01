@@ -380,6 +380,7 @@
     "questionCount": "共用咗 {{n}} 條問題",
     "correctAnswer": "正確答案係：",
     "reveal": "點擊睇答案",
-    "newGame": "再玩一局"
+    "newGame": "再玩一局",
+    "yourGuess": "你估咗："
   }
 }

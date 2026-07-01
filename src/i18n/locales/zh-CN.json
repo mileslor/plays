@@ -380,6 +380,7 @@
     "questionCount": "共用了 {{n}} 题",
     "correctAnswer": "正确答案是：",
     "reveal": "点击看答案",
-    "newGame": "再玩一局"
+    "newGame": "再玩一局",
+    "yourGuess": "你猜的是："
   }
 }

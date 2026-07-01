@@ -380,6 +380,7 @@
     "questionCount": "{{n}} 問使いました",
     "correctAnswer": "正解は：",
     "reveal": "タップして答えを見る",
-    "newGame": "もう一度"
+    "newGame": "もう一度",
+    "yourGuess": "あなたの回答："
   }
 }

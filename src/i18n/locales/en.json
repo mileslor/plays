@@ -380,6 +380,7 @@
     "questionCount": "Used {{n}} questions",
     "correctAnswer": "The answer was:",
     "reveal": "Tap to reveal",
-    "newGame": "Play Again"
+    "newGame": "Play Again",
+    "yourGuess": "Your guess:"
   }
 }
