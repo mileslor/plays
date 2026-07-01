@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -25,6 +25,13 @@ export default function CelebrityGuess() {
   const [submittedGuess, setSubmittedGuess] = useState('')
 
   const remaining = MAX_Q - questions.length
+  const questionLogRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (questionLogRef.current) {
+      questionLogRef.current.scrollTop = questionLogRef.current.scrollHeight
+    }
+  }, [questions])
 
   const confirmSecret = () => {
     if (!celebrity.trim()) return
@@ -143,7 +150,7 @@ export default function CelebrityGuess() {
         </div>
 
         {/* Question log */}
-        <div className="flex-1 overflow-y-auto mb-4 space-y-2 min-h-0">
+        <div ref={questionLogRef} className="flex-1 overflow-y-auto mb-4 space-y-2 min-h-0">
           {questions.length === 0 ? (
             <p className="text-center text-pink-400/50 text-sm py-8">
               {t('celebrity.noQuestionsYet')}

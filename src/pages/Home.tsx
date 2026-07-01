@@ -50,7 +50,6 @@ const GAMES: { key: string; path: string; emoji: string; color: string; ready: b
     color: 'from-teal-600 to-cyan-700',
     ready: true,
     players: '2–4',
-    isNew: true,
   },
   {
     key: 'chess',
