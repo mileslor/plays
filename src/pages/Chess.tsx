@@ -486,7 +486,7 @@ export default function Chess() {
                 to="/"
                 className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold transition-colors text-center"
               >
-                ← {t('home.heading')}
+                {t('games.chess.backHome')}
               </Link>
             </div>
           </div>
