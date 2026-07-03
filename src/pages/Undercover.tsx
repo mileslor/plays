@@ -475,11 +475,20 @@ export default function Undercover() {
             {t(`undercover.role_${eliminatedPlayer.role}`)}
           </p>
           {eliminatedPlayer.role === 'undercover' && eliminatedPlayer.word && (
-            <p className="text-gray-400 mb-8">
+            <p className="text-gray-400 mb-4">
               {t('undercover.theirWord')}：<span className="text-white font-bold">「{eliminatedPlayer.word}」</span>
             </p>
           )}
-          {eliminatedPlayer.role !== 'undercover' && <div className="mb-8" />}
+          {(() => {
+            const remaining = initialUndercoverCount - eliminatedUndercoverCount
+            return (
+              <div className="mb-8">
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold ${remaining === 0 ? 'bg-green-900/50 border border-green-600 text-green-300' : 'bg-red-900/50 border border-red-600 text-red-300'}`}>
+                  👥 {remaining === 0 ? t('undercover.allSpiesOut') : t('undercover.remainingSpy', { n: remaining })}
+                </span>
+              </div>
+            )
+          })()}
           <button onClick={continueRound}
             className="w-full py-4 bg-gray-700 hover:bg-gray-600 rounded-2xl font-bold text-lg transition-colors">
             {t('undercover.nextRound')}
