@@ -65,7 +65,6 @@ const GAMES: { key: string; path: string; emoji: string; color: string; ready: b
     emoji: '🌟',
     color: 'from-pink-700 to-rose-800',
     ready: true,
-    isNew: true,
     players: '3+',
   },
 ]
