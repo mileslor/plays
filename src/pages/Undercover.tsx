@@ -511,6 +511,7 @@ export default function Undercover() {
           {wbGuessResult === null ? (
             <>
               <input
+                autoFocus
                 value={wbGuess}
                 onChange={(e) => setWbGuess(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && wbGuess.trim() && handleWbSubmit()}
