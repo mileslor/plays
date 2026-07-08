@@ -23,6 +23,7 @@ export default function NumberGuess() {
     return saved ? parseInt(saved) : 100
   })
   const secretRef = useRef(0)
+  const nameInputRef = useRef<HTMLInputElement>(null)
   const guessInputRef = useRef<HTMLInputElement>(null)
 
   const [currentMin, setCurrentMin] = useState(1)
@@ -74,6 +75,7 @@ export default function NumberGuess() {
     setGuesses(prev => [...prev, newGuess])
     setGuessValue('')
     setGuesserName('')
+    setTimeout(() => nameInputRef.current?.focus(), 0)
 
     if (result === 'correct') {
       setLoser(name)
@@ -208,6 +210,7 @@ export default function NumberGuess() {
       {/* Input */}
       <div className="flex flex-col gap-3">
         <input
+          ref={nameInputRef}
           value={guesserName}
           onChange={e => setGuesserName(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && guessInputRef.current?.focus()}
