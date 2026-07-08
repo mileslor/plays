@@ -171,6 +171,7 @@ export default function WheelOfFortune() {
               onChange={e => setItemText(e.target.value)}
               className="w-full h-44 bg-white/10 rounded-2xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:bg-white/15 transition-colors resize-none"
               placeholder={'A\nB\nC\n...'}
+              autoFocus
             />
             {parsedItems.length > 0 && (
               <p className="text-gray-400 text-xs mt-1.5">

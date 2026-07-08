@@ -115,6 +115,7 @@ export default function BlackMagic() {
               onChange={e => updateItem(i, e.target.value)}
               placeholder={suggestedItems[i] ?? t('blackmagic.itemPlaceholder')}
               className="flex-1 bg-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:bg-white/15 transition-colors"
+              {...(i === 0 ? { autoFocus: true } : {})}
             />
             {inputItems.length > 3 && (
               <button onClick={() => removeItem(i)} className="text-gray-600 hover:text-red-400 transition-colors px-2">✕</button>
