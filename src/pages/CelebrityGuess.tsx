@@ -26,6 +26,7 @@ export default function CelebrityGuess() {
 
   const remaining = MAX_Q - questions.length
   const questionLogRef = useRef<HTMLDivElement>(null)
+  const questionInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (questionLogRef.current) {
@@ -46,6 +47,8 @@ export default function CelebrityGuess() {
     setCurrentQ('')
     if (newQuestions.length >= MAX_Q) {
       setPhase('guessing')
+    } else {
+      setTimeout(() => questionInputRef.current?.focus(), 0)
     }
   }
 
@@ -180,6 +183,7 @@ export default function CelebrityGuess() {
         {phase === 'asking' ? (
           <div className="space-y-3 shrink-0">
             <input
+              ref={questionInputRef}
               type="text"
               value={currentQ}
               onChange={e => setCurrentQ(e.target.value)}
