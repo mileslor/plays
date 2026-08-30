@@ -11,6 +11,7 @@ const WheelOfFortune = lazy(() => import('./pages/WheelOfFortune'))
 const Ludo = lazy(() => import('./pages/Ludo'))
 const Chess = lazy(() => import('./pages/Chess'))
 const CelebrityGuess = lazy(() => import('./pages/CelebrityGuess'))
+const Story = lazy(() => import('./pages/Story'))
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/ludo" element={<Ludo />} />
         <Route path="/chess" element={<Chess />} />
         <Route path="/celebrity" element={<CelebrityGuess />} />
+        <Route path="/story" element={<Story />} />
       </Routes>
     </Suspense>
   )

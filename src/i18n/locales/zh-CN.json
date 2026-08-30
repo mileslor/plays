@@ -73,6 +73,10 @@
     "celebrity": {
       "name": "名人猜猜",
       "desc": "猜出主持人心中的名人，20个问题内猜中就赢！"
+    },
+    "story": {
+      "name": "从前从前",
+      "desc": "开房间和朋友一起接龙讲故事，听到你说中我的牌就打断你"
     }
   },
   "lang": {
@@ -382,5 +386,50 @@
     "reveal": "点击看答案",
     "newGame": "再玩一局",
     "yourGuess": "你猜的是："
+  },
+  "story": {
+    "guest": "玩家",
+    "title": "从前从前",
+    "tagline": "开房间，和朋友一起编童话",
+    "howToPlay": "怎么玩？",
+    "rule1": "主持人开房间，会有一组 4 位数字房号",
+    "rule2": "朋友选“加入房间”，输入房号就能进来",
+    "rule3": "每人有几张情节牌和一张结局牌，故事讲到自己的牌就打出",
+    "rule4": "听到讲故事的人说中你手上的牌，就点那张牌打断他，接着讲下去",
+    "namePlaceholder": "你的名字",
+    "createRoom": "开新房间",
+    "joinRoom": "加入房间",
+    "enterRoom": "进入",
+    "back": "返回",
+    "backHome": "← 回主页",
+    "roomCode": "房号",
+    "roomCodeHint": "让朋友输入这组号码加入",
+    "connecting": "连接中…",
+    "connError": "连接失败，请重试",
+    "playersJoined": "已加入 {{n}} 人",
+    "you": "你",
+    "startGame": "开始游戏 →",
+    "needPlayers": "至少需要 {{n}} 人",
+    "waitHost": "等待主持人开始…",
+    "leave": "离开",
+    "winner": "“{{name}}”把故事讲完了！",
+    "theStory": "这个故事是这样的…",
+    "playAgain": "回大厅再玩",
+    "waitHostRestart": "等待主持人开新局…",
+    "hostLeft": "主持人已离开，游戏可能已结束",
+    "storySoFar": "故事进行到…",
+    "noCardsYet": "还没有人出牌",
+    "actStuck": "“{{name}}”卡住了，抽一张牌，换人讲",
+    "actInterrupt": "“{{name}}”打断！打出“{{card}}”",
+    "actPlay": "“{{name}}”打出“{{card}}”",
+    "yourTurn": "轮到你讲故事",
+    "someoneTelling": "“{{name}}”正在讲故事…",
+    "playHint": "讲到自己的牌就点它打出；卡住就抽牌换人",
+    "interruptHint": "听到他说中你的牌，点下去就打断他",
+    "handEmpty": "你手上没牌了！",
+    "finishStory": "打出结局牌，完成故事",
+    "stuck": "我卡住了",
+    "yourEnding": "你的结局牌",
+    "peekEnding": "偷看自己的结局牌"
   }
 }

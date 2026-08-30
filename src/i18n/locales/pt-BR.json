@@ -145,6 +145,10 @@
     "celebrity": {
       "name": "Adivinhe o Famoso",
       "desc": "Adivinhe o famoso secreto em 20 perguntas de sim/não!"
+    },
+    "story": {
+      "name": "Era uma vez",
+      "desc": "Abra uma sala e criem um conto juntos; se você disser uma palavra da minha carta, eu te interrompo"
     }
   },
   "lang": {

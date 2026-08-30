@@ -67,6 +67,15 @@ const GAMES: { key: string; path: string; emoji: string; color: string; ready: b
     ready: true,
     players: '3+',
   },
+  {
+    key: 'story',
+    path: '/story',
+    emoji: '📖',
+    color: 'from-violet-700 to-fuchsia-800',
+    ready: true,
+    players: '3–8',
+    isNew: true,
+  },
 ]
 
 export default function Home() {

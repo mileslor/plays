@@ -145,6 +145,10 @@
     "celebrity": {
       "name": "Celebrity Guess",
       "desc": "Guess the secret celebrity in 20 yes/no questions!"
+    },
+    "story": {
+      "name": "Story Chain",
+      "desc": "Open a room, weave a fairy tale together — say a word on my card and I cut in"
     }
   },
   "lang": {
@@ -382,5 +386,50 @@
     "reveal": "Tap to reveal",
     "newGame": "Play Again",
     "yourGuess": "Your guess:"
+  },
+  "story": {
+    "guest": "Player",
+    "title": "Story Chain",
+    "tagline": "Open a room, weave a fairy tale with friends",
+    "howToPlay": "How to play?",
+    "rule1": "The host opens a room and gets a 4-digit room code",
+    "rule2": "Friends tap “Join” and enter that code",
+    "rule3": "Everyone holds a few story cards and one ending card — play a card when your story mentions it",
+    "rule4": "Hear the storyteller say something on one of your cards? Tap it to cut in and keep the story going",
+    "namePlaceholder": "Your name",
+    "createRoom": "Create Room",
+    "joinRoom": "Join Room",
+    "enterRoom": "Enter",
+    "back": "Back",
+    "backHome": "← Home",
+    "roomCode": "Room code",
+    "roomCodeHint": "Have friends type this code to join",
+    "connecting": "Connecting…",
+    "connError": "Connection failed — try again",
+    "playersJoined": "{{n}} joined",
+    "you": "you",
+    "startGame": "Start Game →",
+    "needPlayers": "Need at least {{n}} players",
+    "waitHost": "Waiting for the host to start…",
+    "leave": "Leave",
+    "winner": "{{name}} finished the story!",
+    "theStory": "Here's how the story went…",
+    "playAgain": "Back to lobby",
+    "waitHostRestart": "Waiting for the host to start a new round…",
+    "hostLeft": "The host has left — the game may be over",
+    "storySoFar": "The story so far…",
+    "noCardsYet": "No cards played yet",
+    "actStuck": "{{name}} got stuck — drew a card, next teller's turn",
+    "actInterrupt": "{{name}} cut in! Played “{{card}}”",
+    "actPlay": "{{name}} played “{{card}}”",
+    "yourTurn": "Your turn to tell the story",
+    "someoneTelling": "{{name}} is telling the story…",
+    "playHint": "Tap a card when your story mentions it; stuck? draw and pass",
+    "interruptHint": "Hear them say one of your cards? Tap it to cut in",
+    "handEmpty": "You're out of cards!",
+    "finishStory": "Play your ending card, finish the story",
+    "stuck": "I'm stuck",
+    "yourEnding": "Your ending card",
+    "peekEnding": "Peek at your ending card"
   }
 }

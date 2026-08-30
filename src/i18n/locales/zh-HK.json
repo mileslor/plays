@@ -223,6 +223,10 @@
     "celebrity": {
       "name": "名人估估",
       "desc": "估出主持人心諗嘅名人，20條問題要猜中！"
+    },
+    "story": {
+      "name": "從前從前",
+      "desc": "開房夾朋友一齊接龍作故事，聽到你講中我張牌就打斷你"
     }
   },
   "lang": {
@@ -382,5 +386,50 @@
     "reveal": "點擊睇答案",
     "newGame": "再玩一局",
     "yourGuess": "你估咗："
+  },
+  "story": {
+    "guest": "玩家",
+    "title": "從前從前",
+    "tagline": "開房夾朋友，一齊接龍作童話",
+    "howToPlay": "點玩？",
+    "rule1": "主持人開房，會有一個 4 位數字房號",
+    "rule2": "朋友揀「入房」，輸入房號就入到嚟",
+    "rule3": "每人有幾張情節牌同一張結局牌，講故事講到自己張牌就打出",
+    "rule4": "聽到講故佬講中你手上嘅牌，就撳嗰張牌打斷佢，接住講落去",
+    "namePlaceholder": "你個名",
+    "createRoom": "開新房",
+    "joinRoom": "入房",
+    "enterRoom": "入去",
+    "back": "返回",
+    "backHome": "← 返主頁",
+    "roomCode": "房號",
+    "roomCodeHint": "俾朋友輸入呢個號碼入嚟",
+    "connecting": "連線中…",
+    "connError": "連線失敗，請重試",
+    "playersJoined": "已加入 {{n}} 人",
+    "you": "你",
+    "startGame": "開始遊戲 →",
+    "needPlayers": "最少要 {{n}} 個人",
+    "waitHost": "等主持人開始…",
+    "leave": "離開",
+    "winner": "「{{name}}」講完成個故事！",
+    "theStory": "呢個故事係咁嘅…",
+    "playAgain": "返大廳再玩",
+    "waitHostRestart": "等主持人開新局…",
+    "hostLeft": "主持人離開咗，遊戲可能已經結束",
+    "storySoFar": "故事進行到…",
+    "noCardsYet": "仲未有人出牌",
+    "actStuck": "「{{name}}」卡住咗，抽多張牌，換人講",
+    "actInterrupt": "「{{name}}」打斷！打出「{{card}}」",
+    "actPlay": "「{{name}}」打出「{{card}}」",
+    "yourTurn": "輪到你講故事",
+    "someoneTelling": "「{{name}}」正在講故事…",
+    "playHint": "講到自己張牌就撳佢打出；卡住就抽牌換人",
+    "interruptHint": "聽到佢講中你張牌，撳落去就打斷佢",
+    "handEmpty": "你手上冇牌喇！",
+    "finishStory": "打出結局牌，完成故事",
+    "stuck": "我卡住咗",
+    "yourEnding": "你嘅結局牌",
+    "peekEnding": "偷睇自己嘅結局牌"
   }
 }
