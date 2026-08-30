@@ -430,6 +430,9 @@
     "finishStory": "打出結局牌，完成故事",
     "stuck": "我卡住咗",
     "yourEnding": "你嘅結局牌",
-    "peekEnding": "偷睇自己嘅結局牌"
+    "peekEnding": "偷睇自己嘅結局牌",
+    "enterNameStep": "打你個名",
+    "pickRoomStep": "揀開新房定入房",
+    "nameFirst": "打咗名先可以開房或入房"
   }
 }

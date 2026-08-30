@@ -430,6 +430,9 @@
     "finishStory": "打出结局牌，完成故事",
     "stuck": "我卡住了",
     "yourEnding": "你的结局牌",
-    "peekEnding": "偷看自己的结局牌"
+    "peekEnding": "偷看自己的结局牌",
+    "enterNameStep": "输入你的名字",
+    "pickRoomStep": "选择开房或加入房间",
+    "nameFirst": "先输入名字才能开房或加入"
   }
 }

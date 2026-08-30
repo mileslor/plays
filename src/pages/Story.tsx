@@ -526,13 +526,26 @@ function Entry({
           <p>4. {t('story.rule4')}</p>
         </div>
 
+        <label className="block text-sm text-violet-200 mb-1.5 font-medium">
+          1. {t('story.enterNameStep')}
+        </label>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder={t('story.namePlaceholder')}
           maxLength={12}
-          className="w-full bg-white/10 border border-violet-500/40 rounded-xl px-4 py-3 mb-3 text-center placeholder-violet-400/50 focus:outline-none focus:border-violet-400"
+          autoFocus
+          className={`w-full bg-white/10 border rounded-xl px-4 py-3 text-center placeholder-violet-400/50 focus:outline-none focus:border-violet-400 ${
+            name.trim() ? 'border-violet-500/40 mb-2' : 'border-amber-400/70 mb-2'
+          }`}
         />
+        <p className="text-sm mb-3 min-h-5">
+          {name.trim() ? (
+            <span className="text-violet-300/80">2. {t('story.pickRoomStep')}</span>
+          ) : (
+            <span className="text-amber-300">👆 {t('story.nameFirst')}</span>
+          )}
+        </p>
 
         {!showJoin ? (
           <div className="space-y-3">

@@ -430,6 +430,9 @@
     "finishStory": "Play your ending card, finish the story",
     "stuck": "I'm stuck",
     "yourEnding": "Your ending card",
-    "peekEnding": "Peek at your ending card"
+    "peekEnding": "Peek at your ending card",
+    "enterNameStep": "Enter your name",
+    "pickRoomStep": "Create or join a room",
+    "nameFirst": "Type your name first to create or join a room"
   }
 }
