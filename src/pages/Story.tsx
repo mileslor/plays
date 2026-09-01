@@ -134,6 +134,19 @@ export default function Story() {
         return
       }
 
+      if (type === 'restart') {
+        if (!g) return
+        broadcastState({
+          ...g,
+          phase: 'lobby',
+          played: [],
+          hands: {},
+          winner: null,
+          last: null,
+        })
+        return
+      }
+
       if (!g || g.phase !== 'playing') return
 
       if (type === 'play' || type === 'interrupt') {
@@ -178,17 +191,6 @@ export default function Story() {
           phase: 'ended',
         })
         return
-      }
-
-      if (type === 'restart') {
-        broadcastState({
-          ...g,
-          phase: 'lobby',
-          played: [],
-          hands: {},
-          winner: null,
-          last: null,
-        })
       }
     },
     [isHost, i18n.language, applyGame, broadcastState, advanceStoryteller],
